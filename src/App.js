@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
 `;
 
 function App() {
