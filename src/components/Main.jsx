@@ -10,16 +10,18 @@ const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid cadetblue;
 `;
 
 const SectionHeader = styled.h2`
   text-align: center;
-  margin: 20px;
+  margin: 30px;
   color: cadetblue;
 `;
 
 const AboutMe = styled.article`
   max-width: 1200px;
+  margin-bottom: 20px;
   /* media queries */
   @media (min-width: 768px) {
     display: flex;
@@ -29,7 +31,6 @@ const AboutMe = styled.article`
 `;
 
 const MyPicture = styled.figure`
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -41,9 +42,10 @@ const MyPicture = styled.figure`
 `;
 
 const MyAmbition = styled.div`
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   @media (min-width: 768px) {
     width: 50%;
+    padding: 0 20px 0 15px;
   }
 `;
 
@@ -51,6 +53,7 @@ const Image = styled.img`
   width: 100%;
   max-width: 350px;
   @media (min-width: 768px) {
+    margin-right: 15px;
   }
 `;
 
@@ -61,7 +64,7 @@ const Paragraph = styled.p`
 
 const List = styled.ul`
   list-style-type: none;
-  padding: 20px;
+  margin-bottom: 20px;
 `;
 
 const ListItem = styled.li`
