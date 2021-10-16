@@ -87,7 +87,7 @@ function Main() {
   return (
     <Wrapper>
       <StyledSection>
-        <SectionHeader>Aspiring full-stack developer</SectionHeader>
+        <SectionHeader>Junior Front-end Developer</SectionHeader>
         <AboutMe>
           <MyPicture>
             <Image src={image} alt="image of Saskia Opdam" />
