@@ -19,54 +19,63 @@ const SectionHeader = styled.h2`
   color: cadetblue;
 `;
 
-const AboutMe = styled.article`
-  margin-bottom: 20px;
-  background: white;
-  /* media queries */
-  @media (min-width: 1000px) {
-    display: flex;
-    align-items: stretch;
-  }
-`;
+// const AboutMe = styled.article`
+//   margin-bottom: 20px;
+//   background: white;
+//   /* media queries */
+//   @media (min-width: 1000px) {
+//     display: flex;
+//     align-items: stretch;
+//   }
+// `;
 
-const MyPicture = styled.figure`
-  max-width: 500px;
-  @media (min-width: 1000px) {
-    width: 50%;
-  }
-`;
+// const MyPicture = styled.figure`
+//   max-width: 500px;
+//   @media (min-width: 1000px) {
+//     width: 50%;
+//   }
+// `;
 
-const MyAmbition = styled.div`
-  max-width: 500px;
-  @media (min-width: 1000px) {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-`;
+// const MyInfo = styled.div`
+//   max-width: 500px;
+//   @media (min-width: 1000px) {
+//     width: 50%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//   }
+// `;
 
 const Image = styled.img`
   width: 100%;
+  max-width: 350px;
 `;
 
-const Column = styled.div`
-  padding: 20px;
-  @media (min-width: 500px) {
-    padding: 20px 0;
-  }
-  @media (min-width: 1000px) {
-    padding-left: 20px;
-  }
+// const Column = styled.div`
+//   padding: 20px;
+//   @media (min-width: 500px) {
+//     padding: 20px 0;
+//   }
+//   @media (min-width: 1000px) {
+//     padding-left: 20px;
+//   }
+// `;
+
+const Info = styled.h3`
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 30px;
+  opacity: 0.5;
 `;
 
-const Paragraph = styled.p`
-  line-height: 1.25;
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
+// const Paragraph = styled.p`
+//   line-height: 1.25;
+//   margin-bottom: 20px;
+//   &:last-child {
+//     margin-bottom: 0;
+//   }
+// `;
 
 const List = styled.ul`
   list-style-type: none;
@@ -88,14 +97,28 @@ function Main() {
     <Wrapper>
       <StyledSection>
         <SectionHeader>Junior Front-end Developer</SectionHeader>
+        <Image src={image} alt="image of Saskia Opdam" />
+        <Info>
+          Full-stack development student at Winc Academy.
+          <br /> Currently working on the student dashboard react app.
+          <br /> (The final front-end assignment.)
+        </Info>
+      </StyledSection>
+      {/* <StyledSection>
+        <SectionHeader>Junior Front-end Developer</SectionHeader>
         <AboutMe>
           <MyPicture>
             <Image src={image} alt="image of Saskia Opdam" />
           </MyPicture>
-          <MyAmbition>
+          <MyInfo>
             {/* <ArticleHeader>Background</ArticleHeader> */}
-            <Column>
+      {/* <Column>
               <Paragraph>
+                I'm A full-stack development student at Winc Academy.
+                <br /> My current project is the student dashboard (react app).
+                <br /> This is the final front-end development assignment.
+              </Paragraph> */}
+      {/* <Paragraph>
                 While freelancing as a translator and editor I had the
                 opportunity to work on my own website, and a colleagues. This
                 was so inspiring that I kept thinking about it ever since.
@@ -126,11 +149,11 @@ function Main() {
                 and would bring a problem solving attitude to your team, please
                 feel free to get in touch.
               </Paragraph>
-              <Paragraph>Hope to hear from you soon!</Paragraph>
-            </Column>
-          </MyAmbition>
+              <Paragraph>Hope to hear from you soon!</Paragraph> */}
+      {/* </Column>
+          </MyInfo>
         </AboutMe>
-      </StyledSection>
+      </StyledSection> */}
 
       <StyledSection>
         <SectionHeader>Portfolio</SectionHeader>
