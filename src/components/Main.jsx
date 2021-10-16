@@ -19,8 +19,19 @@ const SectionHeader = styled.h2`
   color: cadetblue;
 `;
 
+const ArticleHeader = styled.h3`
+  text-align: center;
+  margin: 30px;
+  color: cadetblue;
+  @media (min-width: 768px) {
+    text-align: left;
+    margin: 0 0 20px 15px;
+  }
+`;
+
 const AboutMe = styled.article`
-  max-width: 1200px;
+  background: ghostwhite;
+  padding: 30px;
   margin-bottom: 20px;
   /* media queries */
   @media (min-width: 768px) {
@@ -36,30 +47,38 @@ const MyPicture = styled.figure`
   align-items: flex-start;
   @media (min-width: 768px) {
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: center;
     width: 50%;
   }
 `;
 
 const MyAmbition = styled.div`
-  padding: 20px 20px 0 20px;
   @media (min-width: 768px) {
     width: 50%;
-    padding: 0 20px 0 15px;
   }
 `;
 
 const Image = styled.img`
   width: 100%;
-  max-width: 350px;
+  max-width: 430px;
   @media (min-width: 768px) {
     margin-right: 15px;
   }
 `;
 
 const Paragraph = styled.p`
+  max-width: 430px;
   margin-bottom: 20px;
   line-height: 1.25;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+  @media (min-width: 768px) {
+    margin-left: 15px;
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
 `;
 
 const List = styled.ul`
@@ -87,6 +106,7 @@ function Main() {
             <Image src={image} alt="image of Saskia Opdam" />
           </MyPicture>
           <MyAmbition>
+            <ArticleHeader>Background</ArticleHeader>
             <Paragraph>
               While freelancing as a translator and editor I had the opportunity
               to work on my own website, and a colleagues. This was so inspiring
