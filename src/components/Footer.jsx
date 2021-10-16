@@ -4,12 +4,11 @@ const Wrapper = styled.footer`
   background-color: darkgray;
   color: white;
   padding: 30px;
-  display: flex;
-  justify-content: center;
   flex-shrink: 0;
 `;
 
 const Copyright = styled.small`
+  display: block;
   text-align: center;
 `;
 
