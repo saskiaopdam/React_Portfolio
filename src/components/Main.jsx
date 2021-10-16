@@ -14,7 +14,8 @@ const StyledSection = styled.section`
 
 const SectionHeader = styled.h2`
   text-align: center;
-  margin: 40px;
+  margin: 20px;
+  color: cadetblue;
 `;
 
 const AboutMe = styled.article`
@@ -28,7 +29,7 @@ const AboutMe = styled.article`
 `;
 
 const MyPicture = styled.figure`
-  padding: 40px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -40,7 +41,7 @@ const MyPicture = styled.figure`
 `;
 
 const MyAmbition = styled.div`
-  padding: 40px;
+  padding: 20px;
   @media (min-width: 768px) {
     width: 50%;
   }
@@ -60,7 +61,7 @@ const Paragraph = styled.p`
 
 const List = styled.ul`
   list-style-type: none;
-  padding: 40px;
+  padding: 20px;
 `;
 
 const ListItem = styled.li`

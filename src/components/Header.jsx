@@ -1,9 +1,9 @@
 import styled from "styled-components/macro";
 
 const Wrapper = styled.header`
-  background-color: darkgrey;
+  background-color: cadetblue;
   color: white;
-  padding: 60px;
+  padding: 40px;
   flex-shrink: 0;
 `;
 
