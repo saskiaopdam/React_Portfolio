@@ -56,3 +56,15 @@
         </AboutMe>
       </StyledSection> */
 }
+
+import photo from "./_DSC3220_500x750.jpg";
+import colourToggle from "../assets/colourToggle.png";
+import colourToggleDesign from "../assets/colourToggleDesign.png";
+import firstWebsite from "../assets/firstWebsite.png";
+import movieFilter from "../assets/movieFilter.png";
+import playlist from "../assets/playlist.png";
+import portfolioGrid from "../assets/portfolioGrid.png";
+import socialMediaButtons from "../assets/socialMediaButtons.png";
+import studentDashboard from "../assets/studentDashboard.png";
+import testimonial from "../assets/testimonial.png";
+import todoList from "../assets/todoList.png";

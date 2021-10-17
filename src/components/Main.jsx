@@ -1,17 +1,23 @@
+import React from "react";
+import { useState } from "react";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+
 import styled from "styled-components/macro";
 
+import Projects from "./Projects";
+
 import photo from "./_DSC3220_500x750.jpg";
-import colourtoggle from "../assets/colourtoggle.png";
-import colourtoggle2 from "../assets/colourtoggle2.png";
-import firstWebsite from "../assets/first-website.png";
-import moviefilter from "../assets/moviefilter.png";
-import playlist from "../assets/playlist.png";
-import portfolio from "../assets/portfolio.png";
-import portfolioGrid from "../assets/portfolio-grid.png";
-import socialMediaButtons from "../assets/social-media-buttons.png";
+// import colourtoggle from "../assets/colourtoggle.png";
+// import colourtoggle2 from "../assets/colourtoggle2.png";
+// import firstWebsite from "../assets/first-website.png";
+// import moviefilter from "../assets/moviefilter.png";
+// import playlist from "../assets/playlist.png";
+// import portfolio from "../assets/portfolio.png";
+// import portfolioGrid from "../assets/portfolio-grid.png";
+// import socialMediaButtons from "../assets/social-media-buttons.png";
 import dashboard from "../assets/dashboard.png";
-import testimonial from "../assets/testimonial.png";
-import todolist from "../assets/todolist.png";
+// import testimonial from "../assets/testimonial.png";
+// import todolist from "../assets/todolist.png";
 
 const Wrapper = styled.main`
   flex-grow: 1;
@@ -30,18 +36,17 @@ const SectionHeader = styled.h2`
   color: cadetblue;
 `;
 
-const Projects = styled.div`
-  padding: 20px;
-  margin-bottom: 20px;
-  background: black;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-`;
+// const Projects = styled.div`
+//   padding: 20px;
+//   margin-bottom: 20px;
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   gap: 20px;
+// `;
 
 const Project = styled.div`
-  background: yellow;
+  border-bottom: 1px solid green;
 `;
 
 const ProjectTitle = styled.h3`
@@ -80,10 +85,18 @@ const Photo = styled.img`
   max-width: 350px;
 `;
 
+const Figure = styled.figure`
+  background: white;
+`;
+
 const Screenshot = styled.img`
   width: 100%;
   max-width: 600px;
 `;
+
+// const Project = styled.div`
+//   background: yellow;
+// `;
 
 // const Video = styled.video`
 //   width: 100%;
@@ -106,6 +119,16 @@ const Info = styled.h3`
   line-height: 1.5;
   margin: 30px;
   opacity: 0.5;
+`;
+
+const Caption = styled.figcaption`
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+`;
+
+const Details = styled.div`
+  padding: 20px;
 `;
 
 // const Paragraph = styled.p`
@@ -137,7 +160,68 @@ const LinkToSite = styled.a`
   padding: 20px;
 `;
 
+const CloseButton = styled.button`
+  display: block;
+  border: none;
+  background-color: transparent;
+  text-align: right;
+  text-decoration: none;
+  float: right;
+`;
+
+const OpenButton = styled.button`
+  display: block;
+  border: none;
+  background-color: transparent;
+  text-align: right;
+  text-decoration: none;
+  float: right;
+`;
+
+const Button = styled.button`
+  background-color: rgb(233, 229, 229);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px;
+  width: 50%;
+`;
+
+function useToggle(initialValue = false) {
+  const [value, setValue] = React.useState(initialValue);
+  const toggle = React.useCallback(() => {
+    setValue((v) => !v);
+  }, []);
+  return [value, toggle];
+}
+
 function Main() {
+  const [isOn, toggleIsOn] = useToggle();
+  const [clickedProject, setClickedProject] = useState("");
+
+  const handleClick = (event) => {
+    setClickedProject(event.target.id);
+    console.log(typeof clickedProject);
+    toggleIsOn();
+  };
+
+  function DetailsVisible() {
+    return (
+      <div>
+        <CloseButton onClick={toggleIsOn}>X</CloseButton>
+        <p>info about {clickedProject}</p>
+      </div>
+    );
+  }
+
+  function DetailsHidden() {
+    return (
+      <div>
+        <OpenButton onClick={toggleIsOn}>Show details</OpenButton>
+      </div>
+    );
+  }
+
   return (
     <Wrapper>
       <StyledSection>
@@ -147,9 +231,44 @@ function Main() {
       </StyledSection>
 
       <StyledSection>
-        <SectionHeader>Projects</SectionHeader>
-        <Projects>
-          <Project>
+        <SectionHeader>Current project</SectionHeader>
+
+        <Project>
+          <Figure>
+            <Screenshot
+              id="dashboard"
+              src={dashboard}
+              alt="screenshot of dashboard project"
+              onClick={handleClick}
+            />
+            <Caption>
+              <span>Dashboard</span>
+              <span>Current project</span>
+            </Caption>
+          </Figure>
+          <Details>{isOn ? <DetailsVisible /> : <DetailsHidden />}</Details>
+
+          <LinkToSite
+            href="https://unruffled-kowalevski-7b0717.netlify.app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Dashboard
+          </LinkToSite>
+        </Project>
+
+        <Router>
+          <Link to="/projects">
+            <Button>View previous projects</Button>
+          </Link>
+          <Switch>
+            <Route path="/projects" exact component={Projects}></Route>
+            {/* <Route path="/projects/:name" component={StudentRatings}></Route> */}
+          </Switch>
+        </Router>
+        {/* <SectionHeader>Projects</SectionHeader> */}
+
+        {/* <Project>
             <Screenshot src={portfolio} alt="screenshot of portfolio project" />
             <LinkToSite
               href="https://gifted-chandrasekhar-632f93.netlify.app"
@@ -158,9 +277,9 @@ function Main() {
             >
               Portfolio
             </LinkToSite>
-          </Project>
+          </Project> */}
 
-          <Project>
+        {/* <Project>
             <Screenshot src={dashboard} alt="screenshot of dashboard project" />
             <LinkToSite
               href="https://unruffled-kowalevski-7b0717.netlify.app"
@@ -169,9 +288,9 @@ function Main() {
             >
               Dashboard
             </LinkToSite>
-          </Project>
+          </Project> */}
 
-          <Project>
+        {/* <Project>
             <Screenshot src={playlist} alt="screenshot of playlist project" />
             <LinkToSite
               href="https://lucid-kowalevski-bfd17f.netlify.app"
@@ -289,7 +408,7 @@ function Main() {
               First website
             </LinkToSite>
           </Project>
-        </Projects>
+        </Projects> */}
       </StyledSection>
 
       <StyledSection>
