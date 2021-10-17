@@ -1,6 +1,17 @@
 import styled from "styled-components/macro";
 
-import image from "./_DSC3220_500x750.jpg";
+import photo from "./_DSC3220_500x750.jpg";
+import colourtoggle from "../assets/colourtoggle.png";
+import colourtoggle2 from "../assets/colourtoggle2.png";
+import firstWebsite from "../assets/first-website.png";
+import moviefilter from "../assets/moviefilter.png";
+import playlist from "../assets/playlist.png";
+import portfolio from "../assets/portfolio.png";
+import portfolioGrid from "../assets/portfolio-grid.png";
+import socialMediaButtons from "../assets/social-media-buttons.png";
+import dashboard from "../assets/dashboard.png";
+import testimonial from "../assets/testimonial.png";
+import todolist from "../assets/todolist.png";
 
 const Wrapper = styled.main`
   flex-grow: 1;
@@ -17,6 +28,24 @@ const SectionHeader = styled.h2`
   text-align: center;
   margin: 30px;
   color: cadetblue;
+`;
+
+const Projects = styled.div`
+  padding: 20px;
+  margin-bottom: 20px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
+const Project = styled.div`
+  background: yellow;
+`;
+
+const ProjectTitle = styled.h3`
+  color: red;
 `;
 
 // const AboutMe = styled.article`
@@ -46,10 +75,20 @@ const SectionHeader = styled.h2`
 //   }
 // `;
 
-const Image = styled.img`
+const Photo = styled.img`
   width: 100%;
   max-width: 350px;
 `;
+
+const Screenshot = styled.img`
+  width: 100%;
+  max-width: 600px;
+`;
+
+// const Video = styled.video`
+//   width: 100%;
+//   max-width: 350px;
+// `;
 
 // const Column = styled.div`
 //   padding: 20px;
@@ -92,142 +131,165 @@ const A = styled.a`
   text-decoration: none;
 `;
 
+const LinkToSite = styled.a`
+  color: black;
+  display: block;
+  padding: 20px;
+`;
+
 function Main() {
   return (
     <Wrapper>
       <StyledSection>
         <SectionHeader>Junior Front-end Developer</SectionHeader>
-        <Image src={image} alt="image of Saskia Opdam" />
-        <Info>
-          Full-stack development student at Winc Academy.
-          <br /> Currently working on the student dashboard react app.
-          <br /> (The final front-end assignment.)
-        </Info>
+        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
+        <Info>Full-stack development student at Winc Academy</Info>
       </StyledSection>
-      {/* <StyledSection>
-        <SectionHeader>Junior Front-end Developer</SectionHeader>
-        <AboutMe>
-          <MyPicture>
-            <Image src={image} alt="image of Saskia Opdam" />
-          </MyPicture>
-          <MyInfo>
-            {/* <ArticleHeader>Background</ArticleHeader> */}
-      {/* <Column>
-              <Paragraph>
-                I'm A full-stack development student at Winc Academy.
-                <br /> My current project is the student dashboard (react app).
-                <br /> This is the final front-end development assignment.
-              </Paragraph> */}
-      {/* <Paragraph>
-                While freelancing as a translator and editor I had the
-                opportunity to work on my own website, and a colleagues. This
-                was so inspiring that I kept thinking about it ever since.
-              </Paragraph>
-              <Paragraph>
-                This year I decided to take the plunge and start a new
-                adventure. In February I enrolled in a full-stack development
-                course at Winc Academy (remote learning). So far I have gained
-                knowledge and experience in HTML, CSS, SCSS, JavaScript, React,
-                Redux, Jest, Git, Github and NodeJS.
-              </Paragraph>
-              <Paragraph>
-                At present I'm busy with the final front-end assignment: a
-                react-app showing ratings in a chart (student-dashboard). When
-                finished, I will proceed with the back-end development course,
-                which will cover Python, Flask and SQL.
-              </Paragraph>
-              <Paragraph>
-                What I love about programming is that it allows for creativity
-                and logical thinking, at the same time, both of which I love. It
-                would be great to gain experience and broaden my front-end
-                knowledge in a junior developer job, while in the spare time
-                finishing the back-end course.
-              </Paragraph>
-              <Paragraph>
-                So, if you are looking for an enthusiastic beginner programmer
-                with a creative background (academy of arts), who loves to learn
-                and would bring a problem solving attitude to your team, please
-                feel free to get in touch.
-              </Paragraph>
-              <Paragraph>Hope to hear from you soon!</Paragraph> */}
-      {/* </Column>
-          </MyInfo>
-        </AboutMe>
-      </StyledSection> */}
 
       <StyledSection>
-        <SectionHeader>Portfolio</SectionHeader>
-        <List>
-          <ListItem>
-            <A
+        <SectionHeader>Projects</SectionHeader>
+        <Projects>
+          <Project>
+            <Screenshot src={portfolio} alt="screenshot of portfolio project" />
+            <LinkToSite
+              href="https://gifted-chandrasekhar-632f93.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Portfolio
+            </LinkToSite>
+          </Project>
+
+          <Project>
+            <Screenshot src={dashboard} alt="screenshot of dashboard project" />
+            <LinkToSite
               href="https://unruffled-kowalevski-7b0717.netlify.app"
               target="_blank"
+              rel="noreferrer"
             >
-              Student dashboard (current)
-            </A>
-          </ListItem>
-          <ListItem>
-            <A
+              Dashboard
+            </LinkToSite>
+          </Project>
+
+          <Project>
+            <Screenshot src={playlist} alt="screenshot of playlist project" />
+            <LinkToSite
               href="https://lucid-kowalevski-bfd17f.netlify.app"
               target="_blank"
+              rel="noreferrer"
             >
               Playlist
-            </A>
-          </ListItem>
-          <ListItem>
-            <A href="https://loving-banach-713eaf.netlify.app" target="_blank">
-              To do list
-            </A>
-          </ListItem>
-          <ListItem>
-            <A
+            </LinkToSite>
+          </Project>
+
+          <Project>
+            <Screenshot src={todolist} alt="screenshot of to-do list project" />
+            <LinkToSite
+              href="https://objective-banach-2a5a85.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              To-do list
+            </LinkToSite>
+          </Project>
+
+          <Project>
+            <Screenshot
+              src={moviefilter}
+              alt="screenshot of movie filter project"
+            />
+            <LinkToSite
               href="https://practical-sinoussi-a17cb3.netlify.app"
               target="_blank"
+              rel="noreferrer"
             >
-              Movie search
-            </A>
-          </ListItem>
-          <ListItem>
-            <A
+              Movie filter
+            </LinkToSite>
+          </Project>
+
+          <Project>
+            <Screenshot
+              src={colourtoggle2}
+              alt="screenshot of colour toggle design project"
+            />
+            <LinkToSite
               href="https://suspicious-johnson-c894da.netlify.app"
               target="_blank"
+              rel="noreferrer"
             >
-              Colour toggle design
-            </A>
-          </ListItem>
-          <ListItem>
-            <A
+              Colour toggle 2
+            </LinkToSite>
+          </Project>
+
+          <Project>
+            <Screenshot
+              src={colourtoggle}
+              alt="screenshot of colour toggle project"
+            />
+            <LinkToSite
               href="https://affectionate-haibt-22ebd8.netlify.app"
               target="_blank"
+              rel="noreferrer"
             >
               Colour toggle
-            </A>
-          </ListItem>
-          <ListItem>
-            <A
+            </LinkToSite>
+          </Project>
+
+          <Project>
+            <Screenshot
+              src={socialMediaButtons}
+              alt="screenshot of social media buttons project"
+            />
+            <LinkToSite
               href="https://pensive-ptolemy-d5c4c6.netlify.app"
               target="_blank"
+              rel="noreferrer"
             >
               Social media buttons
-            </A>
-          </ListItem>
-          <ListItem>
-            <A href="https://upbeat-goodall-bb4ec2.netlify.app" target="_blank">
-              Portfolio grid
-            </A>
-          </ListItem>
-          <ListItem>
-            <A href="https://amazing-cori-c6ed26.netlify.app" target="_blank">
-              Testimonial
-            </A>
-          </ListItem>
+            </LinkToSite>
+          </Project>
 
-          <ListItem>
-            <A href="https://vibrant-bohr-d9a9ff.netlify.app" target="_blank">
+          <Project>
+            <Screenshot
+              src={portfolioGrid}
+              alt="screenshot of portfolio grid project"
+            />
+            <LinkToSite
+              href="https://upbeat-goodall-bb4ec2.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Portfolio grid
+            </LinkToSite>
+          </Project>
+
+          <Project>
+            <Screenshot
+              src={testimonial}
+              alt="screenshot of testimonial project"
+            />
+            <LinkToSite
+              href="https://amazing-cori-c6ed26.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Testimonial
+            </LinkToSite>
+          </Project>
+          <Project>
+            <Screenshot
+              src={firstWebsite}
+              alt="screenshot of first website project"
+            />
+            <LinkToSite
+              href="https://vibrant-bohr-d9a9ff.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+            >
               First website
-            </A>
-          </ListItem>
-        </List>
+            </LinkToSite>
+          </Project>
+        </Projects>
       </StyledSection>
 
       <StyledSection>
