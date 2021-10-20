@@ -110,3 +110,37 @@ const portfolioGridClicked = clickedScreenshot === "portfolioGrid";
 const socialMediaButtonsClicked = clickedScreenshot === "socialMediaButtons";
 const testimonialClicked = clickedScreenshot === "testimonial";
 const todolistClicked = clickedScreenshot === "todolist";
+
+{
+  /* <StyledSection>
+        <SectionHeader>Intro</SectionHeader>
+        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
+        <Info>Full-stack development student at Winc Academy</Info>
+      </StyledSection>
+
+      <StyledSection>
+        <SectionHeader>Projects</SectionHeader>
+        <Projects />
+      </StyledSection>
+
+      <StyledSection>
+        <SectionHeader>Contact</SectionHeader>
+        <List>
+          <ListItem>
+            <A href="mailto:opdamsaskia@icloud.com">opdamsaskia@icloud.com</A>
+          </ListItem>
+
+          <ListItem>
+            <A href="https://www.linkedin.com/in/saskiaopdam/" target="_blank">
+              LinkedIn
+            </A>
+          </ListItem>
+
+          <ListItem>
+            <A href="https://github.com/saskiaopdam/" target="_blank">
+              GitHub
+            </A>
+          </ListItem>
+        </List>
+      </StyledSection> */
+}
