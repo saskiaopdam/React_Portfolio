@@ -7,176 +7,107 @@ import About from "./About";
 import Work from "./Work";
 import Contact from "./Contact";
 
-// const StyledSection = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   border-bottom: 1px solid #eee;
-// `;
-
-// const SectionHeader = styled.h2`
-//   text-align: center;
-//   margin: 30px;
-//   color: cadetblue;
-// `;
-
-// const Photo = styled.img`
-//   width: 50%;
-//   max-width: 350px;
-// `;
-
-// const Info = styled.h3`
-//   text-align: center;
-//   font-size: 18px;
-//   line-height: 1.5;
-//   margin: 30px;
-//   opacity: 0.5;
-// `;
-
-// const List = styled.ul`
-//   list-style-type: none;
-//   margin-bottom: 20px;
-// `;
-
-// const ListItem = styled.MenuItem`
-//   margin-bottom: 20px;
-//   text-align: center;
-// `;
-
-// const A = styled.a`
-//   color: black;
-//   text-decoration: none;
-// `;
-
 const Wrapper = styled.main`
   flex-grow: 1;
+  background: pink;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-`;
-
-const Inner = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: stretch;
   position: relative;
 `;
 
 const Navigation = styled.nav`
-  position: absolute;
-  z-index: ${({ closed }) => (closed ? "-1" : "1")};
   width: 100%;
-  height: 100%;
-  display: flex;
   padding: 20px;
-`;
-
-const Menu = styled.ul`
-  width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
-
-const MenuItem = styled.li`
-  list-style: none;
-  flex-grow: 1;
-  display: flex;
-`;
-
+//  z-index: ${({ pageHidden }) => (!pageHidden ? "2" : "0")};
+//   position: ${({ pageHidden }) => (!pageHidden ? "absolute" : "relative")};
+//   bottom: ${({ pageHidden }) => (!pageHidden ? "0" : "null")};
+//  height: ${({ pageHidden }) => (!pageHidden ? "auto" : "100%")};
+// background: ${({ pageHidden }) => (!pageHidden ? "fuchsia" : "null")};
+//   position: ${({ pageHidden }) => (!pageHidden ? "absolute" : "null")};
+//   bottom: ${({ pageHidden }) => (!pageHidden ? "0" : "null")};
+//   left: ${({ pageHidden }) => (!pageHidden ? "0" : "null")};
+//   z-index: ${({ pageHidden }) => (!pageHidden ? "2" : "0")};
+// @media (min-width: 400px) {
+//     flex-direction: ${({ pageHidden }) => (!pageHidden ? "row" : "column")};
+//   }
 const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
   font-size: 20px;
+  & + & {
+    margin-top: 10px;
+  }
+  &:hover {
+    background: fuchsia;
+  }
   flex-grow: 1;
-  align-self: center;
+  display: flex;
+  align-items: center;
   @media (min-width: 400px) {
-    text-align: center;
+    justify-content: center;
   }
 `;
 
 function Main() {
-  const [navClosed, setNavClosed] = useState(false);
-  const [pageClosed, setPageClosed] = useState(true);
-  console.log(`navClosed: ${navClosed}`);
-  console.log(`pageClosed: ${pageClosed}`);
+  const [pageHidden, setPageHidden] = useState(true);
+  console.log(`pageHidden: ${pageHidden}`);
 
-  const handleNavClick = (event) => {
-    event.preventDefault();
-    setNavClosed(true);
-    setPageClosed(false);
+  const showPage = () => {
+    setPageHidden(false);
   };
 
-  const handlePageClick = (event) => {
-    event.preventDefault();
-    setNavClosed(false);
-    setPageClosed(true);
+  const hidePage = () => {
+    setPageHidden(true);
   };
 
   return (
     <Wrapper>
-      <Inner>
-        <Router>
-          <Navigation closed={navClosed}>
-            <Menu>
-              <MenuItem onClick={handleNavClick}>
-                <StyledLink to="/about">About</StyledLink>
-              </MenuItem>
-              <MenuItem onClick={handleNavClick}>
-                <StyledLink to="/work">Work</StyledLink>
-              </MenuItem>
-              <MenuItem onClick={handleNavClick}>
-                <StyledLink to="/contact">Contact</StyledLink>
-              </MenuItem>
-            </Menu>
-          </Navigation>
-          <Switch>
-            <Route
-              exact
-              path="/about"
-              render={(props) => (
-                <About
-                  {...props}
-                  navClosed={navClosed}
-                  pageClosed={pageClosed}
-                  onPageClick={handlePageClick}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/work"
-              render={(props) => (
-                <Work
-                  {...props}
-                  navClosed={navClosed}
-                  pageClosed={pageClosed}
-                  onPageClick={handlePageClick}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/contact"
-              render={(props) => (
-                <Contact
-                  {...props}
-                  navClosed={navClosed}
-                  pageClosed={pageClosed}
-                  onPageClick={handlePageClick}
-                />
-              )}
-            />
-          </Switch>
-        </Router>
-      </Inner>
-      {/* <StyledSection>
-        <SectionHeader>Intro</SectionHeader>
-        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Info>Full-stack development student at Winc Academy</Info>
-      </StyledSection>
+      <Router>
+        <Navigation onClick={showPage}>
+          <StyledLink to="/about">About</StyledLink>
+          <StyledLink to="/work">Work</StyledLink>
+          <StyledLink to="/contact">Contact</StyledLink>
+        </Navigation>
 
+        <Switch>
+          <Route
+            exact
+            path="/about"
+            render={(props) => (
+              <About
+                {...props}
+                pageHidden={pageHidden}
+                onPageClick={hidePage}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/work"
+            render={(props) => (
+              <Work {...props} pageHidden={pageHidden} onPageClick={hidePage} />
+            )}
+          />
+          <Route
+            exact
+            path="/contact"
+            render={(props) => (
+              <Contact
+                {...props}
+                pageHidden={pageHidden}
+                onPageClick={hidePage}
+              />
+            )}
+          />
+        </Switch>
+      </Router>
+
+      {/*        
+       
+   
       <StyledSection>
         <SectionHeader>Projects</SectionHeader>
         <Projects />
