@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import { useState } from "react";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 import styled from "styled-components/macro";
 
+import Home from "./Home";
 import About from "./About";
 import Work from "./Work";
 import Contact from "./Contact";
@@ -11,7 +11,7 @@ const Wrapper = styled.main`
   flex-grow: 1;
   background: pink;
   display: flex;
-  position: relative;
+  flex-direction: column;
 `;
 
 const Navigation = styled.nav`
@@ -19,24 +19,25 @@ const Navigation = styled.nav`
   padding: 20px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  @media (min-width: 400px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
-//  z-index: ${({ pageHidden }) => (!pageHidden ? "2" : "0")};
-//   position: ${({ pageHidden }) => (!pageHidden ? "absolute" : "relative")};
-//   bottom: ${({ pageHidden }) => (!pageHidden ? "0" : "null")};
-//  height: ${({ pageHidden }) => (!pageHidden ? "auto" : "100%")};
-// background: ${({ pageHidden }) => (!pageHidden ? "fuchsia" : "null")};
-//   position: ${({ pageHidden }) => (!pageHidden ? "absolute" : "null")};
-//   bottom: ${({ pageHidden }) => (!pageHidden ? "0" : "null")};
-//   left: ${({ pageHidden }) => (!pageHidden ? "0" : "null")};
-//   z-index: ${({ pageHidden }) => (!pageHidden ? "2" : "0")};
-// @media (min-width: 400px) {
-//     flex-direction: ${({ pageHidden }) => (!pageHidden ? "row" : "column")};
-//   }
+
+const Inner = styled.div`
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: yellow;
+`;
+
 const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   & + & {
     margin-top: 10px;
   }
@@ -44,95 +45,37 @@ const StyledLink = styled(Link)`
     background: fuchsia;
   }
   flex-grow: 1;
-  display: flex;
-  align-items: center;
   @media (min-width: 400px) {
+    display: flex;
     justify-content: center;
+    & + & {
+      margin-top: 0;
+    }
   }
 `;
 
+const Content = styled.div``;
+
 function Main() {
-  const [pageHidden, setPageHidden] = useState(true);
-  console.log(`pageHidden: ${pageHidden}`);
-
-  const showPage = () => {
-    setPageHidden(false);
-  };
-
-  const hidePage = () => {
-    setPageHidden(true);
-  };
-
   return (
     <Wrapper>
       <Router>
-        <Navigation onClick={showPage}>
-          <StyledLink to="/about">About</StyledLink>
-          <StyledLink to="/work">Work</StyledLink>
-          <StyledLink to="/contact">Contact</StyledLink>
-        </Navigation>
-
-        <Switch>
-          <Route
-            exact
-            path="/about"
-            render={(props) => (
-              <About
-                {...props}
-                pageHidden={pageHidden}
-                onPageClick={hidePage}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/work"
-            render={(props) => (
-              <Work {...props} pageHidden={pageHidden} onPageClick={hidePage} />
-            )}
-          />
-          <Route
-            exact
-            path="/contact"
-            render={(props) => (
-              <Contact
-                {...props}
-                pageHidden={pageHidden}
-                onPageClick={hidePage}
-              />
-            )}
-          />
-        </Switch>
+        {" "}
+        <Inner>
+          <Navigation>
+            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/about">About</StyledLink>
+            <StyledLink to="/work">Work</StyledLink>
+            <StyledLink to="/contact">Contact</StyledLink>
+          </Navigation>
+        </Inner>
+        <Content>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/work" component={Work} />
+          <Route path="/contact" component={Contact} />
+        </Content>
       </Router>
-
-      {/*        
-       
-   
-      <StyledSection>
-        <SectionHeader>Projects</SectionHeader>
-        <Projects />
-      </StyledSection>
-
-      <StyledSection>
-        <SectionHeader>Contact</SectionHeader>
-        <List>
-          <ListItem>
-            <A href="mailto:opdamsaskia@icloud.com">opdamsaskia@icloud.com</A>
-          </ListItem>
-
-          <ListItem>
-            <A href="https://www.linkedin.com/in/saskiaopdam/" target="_blank">
-              LinkedIn
-            </A>
-          </ListItem>
-
-          <ListItem>
-            <A href="https://github.com/saskiaopdam/" target="_blank">
-              GitHub
-            </A>
-          </ListItem>
-        </List>
-      </StyledSection> */}
     </Wrapper>
   );
 }

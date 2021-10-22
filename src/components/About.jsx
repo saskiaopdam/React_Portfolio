@@ -1,84 +1,83 @@
 import styled from "styled-components/macro";
 
-import photo from "./_DSC3220_500x750.jpg";
-
-// const Wrapper = styled.section`
-//   position: relative;
-//   top: 0;
-//   left: 0;
-//   z-index: ${({ hidden }) => (hidden ? "-1" : "0")};
-//   padding: 20px;
-//   width: 100%;
-//   height: 100%;
-//   background: white;
-// `;
 const Wrapper = styled.section`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: ${({ hidden }) => (hidden ? "-1" : "1")};
-  overflow-y: auto;
-  overflow-x: hidden;
   padding: 20px;
   width: 100%;
-  height: 100%;
   background: white;
 `;
-// background: ${ ({ onClick }) => (onClick ? "red" : "white") };
 
 const Inner = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background: white;
-  @media (min-width: 400px) {
-    align-items: center;
-  }
+  background: yellow;
 `;
 
 const Heading = styled.h3`
-  font-size: 20px;
-  font-weight: 500;
-  color: crimson;
+  font-size: 24px;
+  font-weight: 700;
   margin-bottom: 20px;
+  @media (min-width: 400px) {
+    text-align: center;
+  }
 `;
 
-const Photo = styled.img`
-  width: 50%;
-  max-width: 200px;
-  margin-bottom: 20px;
+const Details = styled.div`
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: justify;
 `;
 
-const Info = styled.p`
-  opacity: 0.5;
-  margin-bottom: 20px;
-  margin-bottom: 40px;
+const Paragraph = styled.p`
+  font-size: 15px;
+  opacity: 0.75;
+  line-height: 1.5;
+  & + & {
+    margin-top: 20px;
+  }
 `;
 
-function About({ pageHidden, onPageClick }) {
+function About() {
   return (
-    <Wrapper onClick={onPageClick} hidden={pageHidden}>
+    <Wrapper>
       <Inner>
         <Heading>About</Heading>
-        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Info>full-stack development student at Winc Academy</Info>
-        <Heading>About</Heading>
-        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Info>full-stack development student at Winc Academy</Info>
-        <Heading>About</Heading>
-        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Info>full-stack development student at Winc Academy</Info>
-        <Heading>About</Heading>
-        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Info>full-stack development student at Winc Academy</Info>
-        <Heading>About</Heading>
-        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Info>full-stack development student at Winc Academy</Info>
-        <Heading>About</Heading>
-        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Info>full-stack development student at Winc Academy</Info>
+        <Details>
+          <Paragraph>
+            While freelancing as a translator and editor I had the opportunity
+            to work on my own website, and a colleagues. This was so inspiring
+            that I kept thinking about it ever since.
+          </Paragraph>
+          <Paragraph>
+            This year I decided to take the plunge and start a new adventure. In
+            February I enrolled in a full-stack development course at Winc
+            Academy (remote learning). So far I have gained knowledge and
+            experience in HTML, CSS, SCSS, JavaScript, React, Redux, Jest, Git,
+            Github and NodeJS.
+          </Paragraph>
+          <Paragraph>
+            At present I'm busy with the final front-end assignment: a react-app
+            showing ratings in a chart (student-dashboard). When finished, I
+            will proceed with the back-end development course, which will cover
+            Python, Flask and SQL.
+          </Paragraph>
+          <Paragraph>
+            What I love about programming is that it allows for creativity and
+            logical thinking, at the same time, both of which I love. It would
+            be great to gain experience and broaden my front-end knowledge in a
+            junior developer job, while in the spare time finishing the back-end
+            course.
+          </Paragraph>
+          <Paragraph>
+            So, if you are looking for an enthusiastic beginner programmer with
+            a creative background (academy of arts), who loves to learn and
+            would bring a problem solving attitude to your team, please feel
+            free to get in touch.
+          </Paragraph>
+          <Paragraph>Hope to hear from you soon!</Paragraph>
+        </Details>
       </Inner>
     </Wrapper>
   );

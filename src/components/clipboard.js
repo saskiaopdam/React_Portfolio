@@ -1,32 +1,3 @@
-{
-
-
-// const StyledSection = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   border-bottom: 1px solid #eee;
-// `;
-
-// const SectionHeader = styled.h2`
-//   text-align: center;
-//   margin: 30px;
-//   color: cadetblue;
-// `;
-
-// const Photo = styled.img`
-//   width: 50%;
-//   max-width: 350px;
-// `;
-
-// const Info = styled.h3`
-//   text-align: center;
-//   font-size: 18px;
-//   line-height: 1.5;
-//   margin: 30px;
-//   opacity: 0.5;
-// `;
-
 // const List = styled.ul`
 //   list-style-type: none;
 //   margin-bottom: 20px;
@@ -41,7 +12,6 @@
 //   color: black;
 //   text-decoration: none;
 // `;
-
 
 import colourToggle from "../assets/colourToggle.png";
 import colourToggleDesign from "../assets/colourToggleDesign.png";
@@ -121,6 +91,34 @@ const todolistClicked = clickedScreenshot === "todolist";
             </A>
           </ListItem>
 
+          <ListItem>
+            <A href="https://github.com/saskiaopdam/" target="_blank">
+              GitHub
+            </A>
+          </ListItem>
+        </List>
+      </StyledSection> */
+}
+
+{
+  /*        
+       
+   
+      <StyledSection>
+        <SectionHeader>Projects</SectionHeader>
+        <Projects />
+      </StyledSection>
+      <StyledSection>
+        <SectionHeader>Contact</SectionHeader>
+        <List>
+          <ListItem>
+            <A href="mailto:opdamsaskia@icloud.com">opdamsaskia@icloud.com</A>
+          </ListItem>
+          <ListItem>
+            <A href="https://www.linkedin.com/in/saskiaopdam/" target="_blank">
+              LinkedIn
+            </A>
+          </ListItem>
           <ListItem>
             <A href="https://github.com/saskiaopdam/" target="_blank">
               GitHub

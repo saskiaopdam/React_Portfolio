@@ -11,7 +11,7 @@ const Wrapper = styled.header`
 const Title = styled.h1`
   font-weight: 500;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   @media (min-width: 400px) {
     text-align: center;
   }

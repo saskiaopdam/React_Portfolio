@@ -1,20 +1,35 @@
 import styled from "styled-components/macro";
 
 const Wrapper = styled.section`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: ${({ hidden }) => (hidden ? "-1" : "1")};
   padding: 20px;
   width: 100%;
-  height: 100%;
   background: white;
+`;
+
+const Inner = styled.div`
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: yellow;
+`;
+
+const Heading = styled.h3`
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  @media (min-width: 400px) {
+    text-align: center;
+  }
 `;
 
 function Contact({ pageHidden, onPageClick }) {
   return (
     <Wrapper onClick={onPageClick} hidden={pageHidden}>
-      <h2>Contact</h2>
+      <Inner>
+        <Heading>Contact</Heading>
+      </Inner>
     </Wrapper>
   );
 }
