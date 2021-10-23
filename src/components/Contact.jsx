@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 const Wrapper = styled.section`
   padding: 20px;
   width: 100%;
-  background: white;
+  background: blue;
 `;
 
 const Inner = styled.div`
@@ -24,9 +24,9 @@ const Heading = styled.h3`
   }
 `;
 
-function Contact({ pageHidden, onPageClick }) {
+function Contact() {
   return (
-    <Wrapper onClick={onPageClick} hidden={pageHidden}>
+    <Wrapper>
       <Inner>
         <Heading>Contact</Heading>
       </Inner>

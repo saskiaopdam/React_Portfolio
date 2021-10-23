@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 const Wrapper = styled.section`
   padding: 20px;
   width: 100%;
-  background: white;
+  background: blue;
 `;
 
 const Inner = styled.div`

@@ -5,7 +5,9 @@ import photo from "./_DSC3220_500x750.jpg";
 const Wrapper = styled.section`
   padding: 20px;
   width: 100%;
-  background: white;
+  background: blue;
+  position: relative;
+  z-index: 0;
 `;
 
 const Inner = styled.div`
