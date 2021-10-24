@@ -127,3 +127,39 @@ const todolistClicked = clickedScreenshot === "todolist";
         </List>
       </StyledSection> */
 }
+
+// const Hamburger = styled.div`
+//   display: flex;
+//   padding: 20px 0;
+//   @media (min-width: 400px) {
+//     display: none;
+//   }
+// `;
+
+// const Menu = styled.div`
+//   display: none;
+//   @media (min-width: 400px) {
+//     display: flex;
+//   }
+// `;
+
+// const StyledLink = styled(Link)`
+//   color: black;
+//   text-decoration: none;
+//   font-size: 16px;
+//   padding: 20px 0;
+//   flex-grow: 1;
+//   display: flex;
+//   &.menuLink {
+//     justify-content: center;
+//     &:hover {
+//       background: fuchsia;
+//     }
+//   }
+// `;
+
+// const Content = styled.div`
+//   display: flex;
+//   align-items: stretch;
+//   position: relative;
+// `;

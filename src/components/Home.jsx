@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 
+import { Link } from "react-router-dom";
+
 import photo from "./_DSC3220_500x750.jpg";
 
 const Wrapper = styled.section`
@@ -36,17 +38,32 @@ const Summary = styled.p`
   }
 `;
 
+const StyledLink = styled(Link)`
+  background: pink;
+  border-bottom: 1px solid yellow;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  padding-bottom: 10px;
+  display: block;
+  @media (min-width: 400px) {
+    text-align: center;
+  }
+`;
+
 function Home() {
   return (
     <Wrapper>
       <Inner>
         <Photo src={photo} alt="portrait photo of Saskia Opdam" />
+        <Summary>full-stack development student at Winc Academy</Summary>
         <Summary>
-          full-stack development student at Winc Academy
-          <br />
           HTML | CSS | JavaScript | React | Redux | NodeJS
           <br /> Python | Flask | SQL
         </Summary>
+        <StyledLink to="/about">About</StyledLink>
+        <StyledLink to="/work">Work</StyledLink>
+        <StyledLink to="/contact">Contact</StyledLink>
       </Inner>
     </Wrapper>
   );

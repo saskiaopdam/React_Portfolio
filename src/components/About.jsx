@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 
+import { Link } from "react-router-dom";
+
 const Wrapper = styled.section`
   padding: 20px;
   width: 100%;
@@ -39,10 +41,18 @@ const Paragraph = styled.p`
   }
 `;
 
+const StyledLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  padding-bottom: 10px;
+`;
+
 function About() {
   return (
     <Wrapper>
       <Inner>
+        <StyledLink to="/home">Home</StyledLink>
         <Heading>About</Heading>
         <Details>
           <Paragraph>
