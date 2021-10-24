@@ -9,17 +9,20 @@ const Wrapper = styled.header`
 `;
 
 const Title = styled.h1`
+  font-size: 36px;
   font-weight: 500;
-  color: white;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  color: indigo;
   @media (min-width: 400px) {
     text-align: center;
   }
 `;
 
 const SubTitle = styled.h2`
+  font-size: 28px;
   font-weight: 500;
-  color: white;
+  margin-bottom: 14px;
+  color: indigo;
   @media (min-width: 400px) {
     text-align: center;
   }

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -14,7 +14,6 @@ import Contact from "./Contact";
 const Wrapper = styled.main`
   flex-grow: 1;
   padding: 20px;
-  background: blue;
   display: flex;
   flex-direction: column;
 `;
@@ -23,19 +22,20 @@ const NavBar = styled.nav`
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  background: blue;
   margin-bottom: 20px;
 `;
 
-const Hamburger = styled.button`
+const Burger = styled.button`
   display: flex;
   @media (min-width: 400px) {
     display: none;
   }
-  border: none;
-  background-color: blue;
+  width: 100%;
+  padding-bottom: 10px;
+  background: transparent;
   color: white;
-  font-size: 20px;
+  border: none;
+  font-size: 24px;
 `;
 
 const Menu = styled.div`
@@ -43,83 +43,81 @@ const Menu = styled.div`
   @media (min-width: 400px) {
     display: flex;
   }
-  background: blue;
 `;
 
 const StyledLink = styled(Link)`
-  color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
   display: flex;
   & + & {
-    padding-top: 9px;
+    padding-top: 12px;
   }
   &:hover {
-    background: fuchsia;
+    text-decoration: underline;
   }
   &.menuLink {
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    padding-top: 0;
+    & + & {
+      padding-top: 0;
+    }
   }
 `;
 
 const Content = styled.div`
   flex-grow: 1;
-  background: yellow;
   display: flex;
   align-items: stretch;
   position: relative;
 `;
 
-const MobileMenu = styled.div`
+const MobileMenu = styled.nav`
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
-  background: blue;
-  z-index: ${({ toggleOn }) => (toggleOn ? "1" : "-1")};
+  background: silver;
+  z-index: 1;
+  transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(-100%)")};
+  transition: transform 0.3s ease-in-out;
+
   @media (min-width: 400px) {
     display: none;
   }
 `;
 
 const Page = styled.div`
-  background: green;
   width: 100%;
 `;
 
-function useToggle(initialValue = false) {
-  const [value, setValue] = useState(initialValue);
-  const toggle = useCallback(() => {
-    setValue((v) => !v);
-  }, []);
-  return [value, toggle];
-}
-
 function Main() {
-  const [toggleOn, activeToggle] = useToggle();
+  const [open, setOpen] = useState(false);
+  // const [toggleOn, activeToggle] = useToggle();
 
   const toggleMenu = () => {
-    activeToggle();
+    setOpen(!open);
+    // alert(open);
   };
 
   return (
     <Wrapper>
       <Router>
         <NavBar>
-          <Hamburger
+          <Burger
+            open={open}
+            setOpen={setOpen}
             onClick={toggleMenu}
-            aria-label={toggleOn ? "close the menu" : "open the menu"}
+            aria-label={open ? "close the menu" : "open the menu"}
           >
-            {toggleOn ? (
+            {open ? (
               <FontAwesomeIcon icon={faTimes} />
             ) : (
               <FontAwesomeIcon icon={faBars} />
             )}
-          </Hamburger>
+          </Burger>
           <Menu>
             <StyledLink to="/" className="menuLink">
               home
@@ -135,13 +133,8 @@ function Main() {
             </StyledLink>
           </Menu>
         </NavBar>
-
         <Content>
-          <MobileMenu
-            toggleOn={toggleOn}
-            activeToggle={activeToggle}
-            onClick={activeToggle}
-          >
+          <MobileMenu open={open} setOpen={setOpen} onClick={toggleMenu}>
             <StyledLink to="/">home</StyledLink>
             <StyledLink to="/about">about</StyledLink>
             <StyledLink to="/work">work</StyledLink>

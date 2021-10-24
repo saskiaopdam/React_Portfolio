@@ -1,9 +1,7 @@
 import styled from "styled-components/macro";
 
 const Wrapper = styled.section`
-  padding: 20px;
   width: 100%;
-  background: blue;
 `;
 
 const Inner = styled.div`
@@ -12,13 +10,13 @@ const Inner = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background: yellow;
 `;
 
 const Heading = styled.h3`
   font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 12px;
   @media (min-width: 400px) {
     text-align: center;
   }

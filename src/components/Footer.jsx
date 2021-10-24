@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
 const Copyright = styled.small`
   display: block;
   font-size: 14px;
-  color: crimson;
+  color: indigo;
   @media (min-width: 400px) {
     text-align: center;
   }

@@ -1,3 +1,4 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import Header from "./components/Header";
@@ -13,9 +14,11 @@ const Wrapper = styled.div`
 function App() {
   return (
     <Wrapper>
-      <Header />
-      <Main />
-      <Footer />
+      <Router>
+        <Header />
+        <Main />
+        <Footer />
+      </Router>
     </Wrapper>
   );
 }

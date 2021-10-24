@@ -5,11 +5,7 @@ import { Link } from "react-router-dom";
 import photo from "./_DSC3220_500x750.jpg";
 
 const Wrapper = styled.section`
-  padding: 20px;
   width: 100%;
-  background: blue;
-  position: relative;
-  z-index: 0;
 `;
 
 const Inner = styled.div`
@@ -18,7 +14,16 @@ const Inner = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background: yellow;
+`;
+
+const Heading = styled.h3`
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 12px;
+  @media (min-width: 400px) {
+    text-align: center;
+  }
 `;
 
 const Photo = styled.img`
@@ -55,15 +60,13 @@ function Home() {
   return (
     <Wrapper>
       <Inner>
+        <Heading>Home</Heading>
         <Photo src={photo} alt="portrait photo of Saskia Opdam" />
         <Summary>full-stack development student at Winc Academy</Summary>
         <Summary>
           HTML | CSS | JavaScript | React | Redux | NodeJS
           <br /> Python | Flask | SQL
         </Summary>
-        <StyledLink to="/about">About</StyledLink>
-        <StyledLink to="/work">Work</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
       </Inner>
     </Wrapper>
   );

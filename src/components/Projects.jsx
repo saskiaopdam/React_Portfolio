@@ -112,6 +112,7 @@ function useToggle(initialValue = false) {
   return [value, toggle];
 }
 
+// zie Main voor kortere code ipv useToggle
 function Projects() {
   const [toggleOn, activeToggle] = useToggle();
   const [clickedScreenshot, setClickedScreenshot] = useState("");
