@@ -6,19 +6,10 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import styled from "styled-components/macro";
 
-// import MobileMenu from "./MobileMenu";
 import Home from "./Home";
 import About from "./About";
 import Work from "./Work";
 import Contact from "./Contact";
-
-// function useToggle(initialValue = false) {
-//   const [value, setValue] = useState(initialValue);
-//   const toggle = useCallback(() => {
-//     setValue((v) => !v);
-//   }, []);
-//   return [value, toggle];
-// }
 
 const Wrapper = styled.main`
   flex-grow: 1;
@@ -109,7 +100,6 @@ function Main() {
   };
   return (
     <Wrapper>
-      {/* <NavBar>Navbar</NavBar> */}
       <Router>
         <NavBar>
           <Hamburger onClick={handleClick}>
@@ -131,10 +121,7 @@ function Main() {
           </Menu>
         </NavBar>
 
-        {/* <Content>Content</Content> */}
         <Content>
-          {/* <MobileMenu>Menu</MobileMenu> */}
-
           <MobileMenu
             toggleOn={toggleOn}
             activeToggle={activeToggle}
@@ -145,10 +132,6 @@ function Main() {
             <StyledLink to="/work">Work</StyledLink>
             <StyledLink to="/contact">Contact</StyledLink>
           </MobileMenu>
-          {/* {toggleOn ? (
-            <MobileMenu toggleOn={toggleOn} activeToggle={activeToggle} />
-          ) : null} */}
-          {/* <Page>Page</Page> */}
           <Page>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
@@ -156,45 +139,8 @@ function Main() {
             <Route path="/contact" component={Contact} />
           </Page>
         </Content>
-        {/* <NavBar>Navbar</NavBar> */}
-        {/* <Content> */}
-        {/* <MobileMenu>Mobile Menu</MobileMenu>
-      <Page>Page</Page> */}
-        {/* </Content> */}
       </Router>
     </Wrapper>
-    // <Wrapper>
-    /* <Router>
-        <NavBar>
-          <Hamburger onClick={handleClick}>
-            <FontAwesomeIcon icon={faBars} area-hidden="true" />
-          </Hamburger>
-          <Menu>
-            <StyledLink to="/" className="menuLink">
-              Home
-            </StyledLink>
-            <StyledLink to="/about" className="menuLink">
-              About
-            </StyledLink>
-            <StyledLink to="/work" className="menuLink">
-              Work
-            </StyledLink>
-            <StyledLink to="/contact" className="menuLink">
-              Contact
-            </StyledLink>
-          </Menu>
-        </NavBar>
-        <Content>
-          {toggleOn ? (
-            <MobileMenu toggleOn={toggleOn} activeToggle={activeToggle} />
-          ) : null}
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/work" component={Work} />
-          <Route path="/contact" component={Contact} />
-        </Content>
-      </Router> */
-    // </Wrapper>
   );
 }
 
