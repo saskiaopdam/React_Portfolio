@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { useState, useCallback } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import styled from "styled-components/macro";
 
@@ -14,7 +14,7 @@ import Contact from "./Contact";
 const Wrapper = styled.main`
   flex-grow: 1;
   padding: 20px;
-  background: pink;
+  background: blue;
   display: flex;
   flex-direction: column;
 `;
@@ -23,15 +23,19 @@ const NavBar = styled.nav`
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  background: silver;
+  background: blue;
+  margin-bottom: 20px;
 `;
 
-const Hamburger = styled.div`
+const Hamburger = styled.button`
   display: flex;
-  padding: 20px 0;
   @media (min-width: 400px) {
     display: none;
   }
+  border: none;
+  background-color: blue;
+  color: white;
+  font-size: 20px;
 `;
 
 const Menu = styled.div`
@@ -39,26 +43,30 @@ const Menu = styled.div`
   @media (min-width: 400px) {
     display: flex;
   }
+  background: blue;
 `;
 
 const StyledLink = styled(Link)`
-  color: black;
+  color: white;
   text-decoration: none;
-  font-size: 16px;
-  padding: 20px 0;
-  flex-grow: 1;
+  font-size: 18px;
   display: flex;
+  & + & {
+    padding-top: 9px;
+  }
+  &:hover {
+    background: fuchsia;
+  }
   &.menuLink {
+    flex-grow: 1;
     justify-content: center;
-    &:hover {
-      background: fuchsia;
-    }
+    align-items: center;
+    padding-top: 0;
   }
 `;
 
 const Content = styled.div`
   flex-grow: 1;
-  padding: 20px;
   background: yellow;
   display: flex;
   align-items: stretch;
@@ -66,13 +74,12 @@ const Content = styled.div`
 `;
 
 const MobileMenu = styled.div`
-  padding: 20px;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background: red;
+  background: blue;
   z-index: ${({ toggleOn }) => (toggleOn ? "1" : "-1")};
   @media (min-width: 400px) {
     display: none;
@@ -95,28 +102,36 @@ function useToggle(initialValue = false) {
 function Main() {
   const [toggleOn, activeToggle] = useToggle();
 
-  const handleClick = () => {
+  const toggleMenu = () => {
     activeToggle();
   };
+
   return (
     <Wrapper>
       <Router>
         <NavBar>
-          <Hamburger onClick={handleClick}>
-            <FontAwesomeIcon icon={faBars} area-hidden="true" />
+          <Hamburger
+            onClick={toggleMenu}
+            aria-label={toggleOn ? "close the menu" : "open the menu"}
+          >
+            {toggleOn ? (
+              <FontAwesomeIcon icon={faTimes} />
+            ) : (
+              <FontAwesomeIcon icon={faBars} />
+            )}
           </Hamburger>
           <Menu>
             <StyledLink to="/" className="menuLink">
-              Home
+              home
             </StyledLink>
             <StyledLink to="/about" className="menuLink">
-              About
+              about
             </StyledLink>
             <StyledLink to="/work" className="menuLink">
-              Work
+              work
             </StyledLink>
             <StyledLink to="/contact" className="menuLink">
-              Contact
+              contact
             </StyledLink>
           </Menu>
         </NavBar>
@@ -127,10 +142,10 @@ function Main() {
             activeToggle={activeToggle}
             onClick={activeToggle}
           >
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/about">About</StyledLink>
-            <StyledLink to="/work">Work</StyledLink>
-            <StyledLink to="/contact">Contact</StyledLink>
+            <StyledLink to="/">home</StyledLink>
+            <StyledLink to="/about">about</StyledLink>
+            <StyledLink to="/work">work</StyledLink>
+            <StyledLink to="/contact">contact</StyledLink>
           </MobileMenu>
           <Page>
             <Route exact path="/" component={Home} />

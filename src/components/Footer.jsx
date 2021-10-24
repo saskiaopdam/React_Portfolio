@@ -10,7 +10,7 @@ const Wrapper = styled.footer`
 
 const Copyright = styled.small`
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   color: crimson;
   @media (min-width: 400px) {
     text-align: center;
