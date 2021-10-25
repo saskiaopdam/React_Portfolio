@@ -6,22 +6,22 @@ import photo from "./_DSC3220_500x750.jpg";
 
 const Wrapper = styled.section`
   width: 100%;
+  padding: 10px;
 `;
 
-const Inner = styled.div`
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-`;
+// const Inner = styled.div`
+//   width: 100%;
+//   max-width: 800px;
+//   margin: 0 auto;
+//   display: flex;
+//   flex-direction: column;
+// `;
 
-const Heading = styled.h3`
+const SectionHeader = styled.h3`
+  font-size: 20px;
+  font-weight: 400;
   color: white;
-  margin-bottom: 12px;
-  @media (min-width: 400px) {
-    text-align: center;
-  }
+  margin-bottom: 10px;
 `;
 
 const Photo = styled.img`
@@ -41,31 +41,18 @@ const Summary = styled.p`
   }
 `;
 
-const StyledLink = styled(Link)`
-  background: pink;
-  border-bottom: 1px solid yellow;
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  padding-bottom: 10px;
-  display: block;
-  @media (min-width: 400px) {
-    text-align: center;
-  }
-`;
-
 function Home() {
   return (
     <Wrapper>
-      <Inner>
-        <Heading>Home</Heading>
-        <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Summary>full-stack development student at Winc Academy</Summary>
-        <Summary>
-          HTML | CSS | JavaScript | React | Redux | NodeJS
-          <br /> Python | Flask | SQL
-        </Summary>
-      </Inner>
+      {/* <Inner> */}
+      <SectionHeader>Home</SectionHeader>
+      <Photo src={photo} alt="portrait photo of Saskia Opdam" />
+      <Summary>full-stack development student at Winc Academy</Summary>
+      <Summary>
+        HTML | CSS | JavaScript | React | Redux | NodeJS
+        <br /> Python | Flask | SQL
+      </Summary>
+      {/* </Inner> */}
     </Wrapper>
   );
 }
