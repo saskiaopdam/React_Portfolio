@@ -9,9 +9,8 @@ const Wrapper = styled.header`
 `;
 
 const Title = styled.h1`
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 18px;
+  font-size: 28px;
+  margin-bottom: 14px;
   color: indigo;
   @media (min-width: 400px) {
     text-align: center;
@@ -19,9 +18,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h2`
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 14px;
+  font-size: 20px;
   color: indigo;
   @media (min-width: 400px) {
     text-align: center;

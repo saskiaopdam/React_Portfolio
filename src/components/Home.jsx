@@ -17,8 +17,6 @@ const Inner = styled.div`
 `;
 
 const Heading = styled.h3`
-  font-size: 24px;
-  font-weight: 500;
   color: white;
   margin-bottom: 12px;
   @media (min-width: 400px) {

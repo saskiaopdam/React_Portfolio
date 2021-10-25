@@ -1,9 +1,8 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import styled from "styled-components/macro";
 
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
+import Content from "./components/Content";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,9 +14,8 @@ function App() {
   return (
     <Wrapper>
       <Router>
-        <Header />
-        <Main />
-        <Footer />
+        <Navigation />
+        <Content />
       </Router>
     </Wrapper>
   );
