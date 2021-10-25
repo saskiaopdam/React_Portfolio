@@ -1,11 +1,10 @@
 import styled from "styled-components/macro";
 
-import Inner from "./Inner";
+import Something from "./Something";
 
 const Wrapper = styled.main`
   flex-grow: 1;
   background: white;
-  color: black;
 
   width: 100%;
   height: 100%;
@@ -14,17 +13,37 @@ const Wrapper = styled.main`
   flex-direction: column;
 `;
 
-const Something = styled.div`
+const Inner = styled.div`
   flex-grow: 1;
-  background: orange;
-  color: black;
+  background: hotpink;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+`;
+
+const NavbarSpace = styled.div`
+  height: 96px;
+  background: hotpink;
 `;
 
 function Content() {
   return (
     <Wrapper>
       <Inner>
-        Content
+        <NavbarSpace>Navbarspace</NavbarSpace>
+        <Something>Something</Something>
+        <Something>Something</Something>
+        <Something>Something</Something>
+        <Something>Something</Something>
+        <Something>Something</Something>
+        <Something>Something</Something>
+        <Something>Something</Something>
+        <Something>Something</Something>
         <Something>Something</Something>
         <Something>Something</Something>
       </Inner>

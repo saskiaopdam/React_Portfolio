@@ -1,21 +1,21 @@
 import { useState } from "react";
 import styled from "styled-components/macro";
 
-// import Inner from "./Inner";
-
 const Wrapper = styled.nav`
   flex-grow: 1;
-  background: black;
-  color: white;
+  background: transparent;
 
   position: fixed;
   width: 100%;
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 const Inner = styled.div`
   flex-grow: 1;
-  background: red;
+  background: transparent;
 
   width: 100%;
   height: 100%;
@@ -25,24 +25,31 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
 `;
-// when imported, Inner covers components Navbar and Slidemenu;
-// in Content it doesn't
-// fix: z-index?
 
 const Navbar = styled.div`
-  flex-grow: 1;
-  background: orange;
-  color: black;
+  flex-shrink: 0;
+  background: white;
+  color: hotpink;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const MyName = styled.h1`
+  color: hotpink;
+  padding: 20px;
 `;
 
 const Burger = styled.button`
-  background: transparent;
+  background: white;
+  color: hotpink;
   display: block;
+  border: none;
+  padding: 0 20px;
 `;
 
 const SlideMenu = styled.div`
   flex-grow: 1;
-  background: pink;
+  background: transparent;
   color: black;
   position: relative;
 `;
@@ -52,8 +59,8 @@ const Links = styled.div`
   right: -100%;
   width: 100%;
   height: 100%;
-  background: black;
-  color: ${({ open }) => (open ? "white" : "black")};
+  background: ${({ open }) => (open ? "hotpink" : "white")};
+  color: white;
   transform: ${({ open }) => (open ? "translateX(-100%)" : "translateX(0%)")};
 
   transition: transform 0.3s ease;
@@ -70,15 +77,15 @@ function Navigation() {
   return (
     <Wrapper>
       <Inner>
-        Navigation
+        {/* Navigation */}
         <Navbar>
-          Navbar
+          <MyName>Saskia Opdam</MyName>
           <Burger open={open} setOpen={setOpen} onClick={toggleMenu}>
-            Burger
+            <h1>Burger</h1>
           </Burger>
         </Navbar>
         <SlideMenu>
-          Slide Menu
+          {/* Slide Menu */}
           <Links open={open} setOpen={setOpen} onClick={toggleMenu}>
             Links
             <br />
