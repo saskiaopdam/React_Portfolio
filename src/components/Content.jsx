@@ -1,12 +1,7 @@
 import { Route } from "react-router-dom";
 import styled from "styled-components/macro";
 
-import Home from "./Home";
-import About from "./About";
-import Work from "./Work";
-import Contact from "./Contact";
-
-// import Something from "./Something";
+import Portfolio from "./Portfolio";
 
 const Wrapper = styled.main`
   flex-grow: 1;
@@ -33,7 +28,7 @@ const Inner = styled.div`
 `;
 
 const NavbarSpace = styled.div`
-  height: 77px;
+  height: 200px;
   background: yellow;
 `;
 
@@ -42,10 +37,11 @@ function Content() {
     <Wrapper>
       <Inner>
         <NavbarSpace>Navbarspace</NavbarSpace>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/portfolio" component={Portfolio} />
+        {/* <Route path="/about" component={About} />
         <Route path="/work" component={Work} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/contact" component={Contact} /> */}
+        {/* <Portfolio /> */}
       </Inner>
     </Wrapper>
   );

@@ -5,14 +5,6 @@ const Wrapper = styled.section`
   padding: 10px;
 `;
 
-// const Inner = styled.div`
-//   width: 100%;
-//   max-width: 800px;
-//   margin: 0 auto;
-//   display: flex;
-//   flex-direction: column;
-// `;
-
 const SectionHeader = styled.h3`
   font-size: 20px;
   font-weight: 400;
@@ -37,7 +29,6 @@ const Paragraph = styled.p`
 function About() {
   return (
     <Wrapper>
-      {/* <Inner> */}
       <SectionHeader>About</SectionHeader>
       <Details>
         <Paragraph>
@@ -103,7 +94,6 @@ function About() {
           Exercitationem, ipsam?
         </Paragraph>
       </Details>
-      {/* </Inner> */}
     </Wrapper>
   );
 }

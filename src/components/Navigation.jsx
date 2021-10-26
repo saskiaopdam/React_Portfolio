@@ -1,10 +1,8 @@
-import { Link, Route } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 import { useState } from "react";
-import styled from "styled-components/macro";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components/macro";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Wrapper = styled.nav`
@@ -14,14 +12,10 @@ const Wrapper = styled.nav`
   position: fixed;
   width: 100%;
   height: 100%;
-
-  display: flex;
-  flex-direction: column;
 `;
 
 const Inner = styled.div`
   flex-grow: 1;
-  // background: transparent;
 
   width: 100%;
   height: 100%;
@@ -37,37 +31,63 @@ const Navbar = styled.div`
   color: white;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
   @media (min-width: 500px) {
     background: white;
     color: hotpink;
   }
 `;
 
+const Brand = styled.div`
+  padding: 10px;
+`;
+
 const MyName = styled.h1`
   color: white;
   font-weight: 500;
+  margin-bottom: 6px;
+  @media (min-width: 500px) {
+    color: hotpink;
+  }
+`;
+
+const MyRole = styled.h2`
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
   @media (min-width: 500px) {
     color: hotpink;
   }
 `;
 
 const Burger = styled.button`
+  flex-grow: 1;
+  padding: 10px;
   background: transparent;
   color: white;
   border: none;
   font-size: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   @media (min-width: 500px) {
     display: none;
   }
-  display: flex;
-  align-items: center;
+`;
+
+const BurgerLabel = styled.span`
+  font-size: 16px;
+  margin-left: 8px;
 `;
 
 const RegularMenu = styled.nav`
+  flex-grow: 1;
+  padding: 10px;
   display: none;
   @media (min-width: 500px) {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 `;
 
@@ -84,6 +104,8 @@ const MobileMenu = styled.nav`
   width: 100%;
   height: 100%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
   background: ${({ open }) => (open ? "hotpink" : "white")};
   transform: ${({ open }) => (open ? "translateX(-100%)" : "translateX(0%)")};
 
@@ -93,28 +115,42 @@ const MobileMenu = styled.nav`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavHashLink)`
   display: flex;
   text-decoration: none;
   justify-content: flex-end;
 
   &:hover {
+    opacity: 0.75;
+    transform: translateX(-5px);
+  }
+
+  &.selected {
     text-decoration: underline;
+    pointer-events: none;
   }
 
   &.regular {
     color: hotpink;
     padding-left: 16px;
     align-items: center;
+    &:hover {
+      transform: translate(-2px, -2px);
+    }
   }
 
   &.mobile {
     color: white;
-
+    font-size: 20px;
+    padding: 10px;
     & + & {
       padding-top: 16px;
     }
   }
+`;
+
+const HomeLink = styled(Link)`
+  text-decoration: none;
 `;
 
 function Navigation() {
@@ -129,7 +165,13 @@ function Navigation() {
     <Wrapper aria-role="navigation">
       <Inner>
         <Navbar>
-          <MyName>Saskia Opdam</MyName>
+          <HomeLink exact to="/portfolio">
+            <Brand>
+              <MyName>Saskia Opdam</MyName>
+              <MyRole>junior front-end developer</MyRole>
+            </Brand>
+          </HomeLink>
+
           <Burger
             open={open}
             setOpen={setOpen}
@@ -137,43 +179,67 @@ function Navigation() {
             aria-label={open ? "close the menu" : "open the menu"}
           >
             {open ? <AiOutlineClose /> : <AiOutlineMenu />}
-            {/* {open ? (
-              <FontAwesomeIcon
-                icon={faTimes}
-                style={{ fontSize: "24px", fontWeight: "400" }}
-              />
-            ) : (
-              <FontAwesomeIcon icon={faBars} />
-            )} */}
+            <BurgerLabel>{open ? "sluiten" : "menu"}</BurgerLabel>
           </Burger>
           <RegularMenu>
-            <StyledLink to="/" className="regular">
-              home
+            <StyledLink
+              to="/portfolio#intro"
+              className="regular"
+              activeClassName="selected"
+            >
+              intro
             </StyledLink>
-            <StyledLink to="/about" className="regular">
+            <StyledLink
+              to="/portfolio#about"
+              className="regular"
+              activeClassName="selected"
+            >
               about
             </StyledLink>
-            <StyledLink to="/work" className="regular">
+            <StyledLink
+              to="/portfolio#work"
+              className="regular"
+              activeClassName="selected"
+            >
               work
             </StyledLink>
-            <StyledLink to="/contact" className="regular">
+            <StyledLink
+              to="/portfolio#contact"
+              className="regular"
+              activeClassName="selected"
+            >
               contact
             </StyledLink>
           </RegularMenu>
         </Navbar>
         <SlideArea>
-          {/* Slide Menu */}
           <MobileMenu open={open} setOpen={setOpen} onClick={toggleMenu}>
-            <StyledLink to="/" className="mobile">
-              home
-            </StyledLink>
-            <StyledLink to="/about" className="mobile">
+            <StyledLink
+              to="/portfolio#intro"
+              className="mobile"
+              activeClassName="selected"
+            >
               about
             </StyledLink>
-            <StyledLink to="/work" className="mobile">
+            <StyledLink
+              to="/portfolio#about"
+              className="mobile"
+              activeClassName="selected"
+            >
+              about
+            </StyledLink>
+            <StyledLink
+              to="/portfolio#work"
+              className="mobile"
+              activeClassName="selected"
+            >
               work
             </StyledLink>
-            <StyledLink to="/contact" className="mobile">
+            <StyledLink
+              to="/portfolio#contact"
+              className="mobile"
+              activeClassName="selected"
+            >
               contact
             </StyledLink>
           </MobileMenu>

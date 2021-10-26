@@ -5,14 +5,6 @@ const Wrapper = styled.section`
   padding: 10px;
 `;
 
-// const Inner = styled.div`
-//   width: 100%;
-//   max-width: 800px;
-//   margin: 0 auto;
-//   display: flex;
-//   flex-direction: column;
-// `;
-
 const SectionHeader = styled.h3`
   font-size: 20px;
   font-weight: 400;
@@ -20,12 +12,48 @@ const SectionHeader = styled.h3`
   margin-bottom: 10px;
 `;
 
+const Paragraph = styled.p`
+  font-size: 15px;
+  line-height: 1.5;
+  & + & {
+    margin-top: 20px;
+  }
+`;
+
 function Contact() {
   return (
     <Wrapper>
-      {/* <Inner> */}
-      <SectionHeader>Contact</SectionHeader>
-      {/* </Inner> */}
+      <SectionHeader>Contact</SectionHeader>{" "}
+      <Paragraph>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
+        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
+        Exercitationem, ipsam?
+      </Paragraph>
+      <Paragraph>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
+        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
+        Exercitationem, ipsam?
+      </Paragraph>
+      <Paragraph>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
+        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
+        Exercitationem, ipsam?
+      </Paragraph>
+      <Paragraph>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
+        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
+        Exercitationem, ipsam?
+      </Paragraph>
+      <Paragraph>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
+        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
+        Exercitationem, ipsam?
+      </Paragraph>
     </Wrapper>
   );
 }
