@@ -1,8 +1,9 @@
 import styled from "styled-components/macro";
 
 const Wrapper = styled.section`
+  flex-grow: 1;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
 `;
 
 const SectionHeader = styled.h3`
@@ -20,10 +21,15 @@ const Paragraph = styled.p`
   }
 `;
 
+const NavbarSpace = styled.div`
+  height: 158px;
+`;
+
 function Work() {
   return (
     <Wrapper>
-      <SectionHeader>Work</SectionHeader>{" "}
+      <NavbarSpace>{""}</NavbarSpace>
+      <SectionHeader>Work</SectionHeader>
       <Paragraph>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
         harum, eveniet totam possimus sunt doloremque debitis, minus tenetur

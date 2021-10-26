@@ -2,6 +2,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import styled from "styled-components/macro";
 
+import ScrollToTop from "./components/ScrollToTop";
 import Navigation from "./components/Navigation";
 import Content from "./components/Content";
 
@@ -15,8 +16,10 @@ function App() {
   return (
     <Wrapper>
       <Router>
-        <Navigation />
-        <Content />
+        <ScrollToTop>
+          <Navigation />
+          <Content />
+        </ScrollToTop>
       </Router>
     </Wrapper>
   );

@@ -1,9 +1,8 @@
-import { Route } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import Portfolio from "./Portfolio";
 
-const Wrapper = styled.main`
+const Wrapper = styled.div`
   flex-grow: 1;
   background: white;
 
@@ -27,21 +26,11 @@ const Inner = styled.div`
   flex-direction: column;
 `;
 
-const NavbarSpace = styled.div`
-  height: 200px;
-  background: yellow;
-`;
-
 function Content() {
   return (
     <Wrapper>
       <Inner>
-        <NavbarSpace>Navbarspace</NavbarSpace>
-        <Route path="/portfolio" component={Portfolio} />
-        {/* <Route path="/about" component={About} />
-        <Route path="/work" component={Work} />
-        <Route path="/contact" component={Contact} /> */}
-        {/* <Portfolio /> */}
+        <Portfolio />
       </Inner>
     </Wrapper>
   );

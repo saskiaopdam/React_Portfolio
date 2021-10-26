@@ -1,11 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
 import { useState } from "react";
 
 import styled from "styled-components/macro";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
-const Wrapper = styled.nav`
+const Wrapper = styled.div`
   flex-grow: 1;
   background: transparent;
 
@@ -43,6 +42,7 @@ const Brand = styled.div`
 
 const MyName = styled.h1`
   color: white;
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 6px;
   @media (min-width: 500px) {
@@ -115,19 +115,20 @@ const MobileMenu = styled.nav`
   }
 `;
 
-const StyledLink = styled(NavHashLink)`
+const StyledLink = styled(NavLink)`
   display: flex;
   text-decoration: none;
   justify-content: flex-end;
 
   &:hover {
-    opacity: 0.75;
+    font-weight: bold;
     transform: translateX(-5px);
   }
 
   &.selected {
-    text-decoration: underline;
+    font-weight: bold;
     pointer-events: none;
+    text-decoration: underline;
   }
 
   &.regular {
@@ -135,7 +136,8 @@ const StyledLink = styled(NavHashLink)`
     padding-left: 16px;
     align-items: center;
     &:hover {
-      transform: translate(-2px, -2px);
+      text-decoration: underline;
+      // transform: translate(-2px, -2px);
     }
   }
 
@@ -162,10 +164,10 @@ function Navigation() {
   };
 
   return (
-    <Wrapper aria-role="navigation">
+    <Wrapper>
       <Inner>
-        <Navbar>
-          <HomeLink exact to="/portfolio">
+        <Navbar area-role="navigation">
+          <HomeLink to="/">
             <Brand>
               <MyName>Saskia Opdam</MyName>
               <MyRole>junior front-end developer</MyRole>
@@ -183,28 +185,21 @@ function Navigation() {
           </Burger>
           <RegularMenu>
             <StyledLink
-              to="/portfolio#intro"
-              className="regular"
-              activeClassName="selected"
-            >
-              intro
-            </StyledLink>
-            <StyledLink
-              to="/portfolio#about"
+              to="/about"
               className="regular"
               activeClassName="selected"
             >
               about
             </StyledLink>
             <StyledLink
-              to="/portfolio#work"
+              to="/work"
               className="regular"
               activeClassName="selected"
             >
               work
             </StyledLink>
             <StyledLink
-              to="/portfolio#contact"
+              to="/contact"
               className="regular"
               activeClassName="selected"
             >
@@ -215,28 +210,21 @@ function Navigation() {
         <SlideArea>
           <MobileMenu open={open} setOpen={setOpen} onClick={toggleMenu}>
             <StyledLink
-              to="/portfolio#intro"
+              to="/about"
               className="mobile"
               activeClassName="selected"
             >
               about
             </StyledLink>
             <StyledLink
-              to="/portfolio#about"
-              className="mobile"
-              activeClassName="selected"
-            >
-              about
-            </StyledLink>
-            <StyledLink
-              to="/portfolio#work"
+              to="/work"
               className="mobile"
               activeClassName="selected"
             >
               work
             </StyledLink>
             <StyledLink
-              to="/portfolio#contact"
+              to="/contact"
               className="mobile"
               activeClassName="selected"
             >
