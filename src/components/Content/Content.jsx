@@ -4,7 +4,6 @@ import Portfolio from "./Portfolio";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  background: white;
 
   width: 100%;
   height: 100%;

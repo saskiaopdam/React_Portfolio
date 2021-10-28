@@ -122,6 +122,22 @@ function Projects() {
     activeToggle();
   };
 
+  // function DetailsVisible() {
+  //   return (
+  //     <div>
+  //       <CloseButton onClick={activeToggle}>Hide details</CloseButton>
+  //       <p>info about dashboard</p>
+  //     </div>
+  //   );
+  // }
+
+  // function DetailsHidden() {
+  //   return (
+  //     <div>
+  //       <OpenButton onClick={activeToggle}>Show details</OpenButton>
+  //     </div>
+  //   );
+
   const colourToggleClicked = clickedScreenshot === "colourToggle";
   const colourToggleDesignClicked = clickedScreenshot === "colourToggleDesign";
   const dashboardClicked = clickedScreenshot === "dashboard";
