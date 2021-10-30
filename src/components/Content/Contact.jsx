@@ -2,27 +2,16 @@ import styled from "styled-components/macro";
 
 const Wrapper = styled.section`
   flex-grow: 1;
-  width: 100%;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: blue;
 `;
 
 const SectionHeader = styled.h3`
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   color: white;
-  margin-bottom: 10px;
-`;
-
-const Paragraph = styled.p`
-  font-size: 15px;
-  line-height: 1.5;
-  & + & {
-    margin-top: 20px;
-  }
-`;
-
-const NavbarSpace = styled.div`
-  height: 158px;
 `;
 
 // const List = styled.ul`
@@ -43,8 +32,7 @@ const NavbarSpace = styled.div`
 function Contact() {
   return (
     <Wrapper>
-      <NavbarSpace>{""}</NavbarSpace>
-      <SectionHeader>Contact</SectionHeader>
+      <SectionHeader>C O N T A C T</SectionHeader>
       {/* <List>
         <ListItem>
           <A href="mailto:opdamsaskia@icloud.com">opdamsaskia@icloud.com</A>
@@ -60,38 +48,8 @@ function Contact() {
           <A href="https://github.com/saskiaopdam/" target="_blank">
             GitHub
           </A>
-        </ListItem>
-      </List> */}
-      <Paragraph>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
-        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
-        Exercitationem, ipsam?
-      </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
-        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
-        Exercitationem, ipsam?
-      </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
-        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
-        Exercitationem, ipsam?
-      </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
-        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
-        Exercitationem, ipsam?
-      </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        harum, eveniet totam possimus sunt doloremque debitis, minus tenetur
-        quia earum, excepturi inventore nulla omnis sed facere soluta animi.
-        Exercitationem, ipsam?
-      </Paragraph>
+        </ListItem> */}
+      {/* </List> */}
     </Wrapper>
   );
 }

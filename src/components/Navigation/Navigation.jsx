@@ -1,50 +1,26 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
 
-import { AiFillUpCircle, AiOutlineUpCircle } from "react-icons/ai";
-import { AiFillGithub, AiFillLinkedin, AiFillMail } from "react-icons/ai";
-import {
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineMail,
-} from "react-icons/ai";
-
-import BarArea from "./BarArea";
 import SlideArea from "./SlideArea";
+import NavBar from "./NavBar";
+import FooterOverlay from "./FooterOverlay";
 
 const Wrapper = styled.div`
-  flex-grow: 1;
-
+  display: flex;
   position: fixed;
   width: 100%;
   height: 100%;
-
-  display: flex;
-  flex-direction: column;
+  background: transparent;
 `;
 
 const Inner = styled.div`
-  flex-grow: 1;
-
-  width: 100%;
-  height: 100%;
-
-  max-width: 1000px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-`;
-
-const ScrollUp = styled(Link)`
-  position: sticky;
-  bottom: 0;
+  flex-grow: 1;
+  max-width: 1000px;
+  margin: 0 auto;
   background: transparent;
-  padding: 20px;
-  display: flex;
-  justify-content: right;
-  font-size: 24px;
 `;
 
 function Navigation() {
@@ -58,12 +34,9 @@ function Navigation() {
   return (
     <Wrapper>
       <Inner>
-        <BarArea open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
+        <NavBar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
         <SlideArea open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
-        <ScrollUp to="#">
-          <AiFillUpCircle />
-        </ScrollUp>
-        {/* // gradually appear on scroll */}
+        <FooterOverlay />
       </Inner>
     </Wrapper>
   );

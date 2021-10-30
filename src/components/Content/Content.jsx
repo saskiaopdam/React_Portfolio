@@ -1,35 +1,31 @@
 import styled from "styled-components/macro";
 
-import Portfolio from "./Portfolio";
+import NavBarSpacer from "./NavBarSpacer";
+import Main from "./Main";
+import Footer from "./Footer";
 
 const Wrapper = styled.div`
-  flex-grow: 1;
-
-  width: 100%;
-  height: 100%;
-
   display: flex;
-  flex-direction: column;
+  flex-grow: 1;
+  background: indigo;
 `;
 
 const Inner = styled.div`
-  flex-grow: 1;
-  background: hotpink;
-
-  width: 100%;
-  height: 100%;
-
-  max-width: 1000px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: hotpink;
 `;
 
 function Content() {
   return (
     <Wrapper>
       <Inner>
-        <Portfolio />
+        <NavBarSpacer />
+        <Main />
+        <Footer />
       </Inner>
     </Wrapper>
   );

@@ -2,32 +2,28 @@ import { Route } from "react-router-dom";
 
 import styled from "styled-components/macro";
 
-import Intro from "./Intro";
+import Home from "./Home";
 import About from "./About";
 import Work from "./Work";
 import Contact from "./Contact";
-import Footer from "./Footer";
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   flex-grow: 1;
-
-  width: 100%;
-  height: 100%;
-
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  background: darkorange;
 `;
 
-function Portfolio() {
+function Main() {
   return (
     <Wrapper>
-      <Route exact path="/" component={Intro} />
+      <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/work" component={Work} />
       <Route path="/contact" component={Contact} />
-      <Footer />
     </Wrapper>
   );
 }
 
-export default Portfolio;
+export default Main;

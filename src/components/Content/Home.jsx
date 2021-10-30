@@ -1,29 +1,27 @@
 import styled from "styled-components/macro";
 
-import Projects from "./Projects";
-
 const Wrapper = styled.section`
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: blue;
 `;
 
-const SectionHeader = styled.h3`
+const IntroHeader = styled.h3`
   font-size: 24px;
   font-weight: 400;
   color: white;
-  margin: 24px 0;
-  text-align: center;
+  letter-spacing: 6px;
+  line-height: 36px;
 `;
 
-function Work() {
+function Home() {
   return (
     <Wrapper>
-      <SectionHeader>W O R K</SectionHeader>
-      <Projects />
+      <IntroHeader>welcome to my PORTFOLIO</IntroHeader>
     </Wrapper>
   );
 }
 
-export default Work;
+export default Home;

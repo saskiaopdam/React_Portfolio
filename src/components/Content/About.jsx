@@ -1,68 +1,60 @@
-import { Link } from "react-router-dom";
-
 import styled from "styled-components/macro";
 
 import photo from "./_DSC3220_500x750.jpg";
 
 const Wrapper = styled.section`
   flex-grow: 1;
-  width: 100%;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: blue;
 `;
 
 const SectionHeader = styled.h3`
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 400;
   color: white;
-  margin-bottom: 12px;
-  text-align: center;
+  margin-bottom: 24px;
 `;
 
-const Figure = styled.figure`
+const Intro = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  gap: 30px;
+  gap: 24px;
 `;
 
 const Photo = styled.img`
   width: 100%;
   max-width: 200px;
-  margin-bottomm: 20px;
 `;
 
-const Caption = styled.figcaption`
+const Summary = styled.p`
   text-align: center;
-  opacity: 0.75;
-  font-size: 15px;
+  color: white;
 `;
 
 const A = styled.a`
-  color: black;
-`;
-
-const NavbarSpace = styled.div`
-  height: 158px;
+  color: white;
 `;
 
 function About() {
   return (
     <Wrapper>
-      <NavbarSpace>{""}</NavbarSpace>
-      <SectionHeader>about</SectionHeader>
-      <Figure>
+      <SectionHeader>A B O U T</SectionHeader>
+      <Intro>
         <Photo src={photo} alt="portrait photo of Saskia Opdam" />
-        <Caption>
+        <Summary>
           full-stack development student
           <br /> at{" "}
           <A href="https://www.wincacademy.nl" target="_blank" rel="noreferrer">
             Winc Academy
           </A>
-        </Caption>
-        <Caption>HTML | CSS | JavaScript | React | Redux | NodeJS</Caption>
-        <Caption>Python | Flask | SQL</Caption>
-      </Figure>
+        </Summary>
+        <Summary>HTML | CSS | JavaScript | React | Redux | NodeJS</Summary>
+        <Summary>Python | Flask | SQL</Summary>
+      </Intro>
     </Wrapper>
   );
 }
