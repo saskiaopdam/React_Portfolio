@@ -74,7 +74,7 @@ function NavBar() {
   return (
     <Wrapper>
       <Brand>
-        <StyledNavLink to="/home">SASKIA OPDAM</StyledNavLink>
+        <StyledNavLink to="/">SASKIA OPDAM</StyledNavLink>
       </Brand>
       <Menu>
         <BurgerMenu
