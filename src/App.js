@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import { useState } from "react";
 import styled from "styled-components/macro";
 
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
+import SlideMenu from "./components/SlideMenu";
 import Home from "./components/Home";
 import About from "./components/About";
 import Work from "./components/Work";
@@ -21,9 +22,11 @@ const Header = styled.header`
   left: 0;
   right: 0;
   background: black;
+  // background: ${({ open }) => (open ? "hotpink" : "black")};
   color: white;
   font-size: 12px;
   // box-shadow: 0px 0 5px rgba(0, 0, 0, 0.8);
+  // z-index: 1;
 `;
 
 const Main = styled.main`
@@ -48,20 +51,33 @@ const Inner = styled.div`
   &.headerInner {
     padding: 10px;
   }
+  // position: relative;
 `;
 
 function App() {
+  const [open, setOpen] = useState(false);
+  console.log(`open: ${open}`);
+
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
+
   return (
     <Wrapper>
       <Router>
         <ScrollToTop>
-          <Header>
+          <Header open={open}>
             <Inner className="headerInner">
-              <Navbar />
+              <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
             </Inner>
           </Header>
           <Main>
-            <Inner>
+            <Inner className="mainInner">
+              <SlideMenu
+                open={open}
+                setOpen={setOpen}
+                toggleMenu={toggleMenu}
+              />
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />

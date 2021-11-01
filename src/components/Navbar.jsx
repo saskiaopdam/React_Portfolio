@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import styled from "styled-components/macro";
@@ -26,13 +25,13 @@ const BurgerMenu = styled.div`
   @media (min-width: 500px) {
     display: none;
   }
-  background: black;
+  // background: black;
 `;
 
 const Burger = styled.button`
   display: flex;
   align-items: center;
-  background: black;
+  background: transparent;
   color: white;
   border: 1px solid transparent;
   font-size: 16px;
@@ -63,14 +62,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-function NavBar() {
-  const [open, setOpen] = useState(false);
-  console.log(`open: ${open}`);
-
-  const toggleMenu = () => {
-    setOpen(!open);
-  };
-
+function NavBar({ open, setOpen, toggleMenu }) {
   return (
     <Wrapper>
       <Brand>

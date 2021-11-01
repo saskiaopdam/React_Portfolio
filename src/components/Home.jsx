@@ -63,17 +63,29 @@ function Home() {
 
       <h2>I'm about to learn:</h2>
       <p>Python | Flask &amp; SQL</p>
-      <h2>This is me</h2>
 
-      <Photo src={photo} alt="portrait photo of Saskia Opdam" />
       <Photo src={photo} alt="portrait photo of Saskia Opdam" />
       <Paragraph>
         This year, I'm switching careers from translation to development. Why?
         Because I'm curious, eager to learn and love to create and problem
-        solve. So, if you are looking for a enthousiastic beginner developer who
-        you can teach the tricks of the trade, please read on.
+        solve. And, I guess, to follow my dream of doing this in my work (I
+        missed a career in art conservation). So, if you are looking for a
+        enthousiastic beginner developer to learn the tricks of the trade,
+        please read on.
       </Paragraph>
-      <LinkButton>Read my bio</LinkButton>
+      <a href="/about">Learn more about me</a>
+      <br />
+      <a href="/work">Have a look at my work</a>
+      <br />
+      <a href="mailto:opdamsaskia@icloud.com">Drop me an e-mail</a>
+      <br />
+      <a
+        href="https://www.linkedin.com/in/saskiaopdam/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Connect with me on LinkedIn
+      </a>
     </Wrapper>
   );
 }
