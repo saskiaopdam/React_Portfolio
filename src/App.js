@@ -5,10 +5,10 @@ import styled from "styled-components/macro";
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import SlideMenu from "./components/SlideMenu";
-import Home from "./components/Home";
-import About from "./components/About";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
+import HomePage from "./components/HomePage";
+import AboutPage from "./components/AboutPage";
+import WorkPage from "./components/WorkPage";
+import ContactPage from "./components/ContactPage";
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,11 +22,7 @@ const Header = styled.header`
   left: 0;
   right: 0;
   background: black;
-  // background: ${({ open }) => (open ? "hotpink" : "black")};
   color: white;
-  font-size: 12px;
-  // box-shadow: 0px 0 5px rgba(0, 0, 0, 0.8);
-  // z-index: 1;
 `;
 
 const Main = styled.main`
@@ -39,19 +35,23 @@ const Footer = styled.footer`
   flex-shrink: 0;
   background: black;
   color: white;
+`;
+
+const Copyright = styled.small`
   font-size: 12px;
-  // box-shadow: 0 -0px 5px rgba(0, 0, 0, 0.8);
 `;
 
 const Inner = styled.div`
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   &.headerInner {
-    padding: 10px;
+    padding: 0;
   }
-  // position: relative;
+  // background: orange;
 `;
 
 function App() {
@@ -72,20 +72,22 @@ function App() {
             </Inner>
           </Header>
           <Main>
-            <Inner className="mainInner">
+            <Inner>
               <SlideMenu
                 open={open}
                 setOpen={setOpen}
                 toggleMenu={toggleMenu}
               />
-              <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/contact" component={Contact} />
-              <Route exact path="/work" component={Work} />
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/contact" component={ContactPage} />
+              <Route exact path="/work" component={WorkPage} />
             </Inner>
           </Main>
           <Footer>
-            <Inner>© 2021 Saskia Opdam | build with React</Inner>
+            <Inner>
+              <Copyright>© 2021 Saskia Opdam | build with React</Copyright>
+            </Inner>
           </Footer>
         </ScrollToTop>
       </Router>

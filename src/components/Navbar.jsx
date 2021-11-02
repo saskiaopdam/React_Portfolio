@@ -12,7 +12,7 @@ const Wrapper = styled.nav`
 const Brand = styled.div`
   display: flex;
   align-items: center;
-  font-size: 16px;
+  // font-size: 16px;
 `;
 
 const Menu = styled.div`
@@ -33,14 +33,14 @@ const Burger = styled.button`
   align-items: center;
   background: transparent;
   color: white;
-  border: 1px solid transparent;
-  font-size: 16px;
-  padding: 10px;
+  border: none;
+  font-size: 18px;
+  padding: 20px;
 `;
 
 const BurgerLabel = styled.span`
-  font-size: 12px;
-  margin-right: 6px;
+  font-size: 14px;
+  margin-right: 7px;
 `;
 
 const FullMenu = styled.div`
@@ -54,7 +54,7 @@ const FullMenu = styled.div`
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: white;
-  padding: 10px;
+  padding: 20px;
 
   &.selected {
     pointer-events: none;
