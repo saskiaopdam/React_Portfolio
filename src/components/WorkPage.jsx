@@ -96,10 +96,7 @@ function WorkPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image
-            src={portfolio}
-            alt="screenshot of my own colourtoggle project"
-          />
+          <Image src={portfolio} alt="screenshot of my own portfolio project" />
         </ImageLink>
         <TextLink
           href="https://gifted-chandrasekhar-632f93.netlify.app"
