@@ -97,7 +97,7 @@ function WorkPage() {
           rel="noreferrer"
         >
           <Image
-            src={colourtoggle2}
+            src={portfolio}
             alt="screenshot of my own colourtoggle project"
           />
         </ImageLink>
