@@ -12,6 +12,7 @@ import moviefilter from "../assets/winc-projects/movie-filter.png";
 import playlist from "../assets/winc-projects/playlist.png";
 import portfoliogrid from "../assets/winc-projects/portfolio-grid.png";
 import mediabuttons from "../assets/winc-projects/media-buttons.png";
+import TDD from "../assets/winc-projects/TDD.png";
 import testimonial from "../assets/winc-projects/testimonial.png";
 import todolist from "../assets/winc-projects/todo-list.png";
 
@@ -89,9 +90,31 @@ function WorkPage() {
 
       {/* <h3>portfolio</h3> */}
       <Figure>
-        <CaptionTop>
-          2. React - portfolio - will be inserted - working on it
-        </CaptionTop>
+        <CaptionTop>2. React - working on it</CaptionTop>
+        <ImageLink
+          href="https://gifted-chandrasekhar-632f93.netlify.app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src={colourtoggle2}
+            alt="screenshot of my own colourtoggle project"
+          />
+        </ImageLink>
+        <TextLink
+          href="https://gifted-chandrasekhar-632f93.netlify.app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          see website on Netlify
+        </TextLink>
+        <TextLink
+          href="https://github.com/saskiaopdam/React_Portfolio"
+          target="_blank"
+          rel="noreferrer"
+        >
+          view code on GitHub
+        </TextLink>
       </Figure>
 
       {/* <h3>colourtoggle</h3> */}
@@ -104,7 +127,7 @@ function WorkPage() {
         >
           <Image
             src={colourtoggle2}
-            alt="Image of my own colourtoggle project"
+            alt="screenshot of my own colourtoggle project"
           />
         </ImageLink>
         <TextLink
@@ -128,10 +151,29 @@ function WorkPage() {
       {/* <h3>dashboard</h3> */}
       <Figure>
         <CaptionTop>
-          8. React/Redux - just started - final front-end assignment - will be
-          insterted
+          8. React/Redux - just started - final front-end assignment
         </CaptionTop>
-        <Image src={dashboard} alt="Image of dashboard project" />
+        <ImageLink
+          href="https://unruffled-kowalevski-7b0717.netlify.app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image src={dashboard} alt="screenshot of dashboard project" />
+        </ImageLink>
+        <TextLink
+          href="https://unruffled-kowalevski-7b0717.netlify.app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          see website on Netlify
+        </TextLink>
+        <TextLink
+          href="https://github.com/saskiaopdam/Winc_Assignment_8_Student_Dashboard"
+          target="_blank"
+          rel="noreferrer"
+        >
+          view code on GitHub
+        </TextLink>
       </Figure>
 
       {/* <h3>playlist</h3> */}
@@ -142,7 +184,7 @@ function WorkPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image src={playlist} alt="Image of playlist project" />
+          <Image src={playlist} alt="screenshot of playlist project" />
         </ImageLink>
         <TextLink
           href="https://lucid-kowalevski-bfd17f.netlify.app"
@@ -152,7 +194,7 @@ function WorkPage() {
           see website on Netlify
         </TextLink>
         <TextLink
-          href="https://github.com/saskiaopdam/Winc_Academy_Front-end-assignments/tree/main/assignment%20module%208%20(react)/Playlist/my-playlist"
+          href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
           target="_blank"
           rel="noreferrer"
         >
@@ -160,11 +202,17 @@ function WorkPage() {
         </TextLink>
       </Figure>
 
-      {/* <h3>TDD Farm</h3> */}
+      {/* <h3>TDD</h3> */}
       <Figure>
-        <CaptionTop>
-          6. TDD testing - august 2021 - will be insterted
-        </CaptionTop>
+        <CaptionTop>6. TDD testing - august 2021</CaptionTop>
+        <Image src={TDD} alt="screenshot of TDD project" />
+        <TextLink
+          href="https://github.com/saskiaopdam/Winc_Assignment_6_TDD_testing"
+          target="_blank"
+          rel="noreferrer"
+        >
+          view code on GitHub
+        </TextLink>
       </Figure>
 
       {/* <h3>todolist</h3> */}
@@ -175,7 +223,7 @@ function WorkPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image src={todolist} alt="Image of todolist project" />
+          <Image src={todolist} alt="screenshot of todolist project" />
         </ImageLink>
         <TextLink
           href="https://objective-banach-2a5a85.netlify.app"
@@ -201,7 +249,7 @@ function WorkPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image src={moviefilter} alt="Image of moviefilter project" />
+          <Image src={moviefilter} alt="screenshot of moviefilter project" />
         </ImageLink>
         <TextLink
           href="https://practical-sinoussi-a17cb3.netlify.app"
@@ -227,7 +275,7 @@ function WorkPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image src={colourtoggle} alt="Image of colourtoggle project" />
+          <Image src={colourtoggle} alt="screenshot of colourtoggle project" />
         </ImageLink>
         <TextLink
           href="https://affectionate-haibt-22ebd8.netlify.app"
@@ -253,7 +301,7 @@ function WorkPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image src={mediabuttons} alt="Image of mediabuttons project" />
+          <Image src={mediabuttons} alt="screenshot of mediabuttons project" />
         </ImageLink>
         <TextLink
           href="https://pensive-ptolemy-d5c4c6.netlify.app"
@@ -279,7 +327,10 @@ function WorkPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image src={portfoliogrid} alt="Image of portfoliogrid project" />
+          <Image
+            src={portfoliogrid}
+            alt="screenshot of portfoliogrid project"
+          />
         </ImageLink>
         <TextLink
           href="https://upbeat-goodall-bb4ec2.netlify.app"
@@ -305,7 +356,7 @@ function WorkPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <Image src={testimonial} alt="Image of testimonial project" />
+          <Image src={testimonial} alt="screenshot of testimonial project" />
         </ImageLink>
         <TextLink
           href="https://amazing-cori-c6ed26.netlify.app"
