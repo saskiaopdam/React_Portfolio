@@ -116,7 +116,7 @@ function HomePage() {
 
       <H3>this is me</H3>
       <Image src={photo} alt="portrait photo of Saskia Opdam" />
-      <StyledLink href="/about">learn more about me</StyledLink>
+      <StyledLink to="/about">learn more about me</StyledLink>
 
       {/* <Title>
         Hi there, and welcome to my portfolio.
