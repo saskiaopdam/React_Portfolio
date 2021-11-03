@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import photo from "../assets/portrait-photos/_DSC3414_500x755.jpg";
@@ -61,13 +62,13 @@ const Image = styled.img`
   }
 `;
 
-const ImageLink = styled.a`
+const Anchor = styled.a`
   @media (min-width: 500px) {
     text-align: center;
   }
 `;
 
-const TextLink = styled.a`
+const StyledLink = styled(Link)`
   color: indigo;
   @media (min-width: 500px) {
     text-align: center;
@@ -87,35 +88,35 @@ function HomePage() {
 
       <H3>I like coding</H3>
 
-      <ImageLink
+      <Anchor
         href="https://suspicious-johnson-c894da.netlify.app/"
         target="_blank"
         rel="noreferrer"
       >
         <Image src={colourtoggle2} alt="screenshot of colourtoggle project" />
-      </ImageLink>
-      <TextLink href="/work">see all coding projects</TextLink>
+      </Anchor>
+      <StyledLink to="/work">see all coding projects</StyledLink>
 
       <H3>and photo-editing</H3>
 
-      <ImageLink
+      <Anchor
         href="https://www.behance.net/gallery/73920763/Lemons"
         target="_blank"
         rel="noreferrer"
       >
         <Image src={lemons} alt="image of lemons made by photo editing" />
-      </ImageLink>
-      <TextLink
+      </Anchor>
+      <Anchor
         href="https://www.behance.net/opdamsaski0505"
         target="_blank"
         rel="noreferrer"
       >
         see all photo-editing projects
-      </TextLink>
+      </Anchor>
 
       <H3>this is me</H3>
       <Image src={photo} alt="portrait photo of Saskia Opdam" />
-      <TextLink href="/about">learn more about me</TextLink>
+      <StyledLink href="/about">learn more about me</StyledLink>
 
       {/* <Title>
         Hi there, and welcome to my portfolio.
