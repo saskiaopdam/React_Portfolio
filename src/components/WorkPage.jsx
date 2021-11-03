@@ -25,16 +25,49 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   margin-top: 32px;
-  margin-bottom: 52px;
-  color: indigo;
+  margin-bottom: 32px;
   @media (min-width: 500px) {
     text-align: center;
   }
 `;
 
 const H2 = styled.h2`
-  margin-bottom: 44px;
+  margin-bottom: 52px;
   color: darkgray;
+  @media (min-width: 500px) {
+    text-align: center;
+  }
+`;
+
+const H3 = styled.h3`
+  margin-bottom: 18px;
+  font-weight: 500;
+  @media (min-width: 500px) {
+    text-align: center;
+  }
+`;
+
+const ImageAnchorLink = styled.a`
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding-top: 16px;
+  margin-bottom: 64px;
+  @media (min-width: 500px) {
+    text-align: center;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  max-width: 460px;
+  display: block;
+  margin: 0 auto;
+`;
+
+const ImageAction = styled.p`
+  font-size: 18px;
+  padding: 16px 0;
   @media (min-width: 500px) {
     text-align: center;
   }
@@ -61,14 +94,6 @@ const CaptionBottom = styled.figcaption`
   }
 `;
 
-const Image = styled.img`
-  width: 100%;
-  margin: 0 auto 16px auto;
-  @media (min-width: 500px) {
-    width: 50%;
-  }
-`;
-
 const Anchor = styled.a`
   &.textlink {
     color: indigo;
@@ -82,339 +107,159 @@ function WorkPage() {
   return (
     <Wrapper>
       <Title>Work</Title>
-
       <H2>my own projects</H2>
 
       {/* <h3>portfolio</h3> */}
-      <Figure>
-        <CaptionTop>2. React - working on it</CaptionTop>
-        <Anchor
-          href="https://gifted-chandrasekhar-632f93.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={portfolio} alt="screenshot of my own portfolio project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://gifted-chandrasekhar-632f93.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/React_Portfolio"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>react - recent</H3>
 
-      {/* <h3>colourtoggle</h3> */}
-      <Figure>
-        <CaptionTop>1. HTML, CSS, JavaScript - june 2021</CaptionTop>
-        <Anchor
-          href="https://suspicious-johnson-c894da.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image
-            src={colourtoggle2}
-            alt="screenshot of my own colourtoggle project"
-          />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://suspicious-johnson-c894da.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Colour_Toggle_Design"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <ImageAnchorLink
+        href="https://github.com/saskiaopdam/React_Portfolio"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image
+          src={portfolio}
+          alt="screenshot of my own colourtoggle project"
+        />
+        <ImageAction>see code on GitHub</ImageAction>
+      </ImageAnchorLink>
 
-      <H2>learning assignments</H2>
+      <H3>HTML, CSS, JavaScript - june 2021</H3>
+
+      <ImageAnchorLink
+        href="https://suspicious-johnson-c894da.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image
+          src={colourtoggle2}
+          alt="screenshot of my own colourtoggle project"
+        />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
+
+      <H2>Winc Academy exam projects</H2>
 
       {/* <h3>dashboard</h3> */}
-      <Figure>
-        <CaptionTop>
-          8. React/Redux - just started - final front-end assignment
-        </CaptionTop>
-        <Anchor
-          href="https://unruffled-kowalevski-7b0717.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={dashboard} alt="screenshot of dashboard project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://unruffled-kowalevski-7b0717.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Assignment_8_Student_Dashboard"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>8. React/Redux - just started - final front-end assignment</H3>
+
+      <ImageAnchorLink
+        href="https://unruffled-kowalevski-7b0717.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={dashboard} alt="screenshot of dashboard project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>playlist</h3> */}
-      <Figure>
-        <CaptionTop>7. React/Redux - september 2021</CaptionTop>
-        <Anchor
-          href="https://lucid-kowalevski-bfd17f.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={playlist} alt="screenshot of playlist project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://lucid-kowalevski-bfd17f.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>7. React/Redux - september 2021</H3>
+
+      <ImageAnchorLink
+        href="https://lucid-kowalevski-bfd17f.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={playlist} alt="screenshot of playlist project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>TDD</h3> */}
-      <Figure>
-        <CaptionTop>6. TDD testing - august 2021</CaptionTop>
+
+      <H3>6. TDD testing - august 2021</H3>
+
+      <ImageAnchorLink
+        href="https://github.com/saskiaopdam/Winc_Assignment_6_TDD_testing"
+        target="_blank"
+        rel="noreferrer"
+      >
         <Image src={TDD} alt="screenshot of TDD project" />
-        <Anchor
-          href="https://github.com/saskiaopdam/Winc_Assignment_6_TDD_testing"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+        <ImageAction>view code on GitHub</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>todolist</h3> */}
-      <Figure>
-        <CaptionTop>5. JavaScript - august 2021</CaptionTop>
-        <Anchor
-          href="https://objective-banach-2a5a85.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={todolist} alt="screenshot of todolist project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://objective-banach-2a5a85.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Academy_5_To_Do_List"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>5. JavaScript - august 2021</H3>
+
+      <ImageAnchorLink
+        href="https://objective-banach-2a5a85.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={todolist} alt="screenshot of todolist project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>moviefilter</h3> */}
-      <Figure>
-        <CaptionTop>4. HTML, CSS, JavaScript - june 2021</CaptionTop>
-        <Anchor
-          href="https://practical-sinoussi-a17cb3.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={moviefilter} alt="screenshot of moviefilter project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://practical-sinoussi-a17cb3.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Assignment_4_Movie_Filter"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>4. HTML, CSS, JavaScript - june 2021</H3>
+
+      <ImageAnchorLink
+        href="https://practical-sinoussi-a17cb3.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={moviefilter} alt="screenshot of moviefilter project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>colourtoggle</h3> */}
-      <Figure>
-        <CaptionTop>3. HTML, CSS, JavaScript - april 2021</CaptionTop>
-        <Anchor
-          href="https://affectionate-haibt-22ebd8.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={colourtoggle} alt="screenshot of colourtoggle project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://affectionate-haibt-22ebd8.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Assignment_3_Colour_Toggle"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>3. HTML, CSS, JavaScript - april 2021</H3>
+
+      <ImageAnchorLink
+        href="https://affectionate-haibt-22ebd8.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={colourtoggle} alt="screenshot of colourtoggle project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>mediabuttons</h3> */}
-      <Figure>
-        <CaptionTop>2C. HTML, CSS, SCSS - april 2021 (level 3)</CaptionTop>
-        <Anchor
-          href="https://pensive-ptolemy-d5c4c6.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={mediabuttons} alt="screenshot of mediabuttons project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://pensive-ptolemy-d5c4c6.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Assignment_2C_Social_Media_Buttons"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>2C. HTML, CSS, SCSS - april 2021 (level 3)</H3>
+
+      <ImageAnchorLink
+        href="https://pensive-ptolemy-d5c4c6.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={mediabuttons} alt="screenshot of mediabuttons project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>portfoliogrid</h3> */}
-      <Figure>
-        <CaptionTop>2B. HTML, CSS, SCSS - april 2021 (level 2)</CaptionTop>
-        <Anchor
-          href="https://upbeat-goodall-bb4ec2.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image
-            src={portfoliogrid}
-            alt="screenshot of portfoliogrid project"
-          />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://upbeat-goodall-bb4ec2.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Assignment_2B_Portfolio_Grid"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>2B. HTML, CSS, SCSS - april 2021 (level 2)</H3>
+
+      <ImageAnchorLink
+        href="https://upbeat-goodall-bb4ec2.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={portfoliogrid} alt="screenshot of portfoliogrid project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>testimonial</h3> */}
-      <Figure>
-        <CaptionTop>2A. HTML, CSS, SCSS - april 2021 (level 1)</CaptionTop>
-        <Anchor
-          href="https://amazing-cori-c6ed26.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={testimonial} alt="screenshot of testimonial project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://amazing-cori-c6ed26.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Assignment_2A_Testimonial"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>2A. HTML, CSS, SCSS - april 2021 (level 1)</H3>
+
+      <ImageAnchorLink
+        href="https://amazing-cori-c6ed26.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={testimonial} alt="screenshot of testimonial project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
 
       {/* <h3>website</h3> */}
-      <Figure>
-        <CaptionTop>1. HTML, CSS - april 2021</CaptionTop>
-        <Anchor
-          href="https://vibrant-bohr-d9a9ff.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image src={website} alt="screenshot of website project" />
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://vibrant-bohr-d9a9ff.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          see website on Netlify
-        </Anchor>
-        <Anchor
-          className="textlink"
-          href="https://github.com/saskiaopdam/Winc_Assignment_1_Website"
-          target="_blank"
-          rel="noreferrer"
-        >
-          view code on GitHub
-        </Anchor>
-      </Figure>
+      <H3>1. HTML, CSS - april 2021</H3>
+
+      <ImageAnchorLink
+        href="https://vibrant-bohr-d9a9ff.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={website} alt="screenshot of website project" />
+        <ImageAction>see website online</ImageAction>
+      </ImageAnchorLink>
     </Wrapper>
   );
 }

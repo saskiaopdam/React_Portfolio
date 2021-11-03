@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: whitesmoke;
 `;
 
 const Header = styled.header`
@@ -86,7 +87,7 @@ function App() {
           </Main>
           <Footer>
             <Inner>
-              <Copyright>© 2021 Saskia Opdam | build with React</Copyright>
+              <Copyright>© 2021 Saskia Opdam</Copyright>
             </Inner>
           </Footer>
         </ScrollToTop>

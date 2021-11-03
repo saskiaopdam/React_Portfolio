@@ -2,16 +2,22 @@ import styled from "styled-components/macro";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  background: yellow;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.h1`
-  margin-top: 32px;
-  margin-bottom: 52px;
-  color: indigo;
+  margin-top: 12px;
+  margin-bottom: 64px;
   @media (min-width: 500px) {
     text-align: center;
   }
+`;
+
+const Summary = styled.div`
+  margin-bottom: 64px;
 `;
 
 const H2 = styled.h2`
@@ -22,83 +28,77 @@ const H2 = styled.h2`
   }
 `;
 
-// const H3 = styled.h3`
-//   margin-top: 28px;
-//   margin-bottom: 18px;
-//   @media (min-width: 500px) {
-//     text-align: center;
-//   }
-// `;
-
 const Paragraph = styled.p`
-  margin-bottom: 8px;
+  font-size: 18px;
+  margin-bottom: 27px;
+  line-height: 1.25;
+  max-width: 500px;
+  text-indent: 32px;
+`;
+
+const Accent = styled.span`
+  font-weight: bold;
+`;
+
+const Anchor = styled.a`
+  font-weight: bold;
+  color: black; ;
 `;
 
 function AboutPage() {
   return (
     <Wrapper>
-      <Title>About</Title>
+      <Title>About me</Title>
+      <Summary>
+        <H2>experienced freelance translator</H2>
+        <H2>switching careers to development</H2>
+        <H2>why? because I love to puzzle and create</H2>
+        <H2>remotely learning full-stack</H2>
+        <H2>almost finished front-end course</H2>
+        <H2>loves solving problems</H2>
+        <H2>loves visually beautiful things</H2>
+        <H2>curious, eager to learn</H2>
+        <H2>loves to dance, read and take long walks</H2>
+        <H2>lives and works in The Hague</H2>
+      </Summary>
 
       <Paragraph>
-        This year, I'm switching careers from translation to development. Why?
-        Because I'm curious, eager to learn and love to create and problem
-        solve. And, I guess, to follow my dream of doing this in my work (I
-        missed a career in art conservation). So, if you are looking for a
-        enthousiastic beginner developer to learn the tricks of the trade,
-        please read on.
+        <Accent>I decided to switch careers because</Accent> while freelancing
+        as a translator and editor, I had the opportunity to work on my own
+        website, and a colleagues. This was so inspiring that I kept thinking
+        about it ever since.{" "}
       </Paragraph>
-
-      <H2>From translator to developer</H2>
       <Paragraph>
-        I'm an experienced freelance translator switching careers to
-        development. I have a background in arts (introductory year at the
-        Rietveld Academy) and I wanted to become an art conservator, but at the
-        time no selection took place. The desire to work with visual and
-        tangible objects has never left me. In my spare time I like to dance,
-        read, and visit art and photograpy expositions. I live and work in The
-        Hague in the Netherlands.
-      </Paragraph>
-      <H2>Why I'm switching careers</H2>
-      <Paragraph>
-        While freelancing as a translator and editor I had the opportunity to
-        work on my own website, and a colleagues. This was so inspiring that I
-        kept thinking about it ever since. This year I decided to take the
-        plunge.
-      </Paragraph>
-      <H2>Where I'm learning full-stack development</H2>
-      <Paragraph>
-        In February this year I enrolled in a full-stack development course at{" "}
-        <a href="https://www.wincacademy.nl/#" target="_blank" rel="noreferrer">
+        <Accent>This year I decided to take the plunge:</Accent> In February I
+        enrolled in a full-stack development course at{" "}
+        <Anchor
+          href="https://www.wincacademy.nl/#"
+          target="_blank"
+          rel="noreferrer"
+        >
           Winc Academy
-        </a>{" "}
-        (remote learning). This covers: HTML, CSS, SCSS, JavaScript, React,
-        Redux, Jest, Git, Github, NodeJS, Python, Flask and SQL.
+        </Anchor>{" "}
+        (remote learning). I just started working on the final front-end
+        assignment: the Student Dashboard.
       </Paragraph>
-      <H2>What I'm doing at the moment</H2>
       <Paragraph>
-        I started working on the final front-end assignment offered by the Winc
-        Academy: the Student Dashboard. When finished, I will proceed with the
-        back-end part of the course.
-      </Paragraph>
-      <H2>What I love about programming</H2>
-      <Paragraph>
-        I deeply enjoy coding because it allows for creativity and logical
-        thinking at the same time, both of which I love. The result is visual
+        <Accent>What I love about programming is that</Accent> it allows for
+        creativity and logical thinking at the same time. The result is visual
         and - if done well - appealing to the eye. An anspect I miss in
         translation.
       </Paragraph>
-      <H2>What I'm looking for</H2>
+
       <Paragraph>
-        I'm looking for an opportunity to gain real work experience and broaden
-        my front-end skills in a junior developer role, while in the spare time
-        finishing the back-end course.
+        <Accent>I'm looking for an opportunity to gain</Accent> real work
+        experience and broaden my front-end skills in a junior developer role,
+        while in the spare time finishing the back-end course.
       </Paragraph>
-      <H2>What I can offer you</H2>
+
       <Paragraph>
-        My curiosity, eagerness to learn and love of creating and problem
-        solving.
+        <Accent>What I can offer you is</Accent> endless curiosity, eagerness to
+        learn and love of creating and problem solving. I hope to hear from you
+        soon!
       </Paragraph>
-      <Paragraph>Hope to hear from you soon!</Paragraph>
     </Wrapper>
   );
 }

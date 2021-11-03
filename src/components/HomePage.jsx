@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
-import photo from "../assets/portrait-photos/_DSC3414_500x755.jpg";
-import lemons from "../assets/photo-projects/lemons.jpg";
+import {
+  AiFillGithub,
+  AiOutlineGithub,
+  AiFillMail,
+  AiOutlineInbox,
+  AiFillLinkedin,
+  AiOutlineLinkedin,
+} from "react-icons/ai";
+
 import colourtoggle2 from "../assets/coding-projects/colour-toggle-2.png";
+import lemons from "../assets/photo-projects/lemons.jpg";
+import portraitDark from "../assets/portrait-photos/portraitDark.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -13,130 +22,144 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   margin-top: 32px;
-  margin-bottom: 52px;
-  color: indigo;
+  margin-bottom: 32px;
   @media (min-width: 500px) {
     text-align: center;
   }
 `;
 
-const H2 = styled.h2`
-  margin-bottom: 24px;
+const Subtitle = styled.h2`
+  margin-bottom: 52px;
   color: darkgray;
   @media (min-width: 500px) {
     text-align: center;
   }
 `;
 
-const H3 = styled.h3`
-  margin-top: 28px;
-  margin-bottom: 18px;
-  @media (min-width: 500px) {
-    text-align: center;
-  }
-`;
-
-const Paragraph = styled.p`
+const ImageRouteLink = styled(Link)`
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding-top: 16px;
   margin-bottom: 16px;
   @media (min-width: 500px) {
     text-align: center;
   }
 `;
 
-const Accent = styled.span`
-  &.deeppink {
-    color: indigo;
-  }
-  &.darkgray {
-    color: darkgray;
-    // text-decoration: underline;
-    // text-decoration-color: deeppink;
+const ImageAnchorLink = styled.a`
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding-top: 16px;
+  margin-bottom: 16px;
+  @media (min-width: 500px) {
+    text-align: center;
   }
 `;
 
 const Image = styled.img`
   width: 100%;
-  margin: 0 auto 12px;
-  @media (min-width: 500px) {
-    width: 50%;
-  }
+  max-width: 460px;
+  display: block;
+  margin: 0 auto;
 `;
 
-const Anchor = styled.a`
+const ImageAction = styled.p`
+  font-size: 18px;
+  padding: 16px 0;
   @media (min-width: 500px) {
     text-align: center;
   }
 `;
 
-const StyledLink = styled(Link)`
-  color: indigo;
+const Social = styled.div`
+  background: white;
+  padding-top: 16px;
+`;
+
+const IconAnchorLink = styled.a`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-size: 32px;
+  padding: 16px 0;
+  margin-bottom: 16px;
+
   @media (min-width: 500px) {
-    text-align: center;
+    align-items: center;
   }
+`;
+
+const Icon = styled.div`
+  height: 32px;
+  color: darkgray;
+`;
+
+const IconAction = styled.p`
+  font-size: 18px;
+  margin-top: 8px;
 `;
 
 function HomePage() {
   return (
     <Wrapper>
-      <Title>I'm a junior front-end developer learning full-stack</Title>
+      <Title>junior front-end developer learning full-stack</Title>
+      <Subtitle>
+        HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
+      </Subtitle>
 
-      <Paragraph>skills:</Paragraph>
-      <H2>HTML | CSS | JavaScript | React | Redux | NodeJS</H2>
-
-      <Paragraph>upcoming:</Paragraph>
-      <H2>Python | Flask | SQL</H2>
-
-      <H3>I like coding</H3>
-
-      <Anchor
-        href="https://suspicious-johnson-c894da.netlify.app/"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <ImageRouteLink to="/work">
         <Image src={colourtoggle2} alt="screenshot of colourtoggle project" />
-      </Anchor>
-      <StyledLink to="/work">see all coding projects</StyledLink>
+        <ImageAction>take a look at my coding projects</ImageAction>
+      </ImageRouteLink>
 
-      <H3>and photo-editing</H3>
-
-      <Anchor
-        href="https://www.behance.net/gallery/73920763/Lemons"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Image src={lemons} alt="image of lemons made by photo editing" />
-      </Anchor>
-      <Anchor
+      <ImageAnchorLink
         href="https://www.behance.net/opdamsaski0505"
         target="_blank"
         rel="noreferrer"
       >
-        see all photo-editing projects
-      </Anchor>
+        <Image src={lemons} alt="screenshot of lemons project" />
+        <ImageAction>see my photo-editing projects</ImageAction>
+      </ImageAnchorLink>
 
-      <H3>this is me</H3>
-      <Image src={photo} alt="portrait photo of Saskia Opdam" />
-      <StyledLink to="/about">learn more about me</StyledLink>
+      <ImageRouteLink to="/about">
+        <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
+        <ImageAction>learn more about me</ImageAction>
+      </ImageRouteLink>
 
-      {/* <Title>
-        Hi there, and welcome to my portfolio.
-        <br />
-      </Title>
-     
-
-     
-    
-      <a href="/work">See the code on GitHub</a>
-      <br />
-      <a href="mailto:opdamsaskia@icloud.com">Drop me an e-mail</a>
-      <br />
-      <a
-        href="https://www.linkedin.com/in/saskiaopdam/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Connect with me on LinkedIn
-      </a> */}
+      <Social>
+        <IconAnchorLink
+          href="https://github.com/saskiaopdam"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon>
+            {/* <AiFillGithub /> */}
+            <AiOutlineGithub />
+          </Icon>
+          <IconAction>check out my GitHub account</IconAction>
+        </IconAnchorLink>
+        <IconAnchorLink href="mailto:opdamsaskia@icloud.com">
+          <Icon>
+            {/* <AiFillMail /> */}
+            <AiOutlineInbox />
+          </Icon>
+          <IconAction>drop me an e-mail</IconAction>
+        </IconAnchorLink>
+        <IconAnchorLink
+          href="https://www.linkedin.com/in/saskiaopdam/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon>
+            {/* <AiFillLinkedin /> */}
+            <AiOutlineLinkedin />
+          </Icon>
+          <IconAction>connect with me on LinkedIn</IconAction>
+        </IconAnchorLink>
+      </Social>
     </Wrapper>
   );
 }
