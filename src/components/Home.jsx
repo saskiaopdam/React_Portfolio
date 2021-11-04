@@ -36,12 +36,20 @@ const Subtitle = styled.h2`
   }
 `;
 
+const Heading = styled.h3`
+  font-size: 18px;
+  margin-bottom: 9px;
+  @media (min-width: 500px) {
+    text-align: center;
+  }
+`;
+
 const ImageRouteLink = styled(Link)`
   text-decoration: none;
   background: white;
   color: black;
-  padding-top: 16px;
-  margin-bottom: 16px;
+  // padding-top: 16px;
+  margin-bottom: 32px;
   @media (min-width: 500px) {
     text-align: center;
   }
@@ -51,8 +59,8 @@ const ImageAnchorLink = styled.a`
   text-decoration: none;
   background: white;
   color: black;
-  padding-top: 16px;
-  margin-bottom: 16px;
+  // padding-top: 16px;
+  margin-bottom: 32px;
   @media (min-width: 500px) {
     text-align: center;
   }
@@ -66,43 +74,62 @@ const Image = styled.img`
 `;
 
 const ImageAction = styled.p`
-  font-size: 18px;
-  padding: 16px 0;
+  color: royalblue;
+  margin-bottom: 16px;
   @media (min-width: 500px) {
     text-align: center;
   }
 `;
 
+const Hovereffect = styled.span`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const Social = styled.div`
+  padding: 12px 0;
   background: white;
-  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 500px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 `;
 
 const IconAnchorLink = styled.a`
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
+  background: white;
   color: black;
-  font-size: 32px;
-  padding: 16px 0;
-  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  // flex-direction: column;
+  font-size: 24px;
+  & + & {
+    margin-top: 24px;
+  }
 
   @media (min-width: 500px) {
-    align-items: center;
+    margin-bottom: 0;
+    & + & {
+      margin-top: 0;
+      margin-left: 36px;
+    }
   }
 `;
 
 const Icon = styled.div`
-  height: 32px;
-  color: darkgray;
+  height: 24px;
+  color: royalblue;
 `;
 
 const IconAction = styled.p`
-  font-size: 18px;
-  margin-top: 8px;
+  font-size: 14px;
+  margin-left: 4px;
 `;
 
-function HomePage() {
+function Home() {
   return (
     <Wrapper>
       <Title>junior front-end developer learning full-stack</Title>
@@ -110,43 +137,46 @@ function HomePage() {
         HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
       </Subtitle>
 
+      <Heading>coding projects</Heading>
+
       <ImageRouteLink to="/work">
+        <ImageAction>
+          <Hovereffect>see all</Hovereffect> {">"}
+        </ImageAction>
         <Image src={colourtoggle2} alt="screenshot of colourtoggle project" />
-        <ImageAction>take a look at my coding projects</ImageAction>
       </ImageRouteLink>
+
+      <Heading>photo projects</Heading>
 
       <ImageAnchorLink
         href="https://www.behance.net/opdamsaski0505"
         target="_blank"
         rel="noreferrer"
       >
+        <ImageAction>
+          <Hovereffect>see all</Hovereffect> {">"}
+        </ImageAction>
         <Image src={lemons} alt="screenshot of lemons project" />
-        <ImageAction>see my photo-editing projects</ImageAction>
       </ImageAnchorLink>
 
+      <Heading>me</Heading>
       <ImageRouteLink to="/about">
+        <ImageAction>
+          <Hovereffect>info</Hovereffect> {">"}
+        </ImageAction>
         <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-        <ImageAction>learn more about me</ImageAction>
       </ImageRouteLink>
 
+      <Heading>contact</Heading>
+
       <Social>
-        <IconAnchorLink
-          href="https://github.com/saskiaopdam"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon>
-            {/* <AiFillGithub /> */}
-            <AiOutlineGithub />
-          </Icon>
-          <IconAction>check out my GitHub account</IconAction>
-        </IconAnchorLink>
         <IconAnchorLink href="mailto:opdamsaskia@icloud.com">
           <Icon>
-            {/* <AiFillMail /> */}
             <AiOutlineInbox />
           </Icon>
-          <IconAction>drop me an e-mail</IconAction>
+          <IconAction>
+            <Hovereffect>send e-mail</Hovereffect>
+          </IconAction>
         </IconAnchorLink>
         <IconAnchorLink
           href="https://www.linkedin.com/in/saskiaopdam/"
@@ -154,14 +184,27 @@ function HomePage() {
           rel="noreferrer"
         >
           <Icon>
-            {/* <AiFillLinkedin /> */}
             <AiOutlineLinkedin />
           </Icon>
-          <IconAction>connect with me on LinkedIn</IconAction>
+          <IconAction>
+            <Hovereffect>connect</Hovereffect>
+          </IconAction>
+        </IconAnchorLink>{" "}
+        <IconAnchorLink
+          href="https://github.com/saskiaopdam"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon>
+            <AiOutlineGithub />
+          </Icon>
+          <IconAction>
+            <Hovereffect>see code</Hovereffect>
+          </IconAction>
         </IconAnchorLink>
       </Social>
     </Wrapper>
   );
 }
 
-export default HomePage;
+export default Home;

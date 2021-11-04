@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 import styled from "styled-components/macro";
 
 //coding-projects
@@ -103,11 +105,15 @@ const Anchor = styled.a`
   }
 `;
 
-function WorkPage() {
+function Work() {
   return (
     <Wrapper>
       <Title>Work</Title>
       <H2>my own projects</H2>
+
+      <Link to="/work/dashboard">dashboard</Link>
+      <Link to="/work/portfolio">portfolio</Link>
+      <Link to="/work/toggle">toggle</Link>
 
       {/* <h3>portfolio</h3> */}
       <H3>react - recent</H3>
@@ -264,4 +270,4 @@ function WorkPage() {
   );
 }
 
-export default WorkPage;
+export default Work;

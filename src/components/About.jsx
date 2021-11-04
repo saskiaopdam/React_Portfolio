@@ -45,7 +45,7 @@ const Anchor = styled.a`
   color: black; ;
 `;
 
-function AboutPage() {
+function About() {
   return (
     <Wrapper>
       <Title>About me</Title>
@@ -103,4 +103,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default About;

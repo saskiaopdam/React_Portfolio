@@ -5,10 +5,11 @@ import styled from "styled-components/macro";
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import SlideMenu from "./components/SlideMenu";
-import HomePage from "./components/HomePage";
-import AboutPage from "./components/AboutPage";
-import WorkPage from "./components/WorkPage";
-import ContactPage from "./components/ContactPage";
+import Home from "./components/Home";
+import About from "./components/About";
+import Work from "./components/Work";
+import Contact from "./components/Contact";
+import ProjectDetails from "./components/ProjectDetails";
 
 const Wrapper = styled.div`
   display: flex;
@@ -79,10 +80,11 @@ function App() {
                 setOpen={setOpen}
                 toggleMenu={toggleMenu}
               />
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/about" component={AboutPage} />
-              <Route exact path="/contact" component={ContactPage} />
-              <Route exact path="/work" component={WorkPage} />
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/work" exact component={Work} />
+              <Route path="/work/:id" component={ProjectDetails} />
             </Inner>
           </Main>
           <Footer>
