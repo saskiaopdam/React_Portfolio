@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useState } from "react";
+
 import styled from "styled-components/macro";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -8,14 +9,12 @@ import SlideMenu from "./components/SlideMenu";
 import Home from "./components/Home";
 import About from "./components/About";
 import Work from "./components/Work";
-import Contact from "./components/Contact";
-import ProjectDetails from "./components/ProjectDetails";
+import Project from "./components/projectComponents/Project";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: whitesmoke;
 `;
 
 const Header = styled.header`
@@ -53,7 +52,6 @@ const Inner = styled.div`
   &.headerInner {
     padding: 0;
   }
-  // background: orange;
 `;
 
 function App() {
@@ -82,9 +80,8 @@ function App() {
               />
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
-              <Route path="/contact" component={Contact} />
               <Route path="/work" exact component={Work} />
-              <Route path="/work/:id" component={ProjectDetails} />
+              <Route path="/work/:id" component={Project} />
             </Inner>
           </Main>
           <Footer>

@@ -2,15 +2,12 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import {
-  AiFillGithub,
   AiOutlineGithub,
-  AiFillMail,
   AiOutlineInbox,
-  AiFillLinkedin,
   AiOutlineLinkedin,
 } from "react-icons/ai";
 
-import colourtoggle2 from "../assets/coding-projects/colour-toggle-2.png";
+import toggle2 from "../assets/coding-projects/toggle2.png";
 import lemons from "../assets/photo-projects/lemons.jpg";
 import portraitDark from "../assets/portrait-photos/portraitDark.jpg";
 
@@ -48,7 +45,6 @@ const ImageRouteLink = styled(Link)`
   text-decoration: none;
   background: white;
   color: black;
-  // padding-top: 16px;
   margin-bottom: 32px;
   @media (min-width: 500px) {
     text-align: center;
@@ -73,7 +69,7 @@ const Image = styled.img`
   margin: 0 auto;
 `;
 
-const ImageAction = styled.p`
+const ImageAnchorLabel = styled.p`
   color: royalblue;
   margin-bottom: 16px;
   @media (min-width: 500px) {
@@ -124,7 +120,7 @@ const Icon = styled.div`
   color: royalblue;
 `;
 
-const IconAction = styled.p`
+const IconAnchorLabel = styled.p`
   font-size: 14px;
   margin-left: 4px;
 `;
@@ -140,10 +136,10 @@ function Home() {
       <Heading>coding projects</Heading>
 
       <ImageRouteLink to="/work">
-        <ImageAction>
-          <Hovereffect>see all</Hovereffect> {">"}
-        </ImageAction>
-        <Image src={colourtoggle2} alt="screenshot of colourtoggle project" />
+        <ImageAnchorLabel>
+          <Hovereffect>overview</Hovereffect> {">"}
+        </ImageAnchorLabel>
+        <Image src={toggle2} alt="screenshot of toggle2 project" />
       </ImageRouteLink>
 
       <Heading>photo projects</Heading>
@@ -153,17 +149,17 @@ function Home() {
         target="_blank"
         rel="noreferrer"
       >
-        <ImageAction>
-          <Hovereffect>see all</Hovereffect> {">"}
-        </ImageAction>
+        <ImageAnchorLabel>
+          <Hovereffect>overview</Hovereffect> {">"}
+        </ImageAnchorLabel>
         <Image src={lemons} alt="screenshot of lemons project" />
       </ImageAnchorLink>
 
       <Heading>me</Heading>
       <ImageRouteLink to="/about">
-        <ImageAction>
+        <ImageAnchorLabel>
           <Hovereffect>info</Hovereffect> {">"}
-        </ImageAction>
+        </ImageAnchorLabel>
         <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
       </ImageRouteLink>
 
@@ -174,9 +170,9 @@ function Home() {
           <Icon>
             <AiOutlineInbox />
           </Icon>
-          <IconAction>
-            <Hovereffect>send e-mail</Hovereffect>
-          </IconAction>
+          <IconAnchorLabel>
+            <Hovereffect>e-mail</Hovereffect>
+          </IconAnchorLabel>
         </IconAnchorLink>
         <IconAnchorLink
           href="https://www.linkedin.com/in/saskiaopdam/"
@@ -186,9 +182,9 @@ function Home() {
           <Icon>
             <AiOutlineLinkedin />
           </Icon>
-          <IconAction>
+          <IconAnchorLabel>
             <Hovereffect>connect</Hovereffect>
-          </IconAction>
+          </IconAnchorLabel>
         </IconAnchorLink>{" "}
         <IconAnchorLink
           href="https://github.com/saskiaopdam"
@@ -198,9 +194,9 @@ function Home() {
           <Icon>
             <AiOutlineGithub />
           </Icon>
-          <IconAction>
-            <Hovereffect>see code</Hovereffect>
-          </IconAction>
+          <IconAnchorLabel>
+            <Hovereffect>GitHub</Hovereffect>
+          </IconAnchorLabel>
         </IconAnchorLink>
       </Social>
     </Wrapper>

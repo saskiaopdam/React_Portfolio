@@ -12,7 +12,6 @@ const Wrapper = styled.nav`
 const Brand = styled.div`
   display: flex;
   align-items: center;
-  // font-size: 16px;
 `;
 
 const Menu = styled.div`
@@ -25,7 +24,6 @@ const BurgerMenu = styled.div`
   @media (min-width: 500px) {
     display: none;
   }
-  // background: black;
 `;
 
 const Burger = styled.button`
@@ -48,7 +46,6 @@ const FullMenu = styled.div`
   @media (min-width: 500px) {
     display: flex;
   }
-  // background: blue;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -86,9 +83,6 @@ function NavBar({ open, setOpen, toggleMenu }) {
           </StyledNavLink>
           <StyledNavLink to="/work" activeClassName="selected">
             work
-          </StyledNavLink>
-          <StyledNavLink to="/contact" activeClassName="selected">
-            contact
           </StyledNavLink>
         </FullMenu>
       </Menu>

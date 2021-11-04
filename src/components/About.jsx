@@ -2,22 +2,21 @@ import styled from "styled-components/macro";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const Title = styled.h1`
-  margin-top: 12px;
-  margin-bottom: 64px;
+  margin-top: 32px;
+  margin-bottom: 52px;
   @media (min-width: 500px) {
     text-align: center;
   }
 `;
 
 const Summary = styled.div`
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 `;
 
 const H2 = styled.h2`
@@ -29,11 +28,9 @@ const H2 = styled.h2`
 `;
 
 const Paragraph = styled.p`
-  font-size: 18px;
-  margin-bottom: 27px;
+  margin-bottom: 16px;
   line-height: 1.25;
   max-width: 500px;
-  text-indent: 32px;
 `;
 
 const Accent = styled.span`
@@ -41,18 +38,16 @@ const Accent = styled.span`
 `;
 
 const Anchor = styled.a`
-  font-weight: bold;
-  color: black; ;
+  color: black;
 `;
 
 function About() {
   return (
     <Wrapper>
-      <Title>About me</Title>
+      <Title>about me</Title>
       <Summary>
         <H2>experienced freelance translator</H2>
         <H2>switching careers to development</H2>
-        <H2>why? because I love to puzzle and create</H2>
         <H2>remotely learning full-stack</H2>
         <H2>almost finished front-end course</H2>
         <H2>loves solving problems</H2>
@@ -63,14 +58,9 @@ function About() {
       </Summary>
 
       <Paragraph>
-        <Accent>I decided to switch careers because</Accent> while freelancing
-        as a translator and editor, I had the opportunity to work on my own
-        website, and a colleagues. This was so inspiring that I kept thinking
-        about it ever since.{" "}
-      </Paragraph>
-      <Paragraph>
-        <Accent>This year I decided to take the plunge:</Accent> In February I
-        enrolled in a full-stack development course at{" "}
+        After working on a website some time ago I got hooked and decided to
+        learn more and <Accent>switch careers</Accent>. Since February this year
+        I follow a full-stack development course at{" "}
         <Anchor
           href="https://www.wincacademy.nl/#"
           target="_blank"
@@ -79,25 +69,27 @@ function About() {
           Winc Academy
         </Anchor>{" "}
         (remote learning). I just started working on the final front-end
-        assignment: the Student Dashboard.
-      </Paragraph>
-      <Paragraph>
-        <Accent>What I love about programming is that</Accent> it allows for
-        creativity and logical thinking at the same time. The result is visual
-        and - if done well - appealing to the eye. An anspect I miss in
-        translation.
+        assignment and hope to graduate soon and continue with the back-end part
+        of the course.
       </Paragraph>
 
       <Paragraph>
-        <Accent>I'm looking for an opportunity to gain</Accent> real work
-        experience and broaden my front-end skills in a junior developer role,
-        while in the spare time finishing the back-end course.
+        What I love about programming is that it allows for{" "}
+        <Accent>creativity</Accent> and logical thinking at the same time. The
+        result is visual and - if done well - appealing to the eye. An anspect I
+        miss in translation.
       </Paragraph>
 
       <Paragraph>
-        <Accent>What I can offer you is</Accent> endless curiosity, eagerness to
-        learn and love of creating and problem solving. I hope to hear from you
-        soon!
+        I'm looking for an opportunity to gain experience and broaden my
+        front-end skills in a junior <Accent>developer role</Accent>, while in
+        the spare time finishing the back-end curriculum.
+      </Paragraph>
+
+      <Paragraph>
+        If you are looking for someone with endless <Accent>curiosity</Accent>,
+        eagerness to learn and love of creating and problem solving, please let
+        me know.
       </Paragraph>
     </Wrapper>
   );

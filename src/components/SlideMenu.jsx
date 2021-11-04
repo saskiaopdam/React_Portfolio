@@ -3,59 +3,66 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import {
-  AiOutlineHome,
   AiOutlineGithub,
+  AiOutlineInbox,
   AiOutlineLinkedin,
-  AiOutlineMail,
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillMail,
 } from "react-icons/ai";
 
 const Wrapper = styled.nav`
-  // position: absolute;
   position: fixed;
   top: 58px;
   left: -100%;
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  background: ${({ open }) => (open ? "hotpink" : "indigo")};
+  background: ${({ open }) => (open ? "royalblue" : "white")};
   transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0%)")};
-  // transform: ${({ open }) =>
-    open ? "translateX(-100%)" : "translateX(0%)"};
 
-  transition: transform 1s ease, background 1s ease;
+  transition: transform 0.7s ease, background 0.7s ease;
   @media (min-width: 500px) {
     display: none;
   }
-  // z-index: 0;
 `;
 
 const StyledLink = styled(NavLink)`
   display: flex;
   text-decoration: none;
   justify-content: flex-end;
-  // z-index: 10;
   &:hover {
-    font-weight: bold;
-    transform: translate(-2px, -2px);
+    transform: translateX(-5px);
   }
 
   &.selected {
-    font-weight: bold;
     pointer-events: none;
     text-decoration: underline;
   }
 
   color: white;
   font-size: 20px;
-  padding: 10px;
+  padding-top: 12px;
   & + & {
-    padding-top: 16px;
+    padding-top: 32px;
   }
+`;
+
+const AnchorLink = styled.a`
+  display: flex;
+  text-decoration: none;
+  justify-content: flex-end;
+  &:hover {
+    transform: translateX(-5px);
+  }
+
+  &.selected {
+    pointer-events: none;
+    text-decoration: underline;
+  }
+
+  color: white;
+  font-size: 20px;
+  padding-top: 32px;
 `;
 
 function SlideMenu({ open, setOpen, toggleMenu }) {
@@ -67,9 +74,28 @@ function SlideMenu({ open, setOpen, toggleMenu }) {
       <StyledLink to="/work" className="mobile" activeClassName="selected">
         work
       </StyledLink>
-      <StyledLink to="/contact" className="mobile" activeClassName="selected">
-        contact
-      </StyledLink>
+
+      <AnchorLink
+        href="mailto:opdamsaskia@icloud.com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <AiOutlineInbox />
+      </AnchorLink>
+      <AnchorLink
+        href="https://www.linkedin.com/in/saskiaopdam/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <AiOutlineLinkedin />
+      </AnchorLink>
+      <AnchorLink
+        href="https://github.com/saskiaopdam"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <AiOutlineGithub />
+      </AnchorLink>
     </Wrapper>
   );
 }
