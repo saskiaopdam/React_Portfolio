@@ -34,10 +34,10 @@ const StyledLink = styled(NavLink)`
     transform: translateX(-5px);
   }
 
-  &.selected {
-    pointer-events: none;
-    text-decoration: underline;
-  }
+  // &.selected {
+  //   pointer-events: none;
+  //   text-decoration: underline;
+  // }
 
   color: white;
   font-size: 20px;

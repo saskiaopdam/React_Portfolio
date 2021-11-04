@@ -53,10 +53,10 @@ const StyledNavLink = styled(NavLink)`
   color: white;
   padding: 20px;
 
-  &.selected {
-    pointer-events: none;
-    text-decoration: underline;
-  }
+  // &.selected {
+  //   pointer-events: none;
+  //   text-decoration: underline;
+  // }
 `;
 
 function NavBar({ open, setOpen, toggleMenu }) {
