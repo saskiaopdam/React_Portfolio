@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import moviefilter from "../../assets/winc-projects/movie-filter.png";
+import TDD from "../../assets/winc-projects/TDD.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -29,6 +29,7 @@ const Image = styled.img`
   width: 100%;
   max-width: 460px;
   display: block;
+  margin-bottom: 16px;
 `;
 
 const Heading = styled.p`
@@ -39,34 +40,25 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Moviefilter_Details() {
+function TDD() {
   return (
     <Wrapper>
-      <AnchorLink
-        href="https://practical-sinoussi-a17cb3.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <AnchorLabel>
-          <Hovereffect>site online</Hovereffect> {">"}
-        </AnchorLabel>
-        <Image src={moviefilter} alt="screenshot of moviefilter project" />
-      </AnchorLink>
+      <Image src={TDD} alt="screenshot of TDD project" />
 
       <Heading>date:</Heading>
-      <Paragraph>june 2021</Paragraph>
+      <Paragraph>august 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>HTML, CSS, JavaScript</Paragraph>
+      <Paragraph>TDD testing</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Apply array methods like .filter() and display data by adding elements
-        to the DOM.
+        Writing tests to check if functions perform as expected, taking into
+        account multiple environment factors.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_4_Movie_Filter"
+        href="https://github.com/saskiaopdam/Winc_Assignment_6_TDD_testing"
         target="_blank"
         rel="noreferrer"
       >
@@ -78,4 +70,4 @@ function Moviefilter_Details() {
   );
 }
 
-export default Moviefilter_Details;
+export default TDD;

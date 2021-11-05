@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import portfolio from "../../assets/coding-projects/portfolio.png";
+import todolist from "../../assets/winc-projects/todo-list.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -29,7 +29,6 @@ const Image = styled.img`
   width: 100%;
   max-width: 460px;
   display: block;
-  margin-bottom: 16px;
 `;
 
 const Heading = styled.p`
@@ -40,25 +39,34 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Portfolio_Details() {
+function Todolist() {
   return (
     <Wrapper>
-      <Image src={portfolio} alt="screenshot of portfolio project" />
+      <AnchorLink
+        href="https://objective-banach-2a5a85.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <AnchorLabel>
+          <Hovereffect>site online</Hovereffect> {">"}
+        </AnchorLabel>
+        <Image src={todolist} alt="screenshot of todolist project" />
+      </AnchorLink>
 
       <Heading>date:</Heading>
-      <Paragraph>november 2021</Paragraph>
+      <Paragraph>august 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>react</Paragraph>
+      <Paragraph>HTML, CSS, JavaScript</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Single Page portfolio app to demonstrate acquired skills and show
-        projects.
+        Fetching data from an API, gaining understanding of asynchronous
+        javascript. Implementing error handling.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/React_Portfolio"
+        href="https://github.com/saskiaopdam/Winc_Academy_5_To_Do_List"
         target="_blank"
         rel="noreferrer"
       >
@@ -70,4 +78,4 @@ function Portfolio_Details() {
   );
 }
 
-export default Portfolio_Details;
+export default Todolist;

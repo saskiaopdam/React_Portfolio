@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import dashboard from "../../assets/winc-projects/student-dashboard.png";
+import playlist from "../../assets/winc-projects/playlist.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -40,34 +40,34 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Dashboard_Details() {
+function Playlist() {
   return (
     <Wrapper>
       <AnchorLink
-        href="https://unruffled-kowalevski-7b0717.netlify.app"
+        href="https://lucid-kowalevski-bfd17f.netlify.app"
         target="_blank"
         rel="noreferrer"
       >
         <AnchorLabel>
           <Hovereffect>site online</Hovereffect> {">"}
         </AnchorLabel>
-        <Image src={dashboard} alt="screenshot of dashboard project" />
+        <Image src={playlist} alt="screenshot of playlist project" />
       </AnchorLink>
 
       <Heading>date:</Heading>
-      <Paragraph>just started (final front-end assignment)</Paragraph>
+      <Paragraph>september 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>react</Paragraph>
+      <Paragraph>react/redux</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Present data from a Google Sheet in a chart using a JavaScript framework
-        such as React.
+        Single Page application to save favorite songs with a rating, using
+        Redux for state management.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_8_Student_Dashboard"
+        href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
         target="_blank"
         rel="noreferrer"
       >
@@ -79,4 +79,4 @@ function Dashboard_Details() {
   );
 }
 
-export default Dashboard_Details;
+export default Playlist;

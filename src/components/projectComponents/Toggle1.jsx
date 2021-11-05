@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import toggle2 from "../../assets/coding-projects/toggle2.png";
+import toggle1 from "../../assets/winc-projects/toggle1.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -25,7 +25,6 @@ const Hovereffect = styled.span`
     text-decoration: underline;
   }
 `;
-
 const Image = styled.img`
   width: 100%;
   max-width: 460px;
@@ -40,33 +39,33 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Toggle2_Details() {
+function Toggle1() {
   return (
     <Wrapper>
       <AnchorLink
-        href="https://suspicious-johnson-c894da.netlify.app"
+        href="https://affectionate-haibt-22ebd8.netlify.app"
         target="_blank"
         rel="noreferrer"
       >
         <AnchorLabel>
           <Hovereffect>site online</Hovereffect> {">"}
         </AnchorLabel>
-        <Image src={toggle2} alt="screenshot of toggle2 project" />
+        <Image src={toggle1} alt="screenshot of toggle1 project" />
       </AnchorLink>
 
       <Heading>date:</Heading>
-      <Paragraph>june 2021</Paragraph>
+      <Paragraph>april 2021</Paragraph>
 
       <Heading>stack:</Heading>
       <Paragraph>HTML, CSS, JavaScript</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        A new version of the Winc Academy colour toggle project.
+        Add interactivity to a website by adding eventlisteners.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Colour_Toggle_Design"
+        href="https://github.com/saskiaopdam/Winc_Assignment_3_Colour_Toggle"
         target="_blank"
         rel="noreferrer"
       >
@@ -78,4 +77,4 @@ function Toggle2_Details() {
   );
 }
 
-export default Toggle2_Details;
+export default Toggle1;

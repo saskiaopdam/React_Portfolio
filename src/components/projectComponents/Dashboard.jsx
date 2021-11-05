@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import TDD from "../../assets/winc-projects/TDD.png";
+import dashboard from "../../assets/winc-projects/student-dashboard.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -25,11 +25,11 @@ const Hovereffect = styled.span`
     text-decoration: underline;
   }
 `;
+
 const Image = styled.img`
   width: 100%;
   max-width: 460px;
   display: block;
-  margin-bottom: 16px;
 `;
 
 const Heading = styled.p`
@@ -40,25 +40,34 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function TDD_Details() {
+function Dashboard() {
   return (
     <Wrapper>
-      <Image src={TDD} alt="screenshot of TDD project" />
+      <AnchorLink
+        href="https://unruffled-kowalevski-7b0717.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <AnchorLabel>
+          <Hovereffect>site online</Hovereffect> {">"}
+        </AnchorLabel>
+        <Image src={dashboard} alt="screenshot of dashboard project" />
+      </AnchorLink>
 
       <Heading>date:</Heading>
-      <Paragraph>august 2021</Paragraph>
+      <Paragraph>just started (final front-end assignment)</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>TDD testing</Paragraph>
+      <Paragraph>react</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Writing tests to check if functions perform as expected, taking into
-        account multiple environment factors.
+        Present data from a Google Sheet in a chart using a JavaScript framework
+        such as React.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_6_TDD_testing"
+        href="https://github.com/saskiaopdam/Winc_Assignment_8_Student_Dashboard"
         target="_blank"
         rel="noreferrer"
       >
@@ -70,4 +79,4 @@ function TDD_Details() {
   );
 }
 
-export default TDD_Details;
+export default Dashboard;

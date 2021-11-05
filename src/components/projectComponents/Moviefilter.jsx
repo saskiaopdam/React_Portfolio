@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import playlist from "../../assets/winc-projects/playlist.png";
+import moviefilter from "../../assets/winc-projects/movie-filter.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -25,7 +25,6 @@ const Hovereffect = styled.span`
     text-decoration: underline;
   }
 `;
-
 const Image = styled.img`
   width: 100%;
   max-width: 460px;
@@ -40,34 +39,34 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Playlist_Details() {
+function Moviefilter() {
   return (
     <Wrapper>
       <AnchorLink
-        href="https://lucid-kowalevski-bfd17f.netlify.app"
+        href="https://practical-sinoussi-a17cb3.netlify.app"
         target="_blank"
         rel="noreferrer"
       >
         <AnchorLabel>
           <Hovereffect>site online</Hovereffect> {">"}
         </AnchorLabel>
-        <Image src={playlist} alt="screenshot of playlist project" />
+        <Image src={moviefilter} alt="screenshot of moviefilter project" />
       </AnchorLink>
 
       <Heading>date:</Heading>
-      <Paragraph>september 2021</Paragraph>
+      <Paragraph>june 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>react/redux</Paragraph>
+      <Paragraph>HTML, CSS, JavaScript</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Single Page application to save favorite songs with a rating, using
-        Redux for state management.
+        Apply array methods like .filter() and display data by adding elements
+        to the DOM.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
+        href="https://github.com/saskiaopdam/Winc_Assignment_4_Movie_Filter"
         target="_blank"
         rel="noreferrer"
       >
@@ -79,4 +78,4 @@ function Playlist_Details() {
   );
 }
 
-export default Playlist_Details;
+export default Moviefilter;

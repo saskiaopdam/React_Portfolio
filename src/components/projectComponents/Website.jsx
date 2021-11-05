@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import testimonial from "../../assets/winc-projects/testimonial.png";
+import website from "../../assets/winc-projects/website.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -39,34 +39,34 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Testimonial_Details() {
+function Website() {
   return (
     <Wrapper>
       <AnchorLink
-        href="https://amazing-cori-c6ed26.netlify.app"
+        href="https://vibrant-bohr-d9a9ff.netlify.app"
         target="_blank"
         rel="noreferrer"
       >
         <AnchorLabel>
           <Hovereffect>site online</Hovereffect> {">"}
         </AnchorLabel>
-        <Image src={testimonial} alt="screenshot of testimonial project" />
+        <Image src={website} alt="screenshot of website project" />
       </AnchorLink>
 
       <Heading>date:</Heading>
       <Paragraph>april 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>HTML, CSS, SCSS (level 1)</Paragraph>
+      <Paragraph>HTML, CSS</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Code to design, applying Sass and BEM principle. Position the image
-        correctly.
+        Make a website using a mobile-first approach and use flexbox or grid for
+        positioning.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_2A_Testimonial"
+        href="https://github.com/saskiaopdam/Winc_Assignment_1_Website"
         target="_blank"
         rel="noreferrer"
       >
@@ -78,4 +78,4 @@ function Testimonial_Details() {
   );
 }
 
-export default Testimonial_Details;
+export default Website;

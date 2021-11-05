@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import portfoliogrid from "../../assets/winc-projects/portfolio-grid.png";
+import portfolio from "../../assets/coding-projects/portfolio.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -29,6 +29,7 @@ const Image = styled.img`
   width: 100%;
   max-width: 460px;
   display: block;
+  margin-bottom: 16px;
 `;
 
 const Heading = styled.p`
@@ -39,34 +40,25 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Portfolio_Grid_Details() {
+function Portfolio() {
   return (
     <Wrapper>
-      <AnchorLink
-        href="https://upbeat-goodall-bb4ec2.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <AnchorLabel>
-          <Hovereffect>site online</Hovereffect> {">"}
-        </AnchorLabel>
-        <Image src={portfoliogrid} alt="screenshot of portfoliogrid project" />
-      </AnchorLink>
+      <Image src={portfolio} alt="screenshot of portfolio project" />
 
       <Heading>date:</Heading>
-      <Paragraph>april 2021</Paragraph>
+      <Paragraph>november 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>HTML, CSS, SCSS (level 2)</Paragraph>
+      <Paragraph>react</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Code to design, applying Sass and BEM principle. Create hover effect on
-        the image and make responsive grid.
+        Single Page portfolio app to demonstrate acquired skills and show
+        projects.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_2B_Portfolio_Grid"
+        href="https://github.com/saskiaopdam/React_Portfolio"
         target="_blank"
         rel="noreferrer"
       >
@@ -78,4 +70,4 @@ function Portfolio_Grid_Details() {
   );
 }
 
-export default Portfolio_Grid_Details;
+export default Portfolio;

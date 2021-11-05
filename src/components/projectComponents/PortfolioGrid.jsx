@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import todolist from "../../assets/winc-projects/todo-list.png";
+import portfoliogrid from "../../assets/winc-projects/portfolio-grid.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -39,34 +39,34 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Todolist_Details() {
+function PortfolioGrid() {
   return (
     <Wrapper>
       <AnchorLink
-        href="https://objective-banach-2a5a85.netlify.app"
+        href="https://upbeat-goodall-bb4ec2.netlify.app"
         target="_blank"
         rel="noreferrer"
       >
         <AnchorLabel>
           <Hovereffect>site online</Hovereffect> {">"}
         </AnchorLabel>
-        <Image src={todolist} alt="screenshot of todolist project" />
+        <Image src={portfoliogrid} alt="screenshot of portfoliogrid project" />
       </AnchorLink>
 
       <Heading>date:</Heading>
-      <Paragraph>august 2021</Paragraph>
+      <Paragraph>april 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>HTML, CSS, JavaScript</Paragraph>
+      <Paragraph>HTML, CSS, SCSS (level 2)</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Fetching data from an API, gaining understanding of asynchronous
-        javascript. Implementing error handling.
+        Code to design, applying Sass and BEM principle. Create hover effect on
+        the image and make responsive grid.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Academy_5_To_Do_List"
+        href="https://github.com/saskiaopdam/Winc_Assignment_2B_Portfolio_Grid"
         target="_blank"
         rel="noreferrer"
       >
@@ -78,4 +78,4 @@ function Todolist_Details() {
   );
 }
 
-export default Todolist_Details;
+export default PortfolioGrid;

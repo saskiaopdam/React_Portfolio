@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import website from "../../assets/winc-projects/website.png";
+import toggle2 from "../../assets/coding-projects/toggle2.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -25,6 +25,7 @@ const Hovereffect = styled.span`
     text-decoration: underline;
   }
 `;
+
 const Image = styled.img`
   width: 100%;
   max-width: 460px;
@@ -39,34 +40,33 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Website_Details() {
+function Toggle2() {
   return (
     <Wrapper>
       <AnchorLink
-        href="https://vibrant-bohr-d9a9ff.netlify.app"
+        href="https://suspicious-johnson-c894da.netlify.app"
         target="_blank"
         rel="noreferrer"
       >
         <AnchorLabel>
           <Hovereffect>site online</Hovereffect> {">"}
         </AnchorLabel>
-        <Image src={website} alt="screenshot of website project" />
+        <Image src={toggle2} alt="screenshot of toggle2 project" />
       </AnchorLink>
 
       <Heading>date:</Heading>
-      <Paragraph>april 2021</Paragraph>
+      <Paragraph>june 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>HTML, CSS</Paragraph>
+      <Paragraph>HTML, CSS, JavaScript</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Make a website using a mobile-first approach and use flexbox or grid for
-        positioning.
+        A new version of the Winc Academy colour toggle project.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_1_Website"
+        href="https://github.com/saskiaopdam/Colour_Toggle_Design"
         target="_blank"
         rel="noreferrer"
       >
@@ -78,4 +78,4 @@ function Website_Details() {
   );
 }
 
-export default Website_Details;
+export default Toggle2;

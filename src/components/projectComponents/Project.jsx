@@ -1,18 +1,18 @@
 import styled from "styled-components/macro";
 
-import Portfolio_Details from "./Portfolio_Details";
-import Toggle2_Details from "./Toggle2_Details";
+import Portfolio from "./Portfolio";
+import Toggle2_Details from "./Toggle2";
 
-import Dashboard_Details from "./Dashboard_Details";
-import Playlist_Details from "./Playlist_Details";
-import TDD_Details from "./TDD_Details";
-import Todolist_Details from "./Todolist_Details";
-import Moviefilter_Details from "./Moviefilter_Details";
-import Toggle1_Details from "./Toggle1_Details";
-import Mediabuttons_Details from "./Mediabuttons_Details";
-import Portfolio_Grid_Details from "./Portfolio_Grid_Details";
-import Testimonial_Details from "./Testimonial_Details";
-import Website_Details from "./Website_Details";
+import Dashboard from "./Dashboard";
+import Playlist from "./Playlist";
+import TDD from "./TDD";
+import Todolist from "./Todolist";
+import Moviefilter from "./Moviefilter";
+import Toggle1 from "./Toggle1";
+import Mediabuttons from "./Mediabuttons";
+import PortfolioGrid from "./PortfolioGrid";
+import Testimonial from "./Testimonial";
+import Website from "./Website";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -31,29 +31,29 @@ function Project({ match }) {
     <Wrapper>
       <Title>{match.params.id}</Title>
       {id === "portfolio" ? (
-        <Portfolio_Details />
+        <Portfolio />
       ) : id === "toggle2" ? (
-        <Toggle2_Details />
+        <Toggle2 />
       ) : id === "dashboard" ? (
-        <Dashboard_Details />
+        <Dashboard />
       ) : id === "playlist" ? (
-        <Playlist_Details />
+        <Playlist />
       ) : id === "TDD" ? (
-        <TDD_Details />
+        <TDD />
       ) : id === "todo-list" ? (
-        <Todolist_Details />
+        <Todolist />
       ) : id === "movie-filter" ? (
-        <Moviefilter_Details />
+        <Moviefilter />
       ) : id === "toggle1" ? (
-        <Toggle1_Details />
+        <Toggle1 />
       ) : id === "media-buttons" ? (
-        <Mediabuttons_Details />
+        <Mediabuttons />
       ) : id === "portfolio-grid" ? (
-        <Portfolio_Grid_Details />
+        <Portfolio />
       ) : id === "testimonial" ? (
-        <Testimonial_Details />
+        <Testimonial />
       ) : id === "website" ? (
-        <Website_Details />
+        <Website />
       ) : (
         "null"
       )}

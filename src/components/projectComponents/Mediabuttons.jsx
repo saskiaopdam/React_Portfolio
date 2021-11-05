@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import toggle1 from "../../assets/winc-projects/toggle1.png";
+import mediabuttons from "../../assets/winc-projects/media-buttons.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -25,6 +25,7 @@ const Hovereffect = styled.span`
     text-decoration: underline;
   }
 `;
+
 const Image = styled.img`
   width: 100%;
   max-width: 460px;
@@ -39,33 +40,34 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Toggle1_Details() {
+function Mediabuttons() {
   return (
     <Wrapper>
       <AnchorLink
-        href="https://affectionate-haibt-22ebd8.netlify.app"
+        href="https://pensive-ptolemy-d5c4c6.netlify.app"
         target="_blank"
         rel="noreferrer"
       >
         <AnchorLabel>
           <Hovereffect>site online</Hovereffect> {">"}
         </AnchorLabel>
-        <Image src={toggle1} alt="screenshot of toggle1 project" />
+        <Image src={mediabuttons} alt="screenshot of mediabuttons project" />
       </AnchorLink>
 
       <Heading>date:</Heading>
       <Paragraph>april 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>HTML, CSS, JavaScript</Paragraph>
+      <Paragraph>HTML, CSS, SCSS (level 3)</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Add interactivity to a website by adding eventlisteners.
+        Code to design, applying Sass and BEM principle. Challenge: transition
+        on hover, adding icons.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_3_Colour_Toggle"
+        href="https://github.com/saskiaopdam/Winc_Assignment_2C_Social_Media_Buttons"
         target="_blank"
         rel="noreferrer"
       >
@@ -77,4 +79,4 @@ function Toggle1_Details() {
   );
 }
 
-export default Toggle1_Details;
+export default Mediabuttons;

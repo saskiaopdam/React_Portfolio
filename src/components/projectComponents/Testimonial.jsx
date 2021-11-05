@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import mediabuttons from "../../assets/winc-projects/media-buttons.png";
+import testimonial from "../../assets/winc-projects/testimonial.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -25,7 +25,6 @@ const Hovereffect = styled.span`
     text-decoration: underline;
   }
 `;
-
 const Image = styled.img`
   width: 100%;
   max-width: 460px;
@@ -40,34 +39,34 @@ const Paragraph = styled.p`
   margin-bottom: 16px;
 `;
 
-function Mediabuttons_Details() {
+function Testimonial() {
   return (
     <Wrapper>
       <AnchorLink
-        href="https://pensive-ptolemy-d5c4c6.netlify.app"
+        href="https://amazing-cori-c6ed26.netlify.app"
         target="_blank"
         rel="noreferrer"
       >
         <AnchorLabel>
           <Hovereffect>site online</Hovereffect> {">"}
         </AnchorLabel>
-        <Image src={mediabuttons} alt="screenshot of mediabuttons project" />
+        <Image src={testimonial} alt="screenshot of testimonial project" />
       </AnchorLink>
 
       <Heading>date:</Heading>
       <Paragraph>april 2021</Paragraph>
 
       <Heading>stack:</Heading>
-      <Paragraph>HTML, CSS, SCSS (level 3)</Paragraph>
+      <Paragraph>HTML, CSS, SCSS (level 1)</Paragraph>
 
       <Heading>description:</Heading>
       <Paragraph>
-        Code to design, applying Sass and BEM principle. Challenge: transition
-        on hover, adding icons.
+        Code to design, applying Sass and BEM principle. Position the image
+        correctly.
       </Paragraph>
 
       <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_2C_Social_Media_Buttons"
+        href="https://github.com/saskiaopdam/Winc_Assignment_2A_Testimonial"
         target="_blank"
         rel="noreferrer"
       >
@@ -79,4 +78,4 @@ function Mediabuttons_Details() {
   );
 }
 
-export default Mediabuttons_Details;
+export default Testimonial;
