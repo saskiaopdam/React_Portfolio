@@ -49,7 +49,7 @@ function Project({ match }) {
       ) : id === "media-buttons" ? (
         <Mediabuttons />
       ) : id === "portfolio-grid" ? (
-        <Portfolio />
+        <PortfolioGrid />
       ) : id === "testimonial" ? (
         <Testimonial />
       ) : id === "website" ? (

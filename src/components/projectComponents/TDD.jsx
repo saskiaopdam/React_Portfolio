@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import TDD from "../../assets/winc-projects/TDD.png";
+import tdd from "../../assets/winc-projects/tdd.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -43,7 +43,7 @@ const Paragraph = styled.p`
 function TDD() {
   return (
     <Wrapper>
-      <Image src={TDD} alt="screenshot of TDD project" />
+      <Image src={tdd} alt="screenshot of TDD project" />
 
       <Heading>date:</Heading>
       <Paragraph>august 2021</Paragraph>
