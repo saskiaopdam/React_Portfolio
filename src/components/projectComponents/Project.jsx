@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 import Portfolio from "./Portfolio";
-import Toggle2_Details from "./Toggle2";
+import Toggle2 from "./Toggle2";
 
 import Dashboard from "./Dashboard";
 import Playlist from "./Playlist";
