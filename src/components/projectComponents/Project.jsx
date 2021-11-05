@@ -21,7 +21,9 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 12px;
 `;
 
 function Project({ match }) {
@@ -29,6 +31,7 @@ function Project({ match }) {
   console.log(id);
   return (
     <Wrapper>
+      <p>project details</p>
       <Title>{match.params.id}</Title>
       {id === "portfolio" ? (
         <Portfolio />

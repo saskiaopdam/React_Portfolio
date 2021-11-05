@@ -1,23 +1,25 @@
 import styled from "styled-components/macro";
 
-import playlist from "../../assets/winc-projects/playlist.png";
-
 const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 `;
 
+const Links = styled.div`
+  display: flex;
+`;
+
 const AnchorLink = styled.a`
   text-decoration: none;
-  background: white;
-  color: black;
-  margin-bottom: 16px;
+  padding: 8px 0 16px 0;
+  & + & {
+    margin-left: 32px;
+  }
 `;
 
 const AnchorLabel = styled.p`
   color: royalblue;
-  margin-bottom: 16px;
 `;
 
 const Hovereffect = styled.span`
@@ -26,10 +28,11 @@ const Hovereffect = styled.span`
   }
 `;
 
-const Image = styled.img`
+const Iframe = styled.iframe`
   width: 100%;
   max-width: 460px;
-  display: block;
+  border: none;
+  margin-bottom: 16px;
 `;
 
 const Heading = styled.p`
@@ -37,22 +40,41 @@ const Heading = styled.p`
 `;
 
 const Paragraph = styled.p`
+  width: 100%;
+  max-width: 460px;
   margin-bottom: 16px;
 `;
 
 function Playlist() {
   return (
     <Wrapper>
-      <AnchorLink
-        href="https://lucid-kowalevski-bfd17f.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <AnchorLabel>
-          <Hovereffect>site online</Hovereffect> {">"}
-        </AnchorLabel>
-        <Image src={playlist} alt="screenshot of playlist project" />
-      </AnchorLink>
+      <Links>
+        <AnchorLink
+          href="https://lucid-kowalevski-bfd17f.netlify.app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <AnchorLabel>
+            <Hovereffect>site online</Hovereffect> {">"}
+          </AnchorLabel>
+        </AnchorLink>
+
+        <AnchorLink
+          href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <AnchorLabel>
+            <Hovereffect>code online</Hovereffect> {">"}
+          </AnchorLabel>
+        </AnchorLink>
+      </Links>
+
+      <Iframe
+        width="600"
+        height="400"
+        src="https://lucid-kowalevski-bfd17f.netlify.app"
+      ></Iframe>
 
       <Heading>date:</Heading>
       <Paragraph>september 2021</Paragraph>
@@ -65,16 +87,6 @@ function Playlist() {
         Single Page application to save favorite songs with a rating, using
         Redux for state management.
       </Paragraph>
-
-      <AnchorLink
-        href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <AnchorLabel>
-          <Hovereffect>code online</Hovereffect> {">"}
-        </AnchorLabel>
-      </AnchorLink>
     </Wrapper>
   );
 }
