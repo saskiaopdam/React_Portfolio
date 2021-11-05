@@ -14,7 +14,7 @@ import moviefilter from "../assets/winc-projects/movie-filter.png";
 import playlist from "../assets/winc-projects/playlist.png";
 import portfoliogrid from "../assets/winc-projects/portfolio-grid.png";
 import mediabuttons from "../assets/winc-projects/media-buttons.png";
-import tdd from "../assets/winc-projects/tdd.png";
+// import tdd from "../assets/winc-projects/tdd.png";
 import testimonial from "../assets/winc-projects/testimonial.png";
 import todolist from "../assets/winc-projects/todo-list.png";
 
@@ -89,7 +89,7 @@ function Work() {
       </ImageRouteLink>
 
       <ImageRouteLink to="/work/TDD">
-        <Image src={tdd} alt="screenshot of TDD project" />
+        {/* <Image src={tdd} alt="screenshot of TDD project" /> */}
       </ImageRouteLink>
 
       <ImageRouteLink to="/work/todo-list">
