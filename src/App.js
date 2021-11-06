@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Hashrouter as Router, Route } from "react-router-dom";
 import { useState } from "react";
 
 import styled from "styled-components/macro";
