@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 
+import lemons from "../assets/photo-projects/lemons.jpg";
+
 const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
@@ -39,6 +41,49 @@ const Accent = styled.span`
 
 const Anchor = styled.a`
   color: black;
+`;
+
+const ImageAnchorLink = styled.a`
+  text-decoration: none;
+  background: white;
+  color: black;
+  // padding-top: 16px;
+  margin-bottom: 32px;
+  @media (min-width: 500px) {
+    text-align: center;
+  }
+`;
+
+const Heading = styled.h3`
+  font-size: 18px;
+  margin-bottom: 9px;
+  @media (min-width: 500px) {
+    text-align: center;
+  }
+`;
+
+const ImageAnchorLabel = styled.p`
+  color: royalblue;
+  margin-bottom: 16px;
+  @media (min-width: 500px) {
+    text-align: center;
+  }
+`;
+
+const Hovereffect = styled.span`
+  &:hover {
+    font-weight: bold;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  margin: 16px 0;
+  @media (min-width: 768px) {
+    margin: 16px auto;
+  }
 `;
 
 function About() {
@@ -91,6 +136,18 @@ function About() {
         eagerness to learn and love of creating and problem solving, please let
         me know.
       </Paragraph>
+      <Heading>photo projects</Heading>
+
+      <ImageAnchorLink
+        href="https://www.behance.net/opdamsaski0505"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <ImageAnchorLabel>
+          <Hovereffect>overview</Hovereffect> {">"}
+        </ImageAnchorLabel>
+        <Image src={lemons} alt="screenshot of lemons project" />
+      </ImageAnchorLink>
     </Wrapper>
   );
 }

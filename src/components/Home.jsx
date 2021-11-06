@@ -7,30 +7,28 @@ import {
   AiOutlineLinkedin,
 } from "react-icons/ai";
 
-import toggle2 from "../assets/coding-projects/toggle2.png";
-import lemons from "../assets/photo-projects/lemons.jpg";
-import portraitDark from "../assets/portrait-photos/portraitDark.jpg";
 import portrait from "../assets/portrait.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  @media (min-width: 1000px) {
+    justify-content: center;
+  }
 `;
 
 const Title = styled.h1`
   margin-bottom: 16px;
-  // background: pink;
-  @media (min-width: 500px) {
+  @media (min-width: 768px) {
     align-self: center;
   }
 `;
 
 const Subtitle = styled.h2`
-  margin-bottom: 12px;
-  // background: pink;
+  font-size: 18px;
   color: darkgray;
-  @media (min-width: 500px) {
+  @media (min-width: 768px) {
     align-self: center;
   }
 `;
@@ -39,24 +37,27 @@ const Image = styled.img`
   width: 100%;
   max-width: 480px;
   display: block;
-  margin: 16px auto;
+  margin: 16px 0;
+  @media (min-width: 768px) {
+    margin: 16px auto;
+  }
 `;
 
 const Links = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 500px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     align-self: center;
   }
 `;
 
 const StyledLink = styled(Link)`
-  margin-bottom: 16px;
-  // background: pink;
+  margin-bottom: 8px;
   color: black;
   text-decoration: none;
-  @media (min-width: 500px) {
+  @media (min-width: 768px) {
+    margin-bottom: 0;
     & + & {
       margin-left: 32px;
     }
@@ -66,65 +67,6 @@ const StyledLink = styled(Link)`
 const Hovereffect = styled.span`
   &:hover {
     font-weight: bold;
-  }
-`;
-
-const Figure = styled.figure`
-  background: yellow;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 1000px) {
-    flex-direction: row;
-  }
-`;
-
-const Text = styled.div`
-  width: 100%;
-  max-width: 480px;
-  // display: block;
-  margin: 0 auto;
-  background: green;
-  @media (min-width: 1000px) {
-    height: 640.312px;
-    margin: 32px auto;
-  }
-`;
-
-// const ImageRouteLink = styled(Link)`
-//   text-decoration: none;
-//   background: white;
-//   color: black;
-//   margin-bottom: 32px;
-//   @media (min-width: 500px) {
-//     text-align: center;
-//   }
-// `;
-
-const ImageAnchorLink = styled.a`
-  text-decoration: none;
-  background: white;
-  color: black;
-  // padding-top: 16px;
-  margin-bottom: 32px;
-  @media (min-width: 500px) {
-    text-align: center;
-  }
-`;
-
-const Heading = styled.h3`
-  font-size: 18px;
-  margin-bottom: 9px;
-  @media (min-width: 500px) {
-    text-align: center;
-  }
-`;
-
-const ImageAnchorLabel = styled.p`
-  color: royalblue;
-  margin-bottom: 16px;
-  @media (min-width: 500px) {
-    text-align: center;
   }
 `;
 
@@ -189,52 +131,7 @@ function Home() {
         </StyledLink>
       </Links>
 
-      {/* <Heading>coding projects</Heading>
-
-      <ImageRouteLink to="/work">
-        <ImageAnchorLabel>
-          <Hovereffect>overview</Hovereffect> {">"}
-        </ImageAnchorLabel>
-        <Image src={toggle2} alt="screenshot of toggle2 project" />
-      </ImageRouteLink>
-
-      <Heading>photo projects</Heading>
-
-      <ImageAnchorLink
-        href="https://www.behance.net/opdamsaski0505"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <ImageAnchorLabel>
-          <Hovereffect>overview</Hovereffect> {">"}
-        </ImageAnchorLabel>
-        <Image src={lemons} alt="screenshot of lemons project" />
-      </ImageAnchorLink> */}
-
-      {/* <Heading>me</Heading> */}
-      {/* <ImageRouteLink to="/about"> */}
-      {/* <ImageAnchorLabel>
-          <Hovereffect>info</Hovereffect> {">"}
-        </ImageAnchorLabel> */}
-      {/* <Figure> */}
-      {/* <Link to="/about">
-          <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-        </Link>
-        <Link to="/about">
-          <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-        </Link> */}
-      {/* <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-        <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-        <Image src={portrait} alt="portrait photo of Saskia Opdam" /> */}
-      {/* <Image src={portrait} alt="portrait photo of Saskia Opdam" /> */}
-      {/* <Image src={portraitDark} alt="portrait photo of Saskia Opdam" /> */}
-      {/* <Text>Text</Text> */}
-      {/* </Figure> */}
-      {/* </ImageRouteLink> */}
-
-      {/* <Heading>contact</Heading>
-
-      <Social>
+      {/* <Social>
         <IconAnchorLink href="mailto:opdamsaskia@icloud.com">
           <Icon>
             <AiOutlineInbox />
@@ -254,7 +151,7 @@ function Home() {
           <IconAnchorLabel>
             <Hovereffect>connect</Hovereffect>
           </IconAnchorLabel>
-        </IconAnchorLink>{" "}
+        </IconAnchorLink>
         <IconAnchorLink
           href="https://github.com/saskiaopdam"
           target="_blank"
