@@ -50,7 +50,7 @@ function Dashboard() {
     <Wrapper>
       <Links>
         <AnchorLink
-          href="https://student-dashboard-wa.netlify.app"
+          href="https://dashboard-wa.netlify.app"
           target="_blank"
           rel="noreferrer"
         >
@@ -73,7 +73,7 @@ function Dashboard() {
       <Iframe
         width="600"
         height="400"
-        src="https://student-dashboard-wa.netlify.app"
+        src="https://dashboard-wa.netlify.app"
       ></Iframe>
 
       <Heading>date:</Heading>

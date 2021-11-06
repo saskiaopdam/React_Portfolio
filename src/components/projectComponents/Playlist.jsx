@@ -50,7 +50,7 @@ function Playlist() {
     <Wrapper>
       <Links>
         <AnchorLink
-          href="https://lucid-kowalevski-bfd17f.netlify.app"
+          href="https://playlist-wa.netlify.app"
           target="_blank"
           rel="noreferrer"
         >
@@ -73,7 +73,7 @@ function Playlist() {
       <Iframe
         width="600"
         height="400"
-        src="https://lucid-kowalevski-bfd17f.netlify.app"
+        src="https://playlist-wa.netlify.app"
       ></Iframe>
 
       <Heading>date:</Heading>

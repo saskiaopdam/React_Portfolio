@@ -50,7 +50,7 @@ function Moviefilter() {
     <Wrapper>
       <Links>
         <AnchorLink
-          href="https://moviefilter.netlify.app"
+          href="https://moviefilter-wa.netlify.app"
           target="_blank"
           rel="noreferrer"
         >
@@ -73,7 +73,7 @@ function Moviefilter() {
       <Iframe
         width="600"
         height="400"
-        src="https://moviefilter.netlify.app"
+        src="https://moviefilter-wa.netlify.app"
       ></Iframe>
 
       <Heading>date:</Heading>

@@ -10,6 +10,7 @@ import {
 import toggle2 from "../assets/coding-projects/toggle2.png";
 import lemons from "../assets/photo-projects/lemons.jpg";
 import portraitDark from "../assets/portrait-photos/portraitDark.jpg";
+import portrait from "../assets/portrait.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -18,38 +19,63 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  margin-top: 32px;
-  margin-bottom: 32px;
+  // margin-top: 32px;
+  margin-bottom: 16px;
   @media (min-width: 500px) {
-    text-align: center;
+    align-self: center;
   }
 `;
 
 const Subtitle = styled.h2`
-  margin-bottom: 52px;
+  margin-bottom: 12px;
   color: darkgray;
   @media (min-width: 500px) {
-    text-align: center;
+    align-self: center;
   }
 `;
 
-const Heading = styled.h3`
-  font-size: 18px;
-  margin-bottom: 9px;
-  @media (min-width: 500px) {
-    text-align: center;
+const Figure = styled.figure`
+  background: yellow;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1000px) {
+    flex-direction: row;
   }
 `;
 
-const ImageRouteLink = styled(Link)`
-  text-decoration: none;
-  background: white;
-  color: black;
-  margin-bottom: 32px;
-  @media (min-width: 500px) {
-    text-align: center;
+const Image = styled.img`
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  margin: 0 auto;
+  // @media (min-width: 1000px) {
+  //   margin: 32px auto;
+  //   height: 640.312px;
+  // }
+`;
+
+const Text = styled.div`
+  width: 100%;
+  max-width: 480px;
+  // display: block;
+  margin: 0 auto;
+  background: green;
+  @media (min-width: 1000px) {
+    height: 640.312px;
+    margin: 32px auto;
   }
 `;
+
+// const ImageRouteLink = styled(Link)`
+//   text-decoration: none;
+//   background: white;
+//   color: black;
+//   margin-bottom: 32px;
+//   @media (min-width: 500px) {
+//     text-align: center;
+//   }
+// `;
 
 const ImageAnchorLink = styled.a`
   text-decoration: none;
@@ -62,11 +88,12 @@ const ImageAnchorLink = styled.a`
   }
 `;
 
-const Image = styled.img`
-  width: 100%;
-  max-width: 460px;
-  display: block;
-  margin: 0 auto;
+const Heading = styled.h3`
+  font-size: 18px;
+  margin-bottom: 9px;
+  @media (min-width: 500px) {
+    text-align: center;
+  }
 `;
 
 const ImageAnchorLabel = styled.p`
@@ -132,8 +159,9 @@ function Home() {
       <Subtitle>
         HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
       </Subtitle>
+      <Image src={portrait} alt="portrait photo of Saskia Opdam" />
 
-      <Heading>coding projects</Heading>
+      {/* <Heading>coding projects</Heading>
 
       <ImageRouteLink to="/work">
         <ImageAnchorLabel>
@@ -153,17 +181,30 @@ function Home() {
           <Hovereffect>overview</Hovereffect> {">"}
         </ImageAnchorLabel>
         <Image src={lemons} alt="screenshot of lemons project" />
-      </ImageAnchorLink>
+      </ImageAnchorLink> */}
 
-      <Heading>me</Heading>
-      <ImageRouteLink to="/about">
-        <ImageAnchorLabel>
+      {/* <Heading>me</Heading> */}
+      {/* <ImageRouteLink to="/about"> */}
+      {/* <ImageAnchorLabel>
           <Hovereffect>info</Hovereffect> {">"}
-        </ImageAnchorLabel>
+        </ImageAnchorLabel> */}
+      {/* <Figure> */}
+      {/* <Link to="/about">
+          <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
+        </Link>
+        <Link to="/about">
+          <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
+        </Link> */}
+      {/* <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
         <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-      </ImageRouteLink>
+        <Image src={portrait} alt="portrait photo of Saskia Opdam" /> */}
+      {/* <Image src={portrait} alt="portrait photo of Saskia Opdam" /> */}
+      {/* <Image src={portraitDark} alt="portrait photo of Saskia Opdam" /> */}
+      {/* <Text>Text</Text> */}
+      {/* </Figure> */}
+      {/* </ImageRouteLink> */}
 
-      <Heading>contact</Heading>
+      {/* <Heading>contact</Heading>
 
       <Social>
         <IconAnchorLink href="mailto:opdamsaskia@icloud.com">
@@ -198,7 +239,7 @@ function Home() {
             <Hovereffect>GitHub</Hovereffect>
           </IconAnchorLabel>
         </IconAnchorLink>
-      </Social>
+      </Social> */}
     </Wrapper>
   );
 }

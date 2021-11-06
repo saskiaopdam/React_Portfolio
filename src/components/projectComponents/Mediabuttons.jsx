@@ -50,7 +50,7 @@ function Mediabuttons() {
     <Wrapper>
       <Links>
         <AnchorLink
-          href="https://mediabuttons.netlify.app"
+          href="https://mediabuttons-wa.netlify.app"
           target="_blank"
           rel="noreferrer"
         >
@@ -73,7 +73,7 @@ function Mediabuttons() {
       <Iframe
         width="600"
         height="400"
-        src="https://mediabuttons.netlify.app"
+        src="https://mediabuttons-wa.netlify.app"
       ></Iframe>
 
       <Heading>date:</Heading>

@@ -36,6 +36,7 @@ const Footer = styled.footer`
   flex-shrink: 0;
   background: black;
   color: white;
+  // padding: 20px;
 `;
 
 const Copyright = styled.small`
