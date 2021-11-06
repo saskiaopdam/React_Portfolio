@@ -27,7 +27,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   font-size: 18px;
-  color: darkgray;
+  opacity: 0.5;
   @media (min-width: 768px) {
     align-self: center;
   }
