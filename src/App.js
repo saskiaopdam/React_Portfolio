@@ -22,8 +22,8 @@ const Header = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  background: black;
-  color: white;
+  // background: white;
+  // color: royalblue;
 `;
 
 const Main = styled.main`
