@@ -92,7 +92,6 @@ const IconAnchorLink = styled.a`
   & + & {
     margin-top: 24px;
   }
-
   @media (min-width: 500px) {
     margin-bottom: 0;
     & + & {

@@ -22,8 +22,6 @@ const Header = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  // background: white;
-  // color: royalblue;
 `;
 
 const Main = styled.main`
@@ -36,7 +34,6 @@ const Footer = styled.footer`
   flex-shrink: 0;
   background: black;
   color: white;
-  // padding: 20px;
 `;
 
 const Copyright = styled.small`
