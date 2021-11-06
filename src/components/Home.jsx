@@ -19,8 +19,8 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  // margin-top: 32px;
   margin-bottom: 16px;
+  // background: pink;
   @media (min-width: 500px) {
     align-self: center;
   }
@@ -28,9 +28,44 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   margin-bottom: 12px;
+  // background: pink;
   color: darkgray;
   @media (min-width: 500px) {
     align-self: center;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  margin: 16px auto;
+`;
+
+const Links = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 500px) {
+    flex-direction: row;
+    align-self: center;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  margin-bottom: 16px;
+  // background: pink;
+  color: black;
+  text-decoration: none;
+  @media (min-width: 500px) {
+    & + & {
+      margin-left: 32px;
+    }
+  }
+`;
+
+const Hovereffect = styled.span`
+  &:hover {
+    font-weight: bold;
   }
 `;
 
@@ -42,17 +77,6 @@ const Figure = styled.figure`
   @media (min-width: 1000px) {
     flex-direction: row;
   }
-`;
-
-const Image = styled.img`
-  width: 100%;
-  max-width: 480px;
-  display: block;
-  margin: 0 auto;
-  // @media (min-width: 1000px) {
-  //   margin: 32px auto;
-  //   height: 640.312px;
-  // }
 `;
 
 const Text = styled.div`
@@ -101,12 +125,6 @@ const ImageAnchorLabel = styled.p`
   margin-bottom: 16px;
   @media (min-width: 500px) {
     text-align: center;
-  }
-`;
-
-const Hovereffect = styled.span`
-  &:hover {
-    text-decoration: underline;
   }
 `;
 
@@ -159,7 +177,17 @@ function Home() {
       <Subtitle>
         HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
       </Subtitle>
-      <Image src={portrait} alt="portrait photo of Saskia Opdam" />
+      <Link to="/about">
+        <Image src={portrait} alt="portrait photo of Saskia Opdam" />
+      </Link>
+      <Links>
+        <StyledLink to="/work">
+          {">"} <Hovereffect>work</Hovereffect>
+        </StyledLink>
+        <StyledLink to="/about">
+          {">"} <Hovereffect>about</Hovereffect>
+        </StyledLink>
+      </Links>
 
       {/* <Heading>coding projects</Heading>
 
