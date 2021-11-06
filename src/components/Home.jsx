@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  @media (min-width: 1000px) {
+  @media (min-width: 768px) {
     justify-content: center;
   }
 `;
