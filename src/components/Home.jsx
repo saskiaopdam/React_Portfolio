@@ -21,6 +21,9 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   margin-bottom: 16px;
+  // @media (min-width: 500px) {
+  //   text-align: center;
+  // }
 `;
 
 const Subtitle = styled.h2`
@@ -29,11 +32,17 @@ const Subtitle = styled.h2`
   color: rgba(0, 0, 0, 0.5);
 `;
 
+const FigureWrapper = styled.div`
+  margin-top: 20px;
+`;
+
 const Figure = styled.figure`
   position: relative;
   background: whitesmoke;
   width: 100%;
-  margin-top: 20px;
+  & + & {
+    margin-top: 20px;
+  }
 `;
 
 const Image = styled.img`
@@ -41,13 +50,9 @@ const Image = styled.img`
   max-width: 480px;
   display: block;
   &.middle {
-    @media (min-width: 1000px) {
+    @media (min-width: 500px) {
       margin: 0 0 0 auto;
     }
-    @media (min-width: 1000px) {
-      // transform: translate(40px, -60px);
-    }
-  }
 `;
 
 const Text = styled.div`
@@ -59,7 +64,6 @@ const Text = styled.div`
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.8);
-  // opacity: 0;
   opacity: ${({
     codingProjectsClicked,
     photoProjectsClicked,
@@ -111,56 +115,61 @@ function Home() {
       <Subtitle>
         HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
       </Subtitle>
-
-      <Figure>
-        <Image src={toggle2} alt="screenshot of toggle2 project" />
-        <Text
-          id="coding-projects"
-          onClick={handleClick}
-          visible={visible}
-          codingProjectsClicked={codingProjectsClicked}
-        >
-          <StyledLink to="/work">
-            <Heading>coding projects</Heading>
-          </StyledLink>
-        </Text>
-      </Figure>
-
-      <Figure>
-        <Image
-          src={lemons}
-          alt="screenshot of lemons project"
-          className="middle"
-        />
-        <Text
-          id="photo-projects"
-          onClick={handleClick}
-          visible={visible}
-          photoProjectsClicked={photoProjectsClicked}
-        >
-          <AnchorLink
-            href="https://www.behance.net/opdamsaski0505"
-            target="_blank"
-            rel="noreferrer"
+      <FigureWrapper>
+        <Figure>
+          <Image
+            src={toggle2}
+            alt="screenshot of toggle2 project"
+            className="top"
+          />
+          <Text
+            id="coding-projects"
+            onClick={handleClick}
+            visible={visible}
+            codingProjectsClicked={codingProjectsClicked}
           >
-            <Heading>photo projects</Heading>
-          </AnchorLink>
-        </Text>
-      </Figure>
+            <StyledLink to="/work">
+              <Heading>coding projects</Heading>
+            </StyledLink>
+          </Text>
+        </Figure>
 
-      <Figure>
-        <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-        <Text
-          id="switching-careers"
-          onClick={handleClick}
-          visible={visible}
-          switchingCareersClicked={switchingCareersClicked}
-        >
-          <StyledLink to="/about">
-            <Heading>switching careers</Heading>
-          </StyledLink>
-        </Text>
-      </Figure>
+        <Figure>
+          <Image
+            src={lemons}
+            alt="screenshot of lemons project"
+            className="middle"
+          />
+          <Text
+            id="photo-projects"
+            onClick={handleClick}
+            visible={visible}
+            photoProjectsClicked={photoProjectsClicked}
+          >
+            <AnchorLink
+              href="https://www.behance.net/opdamsaski0505"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Heading>photo projects</Heading>
+            </AnchorLink>
+          </Text>
+        </Figure>
+
+        <Figure>
+          <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
+          <Text
+            id="switching-careers"
+            onClick={handleClick}
+            visible={visible}
+            switchingCareersClicked={switchingCareersClicked}
+          >
+            <StyledLink to="/about">
+              <Heading>switching careers</Heading>
+            </StyledLink>
+          </Text>
+        </Figure>
+      </FigureWrapper>
 
       {/* <Social>
         <IconAnchorLink href="mailto:opdamsaskia@icloud.com">

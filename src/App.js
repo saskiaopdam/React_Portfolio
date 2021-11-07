@@ -28,7 +28,7 @@ const Header = styled.header`
 const Main = styled.main`
   flex-grow: 1;
   display: flex;
-  margin-top: 58px;
+  margin-top: 61px;
 `;
 
 const Footer = styled.footer`
