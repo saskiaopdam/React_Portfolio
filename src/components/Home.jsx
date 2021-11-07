@@ -21,46 +21,33 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   margin-bottom: 16px;
-  @media (min-width: 500px) {
-    text-align: center;
-  }
 `;
 
 const Subtitle = styled.h2`
   font-size: 18px;
   margin-bottom: 9px;
   color: rgba(0, 0, 0, 0.5);
-  @media (min-width: 500px) {
-    text-align: center;
-  }
 `;
 
 const Figure = styled.figure`
   position: relative;
+  background: whitesmoke;
   width: 100%;
-  max-width: 480px;
   margin-top: 20px;
-  @media (min-width: 500px) {
-    margin: 20px auto 0;
-  }
-  &.top {
-    @media (min-width: 500px) {
-    }
-  }
-  &.middle {
-    @media (min-width: 500px) {
-    }
-  }
-  &.bottom {
-    @media (min-width: 500px) {
-    }
-  }
-  // background: green;
 `;
 
 const Image = styled.img`
   width: 100%;
+  max-width: 480px;
   display: block;
+  &.middle {
+    @media (min-width: 1000px) {
+      margin: 0 0 0 auto;
+    }
+    @media (min-width: 1000px) {
+      // transform: translate(40px, -60px);
+    }
+  }
 `;
 
 const Text = styled.div`
@@ -125,7 +112,7 @@ function Home() {
         HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
       </Subtitle>
 
-      <Figure className="top">
+      <Figure>
         <Image src={toggle2} alt="screenshot of toggle2 project" />
         <Text
           id="coding-projects"
@@ -139,8 +126,12 @@ function Home() {
         </Text>
       </Figure>
 
-      <Figure className="middle">
-        <Image src={lemons} alt="screenshot of lemons project" />
+      <Figure>
+        <Image
+          src={lemons}
+          alt="screenshot of lemons project"
+          className="middle"
+        />
         <Text
           id="photo-projects"
           onClick={handleClick}
@@ -157,7 +148,7 @@ function Home() {
         </Text>
       </Figure>
 
-      <Figure className="bottom">
+      <Figure>
         <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
         <Text
           id="switching-careers"
