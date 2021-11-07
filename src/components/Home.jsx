@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
@@ -51,6 +53,7 @@ const Figure = styled.figure`
       left: 120px;
     }
   }
+  background: green;
 `;
 
 const Image = styled.img`
@@ -58,7 +61,7 @@ const Image = styled.img`
   display: block;
 `;
 
-const Heading = styled.h3`
+const Text = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -66,34 +69,31 @@ const Heading = styled.h3`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  font-weight: 400;
-  opacity: 0;
+  background: blue;
+  // background: rgba(0, 0, 0, 0.8);
+  opacity: ${({ visible }) => (visible ? "1" : "0")};
   transition: opacity 250ms linear;
   &:hover {
     opacity: 1;
   }
 `;
-// const Heading = styled.h3`
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   bottom: 0;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   background: rgba(0, 0, 0, 0.8);
-//   color: white;
-//   font-weight: 400;
-//   opacity: 0;
-//   transition: opacity 250ms linear;
-//   &:hover {
-//     opacity: 1;
-//   }
-// `;
+const StyledLink = styled(Link)`
+  color: white;
+`;
+
+const Heading = styled.h3`
+  font-size: 54px;
+  font-weight: 400;
+`;
 
 function Home() {
+  const [visible, setVisible] = useState(false);
+  // const [clicked, setClicked] = useState(false);
+
+  const showHeading = () => {
+    // setClicked(true);
+    setVisible(!visible);
+  };
   return (
     <Wrapper>
       <Title>junior front-end developer learning full-stack</Title>
@@ -103,9 +103,12 @@ function Home() {
 
       <Figure className="left">
         <Image src={toggle2} alt="screenshot of toggle2 project" />
-        <Link to="/work">
-          <Heading>coding projects</Heading>
-        </Link>
+
+        <Text onClick={showHeading} visible={visible}>
+          <StyledLink to="/work">
+            <Heading>coding projects</Heading>
+          </StyledLink>
+        </Text>
       </Figure>
 
       <Figure className="right">
