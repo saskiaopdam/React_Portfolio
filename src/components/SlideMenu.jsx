@@ -17,6 +17,7 @@ const Wrapper = styled.nav`
   padding: 20px;
   display: flex;
   flex-direction: column;
+  z-index: 1;
   background: ${({ open }) => (open ? "royalblue" : "white")};
   transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0%)")};
 

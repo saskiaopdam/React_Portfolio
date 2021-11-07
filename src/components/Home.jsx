@@ -9,21 +9,20 @@ import {
   AiOutlineLinkedin,
 } from "react-icons/ai";
 
-import portraitDark from "../assets/portraitDark.jpg";
-import lemons from "../assets/photo-projects/lemons.jpg";
 import toggle2 from "../assets/coding-projects/toggle2.png";
+import lemons from "../assets/photo-projects/lemons.jpg";
+import portraitDark from "../assets/portraitDark.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  z-index: 0;
 `;
 
 const Title = styled.h1`
   margin-bottom: 16px;
-  @media (min-width: 768px) {
-    align-self: center;
+  @media (min-width: 500px) {
+    text-align: center;
   }
 `;
 
@@ -31,29 +30,32 @@ const Subtitle = styled.h2`
   font-size: 18px;
   margin-bottom: 9px;
   color: rgba(0, 0, 0, 0.5);
-  @media (min-width: 768px) {
-    align-self: center;
+  @media (min-width: 500px) {
+    text-align: center;
   }
 `;
 
 const Figure = styled.figure`
   position: relative;
+  width: 100%;
   max-width: 480px;
   margin-top: 20px;
-  @media (min-width: 768px) {
-    align-self: center;
+  @media (min-width: 500px) {
+    margin: 20px auto 0;
   }
-  &.left {
-    @media (min-width: 768px) {
-      left: -120px;
+  &.top {
+    @media (min-width: 500px) {
     }
   }
-  &.right {
-    @media (min-width: 768px) {
-      left: 120px;
+  &.middle {
+    @media (min-width: 500px) {
     }
   }
-  background: green;
+  &.bottom {
+    @media (min-width: 500px) {
+    }
+  }
+  // background: green;
 `;
 
 const Image = styled.img`
@@ -69,9 +71,21 @@ const Text = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: blue;
-  // background: rgba(0, 0, 0, 0.8);
-  opacity: ${({ visible }) => (visible ? "1" : "0")};
+  background: rgba(0, 0, 0, 0.8);
+  // opacity: 0;
+  opacity: ${({
+    codingProjectsClicked,
+    photoProjectsClicked,
+    switchingCareersClicked,
+    visible,
+  }) =>
+    codingProjectsClicked && visible
+      ? "1"
+      : photoProjectsClicked && visible
+      ? "1"
+      : switchingCareersClicked && visible
+      ? "1"
+      : "0"};
   transition: opacity 250ms linear;
   &:hover {
     opacity: 1;
@@ -81,19 +95,29 @@ const StyledLink = styled(Link)`
   color: white;
 `;
 
+const AnchorLink = styled.a`
+  color: white;
+`;
+
 const Heading = styled.h3`
-  font-size: 54px;
+  font-size: 48px;
   font-weight: 400;
 `;
 
 function Home() {
+  const [id, setId] = useState("");
   const [visible, setVisible] = useState(false);
-  // const [clicked, setClicked] = useState(false);
 
-  const showHeading = () => {
-    // setClicked(true);
+  const handleClick = (event) => {
+    setId(event.target.id);
     setVisible(!visible);
+    console.log(event.target.id);
   };
+
+  const codingProjectsClicked = id === "coding-projects";
+  const photoProjectsClicked = id === "photo-projects";
+  const switchingCareersClicked = id === "switching-careers";
+
   return (
     <Wrapper>
       <Title>junior front-end developer learning full-stack</Title>
@@ -101,32 +125,50 @@ function Home() {
         HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
       </Subtitle>
 
-      <Figure className="left">
+      <Figure className="top">
         <Image src={toggle2} alt="screenshot of toggle2 project" />
-
-        <Text onClick={showHeading} visible={visible}>
+        <Text
+          id="coding-projects"
+          onClick={handleClick}
+          visible={visible}
+          codingProjectsClicked={codingProjectsClicked}
+        >
           <StyledLink to="/work">
             <Heading>coding projects</Heading>
           </StyledLink>
         </Text>
       </Figure>
 
-      <Figure className="right">
+      <Figure className="middle">
         <Image src={lemons} alt="screenshot of lemons project" />
-        <a
-          href="https://www.behance.net/opdamsaski0505"
-          target="_blank"
-          rel="noreferrer"
+        <Text
+          id="photo-projects"
+          onClick={handleClick}
+          visible={visible}
+          photoProjectsClicked={photoProjectsClicked}
         >
-          <Heading>photo projects</Heading>
-        </a>
+          <AnchorLink
+            href="https://www.behance.net/opdamsaski0505"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Heading>photo projects</Heading>
+          </AnchorLink>
+        </Text>
       </Figure>
 
-      <Figure className="left">
+      <Figure className="bottom">
         <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-        <Link to="/about">
-          <Heading>switching careers</Heading>
-        </Link>
+        <Text
+          id="switching-careers"
+          onClick={handleClick}
+          visible={visible}
+          switchingCareersClicked={switchingCareersClicked}
+        >
+          <StyledLink to="/about">
+            <Heading>switching careers</Heading>
+          </StyledLink>
+        </Text>
       </Figure>
 
       {/* <Social>
