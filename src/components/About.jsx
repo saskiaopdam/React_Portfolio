@@ -6,8 +6,6 @@ const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
 `;
 
 const Title = styled.h1`
@@ -56,7 +54,9 @@ const Image = styled.img`
 function About() {
   return (
     <Wrapper>
-      <Title>about me</Title>
+      <h1>About</h1>
+      <p>I'm working on this page</p>
+      {/* <Title>about me</Title>
       <Summary>
         <H2>experienced freelance translator</H2>
         <H2>switching careers to development</H2>
@@ -103,6 +103,7 @@ function About() {
         eagerness to learn and love of creating and problem solving, please let
         me know.
       </Paragraph>
+       */}
       <Image src={portraitLight} alt="portrait photo of Saskia Opdam" />
     </Wrapper>
   );
