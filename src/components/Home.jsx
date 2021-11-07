@@ -36,8 +36,8 @@ const Subtitle = styled.h2`
 
 const Figure = styled.figure`
   position: relative;
-  margin-top: 20px;
   max-width: 480px;
+  margin-top: 20px;
   @media (min-width: 768px) {
     align-self: center;
   }
@@ -59,9 +59,10 @@ const Image = styled.img`
 `;
 
 const Heading = styled.h3`
-  position: relative;
-  bottom: 100%;
+  position: absolute;
+  width: 100%;
   height: 100%;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
