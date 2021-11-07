@@ -1,12 +1,13 @@
 import styled from "styled-components/macro";
 
-import lemons from "../assets/photo-projects/lemons.jpg";
+import portraitLight from "../assets/portraitLight.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 const Title = styled.h1`
@@ -32,7 +33,7 @@ const H2 = styled.h2`
 const Paragraph = styled.p`
   margin-bottom: 16px;
   line-height: 1.25;
-  max-width: 500px;
+  // max-width: 500px;
 `;
 
 const Accent = styled.span`
@@ -43,12 +44,13 @@ const Anchor = styled.a`
   color: black;
 `;
 
-const Heading = styled.h3`
-  font-size: 18px;
-  margin-bottom: 9px;
-  @media (min-width: 500px) {
-    text-align: center;
-  }
+const Image = styled.img`
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  display: block;
 `;
 
 function About() {
@@ -101,7 +103,7 @@ function About() {
         eagerness to learn and love of creating and problem solving, please let
         me know.
       </Paragraph>
-      <Heading>photo projects</Heading>
+      <Image src={portraitLight} alt="portrait photo of Saskia Opdam" />
     </Wrapper>
   );
 }

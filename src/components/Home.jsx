@@ -7,7 +7,7 @@ import {
   AiOutlineLinkedin,
 } from "react-icons/ai";
 
-import portrait from "../assets/portrait.jpg";
+import portraitDark from "../assets/portraitDark.jpg";
 import lemons from "../assets/photo-projects/lemons.jpg";
 import toggle2 from "../assets/coding-projects/toggle2.png";
 
@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  z-index: 0;
 `;
 
 const Title = styled.h1`
@@ -34,7 +35,7 @@ const Subtitle = styled.h2`
 `;
 
 const Figure = styled.figure`
-  position: relative;
+  // position: relative;
   max-width: 480px;
   margin-top: 20px;
   @media (min-width: 768px) {
@@ -58,10 +59,10 @@ const Image = styled.img`
 `;
 
 const Heading = styled.h3`
-  position: absolute;
+  position: relative;
+  bottom: 100%;
   width: 100%;
   height: 100%;
-  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,6 +75,23 @@ const Heading = styled.h3`
     opacity: 1;
   }
 `;
+// const Heading = styled.h3`
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   bottom: 0;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background: rgba(0, 0, 0, 0.8);
+//   color: white;
+//   font-weight: 400;
+//   opacity: 0;
+//   transition: opacity 250ms linear;
+//   &:hover {
+//     opacity: 1;
+//   }
+// `;
 
 function Home() {
   return (
@@ -102,7 +120,7 @@ function Home() {
       </Figure>
 
       <Figure className="left">
-        <Image src={portrait} alt="portrait photo of Saskia Opdam" />
+        <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
         <Link to="/about">
           <Heading>switching careers</Heading>
         </Link>
