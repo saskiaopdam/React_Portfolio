@@ -8,14 +8,13 @@ import {
 } from "react-icons/ai";
 
 import portrait from "../assets/portrait.jpg";
+import lemons from "../assets/photo-projects/lemons.jpg";
+import toggle2 from "../assets/coding-projects/toggle2.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
-    justify-content: center;
-  }
 `;
 
 const Title = styled.h1`
@@ -27,88 +26,53 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   font-size: 18px;
+  margin-bottom: 9px;
   color: rgba(0, 0, 0, 0.5);
   @media (min-width: 768px) {
     align-self: center;
   }
 `;
 
-const Image = styled.img`
-  width: 100%;
+const Figure = styled.figure`
+  position: relative;
   max-width: 480px;
-  display: block;
-  margin: 16px 0;
+  margin-top: 20px;
   @media (min-width: 768px) {
-    margin: 16px auto;
-  }
-`;
-
-const Links = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 768px) {
-    flex-direction: row;
     align-self: center;
   }
-`;
-
-const StyledLink = styled(Link)`
-  margin-bottom: 8px;
-  color: black;
-  text-decoration: none;
-  @media (min-width: 768px) {
-    margin-bottom: 0;
-    & + & {
-      margin-left: 32px;
+  &.left {
+    @media (min-width: 768px) {
+      left: -120px;
+    }
+  }
+  &.right {
+    @media (min-width: 768px) {
+      left: 120px;
     }
   }
 `;
 
-const Hovereffect = styled.span`
-  &:hover {
-    font-weight: bold;
-  }
+const Image = styled.img`
+  width: 100%;
+  display: block;
 `;
 
-const Social = styled.div`
-  padding: 12px 0;
-  background: white;
+const Heading = styled.h3`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
   display: flex;
-  flex-direction: column;
-  @media (min-width: 500px) {
-    flex-direction: row;
-    justify-content: center;
-  }
-`;
-
-const IconAnchorLink = styled.a`
-  text-decoration: none;
-  background: white;
-  color: black;
-  display: flex;
+  justify-content: center;
   align-items: center;
-  // flex-direction: column;
-  font-size: 24px;
-  & + & {
-    margin-top: 24px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 250ms linear;
+  &:hover {
+    opacity: 1;
   }
-  @media (min-width: 500px) {
-    margin-bottom: 0;
-    & + & {
-      margin-top: 0;
-      margin-left: 36px;
-    }
-  }
-`;
-
-const Icon = styled.div`
-  height: 24px;
-  color: royalblue;
-`;
-
-const IconAnchorLabel = styled.p`
-  font-size: 14px;
-  margin-left: 4px;
 `;
 
 function Home() {
@@ -118,17 +82,31 @@ function Home() {
       <Subtitle>
         HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
       </Subtitle>
-      <Link to="/about">
+
+      <Figure className="left">
+        <Image src={toggle2} alt="screenshot of toggle2 project" />
+        <Link to="/work">
+          <Heading>coding projects</Heading>
+        </Link>
+      </Figure>
+
+      <Figure className="right">
+        <Image src={lemons} alt="screenshot of lemons project" />
+        <a
+          href="https://www.behance.net/opdamsaski0505"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Heading>photo projects</Heading>
+        </a>
+      </Figure>
+
+      <Figure className="left">
         <Image src={portrait} alt="portrait photo of Saskia Opdam" />
-      </Link>
-      <Links>
-        <StyledLink to="/work">
-          {">"} <Hovereffect>work</Hovereffect>
-        </StyledLink>
-        <StyledLink to="/about">
-          {">"} <Hovereffect>about</Hovereffect>
-        </StyledLink>
-      </Links>
+        <Link to="/about">
+          <Heading>switching careers</Heading>
+        </Link>
+      </Figure>
 
       {/* <Social>
         <IconAnchorLink href="mailto:opdamsaskia@icloud.com">
