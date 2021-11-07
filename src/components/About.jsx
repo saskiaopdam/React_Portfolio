@@ -43,12 +43,9 @@ const Anchor = styled.a`
 `;
 
 const Image = styled.img`
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
   width: 100%;
   max-width: 480px;
-  display: block;
+  margin: 0 auto;
 `;
 
 function About() {
