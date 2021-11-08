@@ -15,50 +15,49 @@ import portraitDark from "../assets/portraitDark.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Title = styled.h1`
   margin-bottom: 16px;
-  // @media (min-width: 600px) {
-  //   text-align: center;
-  // }
+  @media (min-width: 400px) {
+    text-align: center;
+  }
 `;
 
 const Subtitle = styled.h2`
   font-size: 18px;
   margin-bottom: 9px;
   color: rgba(0, 0, 0, 0.5);
-  // @media (min-width: 600px) {
-  //   text-align: center;
-  // }
+  @media (min-width: 400px) {
+    text-align: center;
+  }
 `;
 
 const FigureWrapper = styled.div`
-  margin-top: 20px;
+  margin-top: 40px;
   background: whitesmoke;
 `;
 
 const Figure = styled.figure`
   position: relative;
+
   & + & {
     margin-top: 20px;
   }
-  // &.middle {
-  //   margin: 20px 0 0 auto;
-  // }
+  &.middle {
+    margin: 20px 0 0 auto;
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
+  max-width: 400px;
   display: block;
+  margin: 0 auto;
   &.middle {
-    margin: 0 0 0 auto;
-  }
-  @media (min-width: 600px) {
-    width: 50%;
-  }
-  @media (min-width: 1000px) {
-    width: 40%;
   }
 `;
 
@@ -87,18 +86,6 @@ const Text = styled.div`
   transition: opacity 250ms linear;
   &:hover {
     opacity: 1;
-  }
-  @media (min-width: 600px) {
-    width: 50%;
-    right: 0;
-    opacity: 1;
-    background: rebeccapurple;
-    &.middle {
-      left: 0;
-    }
-  }
-  @media (min-width: 1000px) {
-    width: 60%;
   }
 `;
 const StyledLink = styled(Link)`
