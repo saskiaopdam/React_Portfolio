@@ -15,13 +15,11 @@ import portraitDark from "../assets/portraitDark.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
 `;
 
 const Title = styled.h1`
   margin-bottom: 16px;
-  // @media (min-width: 500px) {
+  // @media (min-width: 600px) {
   //   text-align: center;
   // }
 `;
@@ -30,29 +28,38 @@ const Subtitle = styled.h2`
   font-size: 18px;
   margin-bottom: 9px;
   color: rgba(0, 0, 0, 0.5);
+  // @media (min-width: 600px) {
+  //   text-align: center;
+  // }
 `;
 
 const FigureWrapper = styled.div`
   margin-top: 20px;
+  background: whitesmoke;
 `;
 
 const Figure = styled.figure`
   position: relative;
-  background: whitesmoke;
-  width: 100%;
   & + & {
     margin-top: 20px;
   }
+  // &.middle {
+  //   margin: 20px 0 0 auto;
+  // }
 `;
 
 const Image = styled.img`
   width: 100%;
-  max-width: 480px;
   display: block;
   &.middle {
-    @media (min-width: 500px) {
-      margin: 0 0 0 auto;
-    }
+    margin: 0 0 0 auto;
+  }
+  @media (min-width: 600px) {
+    width: 50%;
+  }
+  @media (min-width: 1000px) {
+    width: 40%;
+  }
 `;
 
 const Text = styled.div`
@@ -81,6 +88,18 @@ const Text = styled.div`
   &:hover {
     opacity: 1;
   }
+  @media (min-width: 600px) {
+    width: 50%;
+    right: 0;
+    opacity: 1;
+    background: rebeccapurple;
+    &.middle {
+      left: 0;
+    }
+  }
+  @media (min-width: 1000px) {
+    width: 60%;
+  }
 `;
 const StyledLink = styled(Link)`
   color: white;
@@ -91,8 +110,9 @@ const AnchorLink = styled.a`
 `;
 
 const Heading = styled.h3`
-  font-size: 48px;
+  font-size: 24px;
   font-weight: 400;
+  text-align: center;
 `;
 
 function Home() {
@@ -117,11 +137,7 @@ function Home() {
       </Subtitle>
       <FigureWrapper>
         <Figure>
-          <Image
-            src={toggle2}
-            alt="screenshot of toggle2 project"
-            className="top"
-          />
+          <Image src={toggle2} alt="screenshot of toggle2 project" />
           <Text
             id="coding-projects"
             onClick={handleClick}
@@ -133,8 +149,7 @@ function Home() {
             </StyledLink>
           </Text>
         </Figure>
-
-        <Figure>
+        <Figure className="middle">
           <Image
             src={lemons}
             alt="screenshot of lemons project"
@@ -145,6 +160,7 @@ function Home() {
             onClick={handleClick}
             visible={visible}
             photoProjectsClicked={photoProjectsClicked}
+            className="middle"
           >
             <AnchorLink
               href="https://www.behance.net/opdamsaski0505"
@@ -155,7 +171,6 @@ function Home() {
             </AnchorLink>
           </Text>
         </Figure>
-
         <Figure>
           <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
           <Text

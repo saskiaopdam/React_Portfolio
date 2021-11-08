@@ -45,7 +45,7 @@ const Inner = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   &.headerInner {
