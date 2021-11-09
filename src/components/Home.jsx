@@ -26,11 +26,12 @@ const Title = styled.h1`
   margin-bottom: 16px;
 `;
 
-const Subtitle = styled.p``;
+const Subtitle = styled.p`
+  font-size: 18px;
+`;
 
 const FigureWrapper = styled.div`
   margin-top: 40px;
-  background: whitesmoke;
   @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -44,49 +45,41 @@ const Figure = styled.figure`
   }
   @media (min-width: 768px) {
     width: 50%;
+    height: 50%;
     & + & {
       margin-top: 0;
     }
   }
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 50%;
   display: block;
 `;
 
 const Text = styled.div`
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
   top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.8);
-  opacity: ${({
-    codingProjectsClicked,
-    photoProjectsClicked,
-    switchingCareersClicked,
-    visible,
-  }) =>
-    codingProjectsClicked && visible
-      ? "1"
-      : photoProjectsClicked && visible
-      ? "1"
-      : switchingCareersClicked && visible
-      ? "1"
-      : "0"};
-  transition: opacity 250ms linear;
-  &:hover {
-    opacity: 1;
-  }
+  // background: rgba(0, 0, 0, 0.8);
+  // &:hover {
+  //   opacity: 0.5;
+  // }
   &.nonClick {
     background: mediumvioletred;
     opacity: 1;
     &:hover {
-      opacity: 0.8;
+      opacity: 0.5;
     }
   }
 `;
@@ -99,7 +92,7 @@ const AnchorLink = styled.a`
 `;
 
 const Heading = styled.h3`
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 400;
   color: white;
   text-align: center;
