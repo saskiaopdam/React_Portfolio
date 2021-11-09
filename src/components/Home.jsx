@@ -17,56 +17,51 @@ const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const Title = styled.h1`
   margin-bottom: 16px;
-  @media (min-width: 400px) {
-    text-align: center;
-  }
 `;
 
-const Subtitle = styled.h2`
-  font-size: 18px;
-  margin-bottom: 9px;
-  color: rgba(0, 0, 0, 0.5);
-  @media (min-width: 400px) {
-    text-align: center;
-  }
-`;
+const Subtitle = styled.p``;
 
 const FigureWrapper = styled.div`
   margin-top: 40px;
   background: whitesmoke;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const Figure = styled.figure`
   position: relative;
-
   & + & {
     margin-top: 20px;
   }
-  &.middle {
-    margin: 20px 0 0 auto;
+  @media (min-width: 768px) {
+    width: 50%;
+    & + & {
+      margin-top: 0;
+    }
   }
 `;
 
 const Image = styled.img`
   width: 100%;
-  max-width: 400px;
   display: block;
-  margin: 0 auto;
-  &.middle {
-  }
 `;
 
 const Text = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  bottom: 0;
+  top: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.8);
@@ -87,6 +82,13 @@ const Text = styled.div`
   &:hover {
     opacity: 1;
   }
+  &.nonClick {
+    background: mediumvioletred;
+    opacity: 1;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `;
 const StyledLink = styled(Link)`
   color: white;
@@ -97,9 +99,9 @@ const AnchorLink = styled.a`
 `;
 
 const Heading = styled.h3`
-  font-size: 24px;
+  font-size: 48px;
   font-weight: 400;
-  text-align: center;
+  color: white;
 `;
 
 function Home() {
@@ -118,7 +120,7 @@ function Home() {
 
   return (
     <Wrapper>
-      <Title>junior front-end developer learning full-stack</Title>
+      <Title>Junior front-end developer learning full-stack</Title>
       <Subtitle>
         HTML | CSS | JavaScript | React | Redux | NodeJS | Python | Flask | SQL
       </Subtitle>
@@ -171,42 +173,37 @@ function Home() {
             </StyledLink>
           </Text>
         </Figure>
-      </FigureWrapper>
+        <Figure>
+          <Image
+            src={portraitDark}
+            alt="portrait photo of Saskia Opdam"
+            style={{ opacity: "0" }}
+          />
+          <Text className="nonClick">
+            <AnchorLink href="mailto:opdamsaskia@icloud.com">
+              <Heading>e-mail</Heading>
+            </AnchorLink>
 
-      {/* <Social>
-        <IconAnchorLink href="mailto:opdamsaskia@icloud.com">
-          <Icon>
-            <AiOutlineInbox />
-          </Icon>
-          <IconAnchorLabel>
-            <Hovereffect>e-mail</Hovereffect>
-          </IconAnchorLabel>
-        </IconAnchorLink>
-        <IconAnchorLink
-          href="https://www.linkedin.com/in/saskiaopdam/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon>
-            <AiOutlineLinkedin />
-          </Icon>
-          <IconAnchorLabel>
-            <Hovereffect>connect</Hovereffect>
-          </IconAnchorLabel>
-        </IconAnchorLink>
-        <IconAnchorLink
-          href="https://github.com/saskiaopdam"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon>
-            <AiOutlineGithub />
-          </Icon>
-          <IconAnchorLabel>
-            <Hovereffect>GitHub</Hovereffect>
-          </IconAnchorLabel>
-        </IconAnchorLink>
-      </Social> */}
+            {/* <AiOutlineInbox />
+            <AnchorLink
+              href="https://www.linkedin.com/in/saskiaopdam/"
+              target="_blank"
+              rel="noreferrer"
+              className="social"
+            >
+              <AiOutlineLinkedin />
+            </AnchorLink>
+            <AnchorLink
+              href="https://github.com/saskiaopdam"
+              target="_blank"
+              rel="noreferrer"
+              className="social"
+            >
+              <AiOutlineGithub />
+            </AnchorLink> */}
+          </Text>
+        </Figure>
+      </FigureWrapper>
     </Wrapper>
   );
 }

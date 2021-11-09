@@ -7,7 +7,6 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
-  background: white;
 `;
 
 const StyledLink = styled(Link)`

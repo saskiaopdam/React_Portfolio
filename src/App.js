@@ -23,6 +23,7 @@ const Header = styled.header`
   left: 0;
   right: 0;
   z-index: 1;
+  background: white;
 `;
 
 const Main = styled.main`
@@ -45,7 +46,7 @@ const Inner = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 20px;
   &.headerInner {
