@@ -99,9 +99,10 @@ const AnchorLink = styled.a`
 `;
 
 const Heading = styled.h3`
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 400;
   color: white;
+  text-align: center;
 `;
 
 function Home() {
@@ -134,7 +135,7 @@ function Home() {
             codingProjectsClicked={codingProjectsClicked}
           >
             <StyledLink to="/work">
-              <Heading>coding projects</Heading>
+              <Heading>coding</Heading>
             </StyledLink>
           </Text>
         </Figure>
@@ -156,7 +157,7 @@ function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              <Heading>photo projects</Heading>
+              <Heading>photo-editing</Heading>
             </AnchorLink>
           </Text>
         </Figure>
@@ -169,7 +170,7 @@ function Home() {
             switchingCareersClicked={switchingCareersClicked}
           >
             <StyledLink to="/about">
-              <Heading>switching careers</Heading>
+              <Heading>info</Heading>
             </StyledLink>
           </Text>
         </Figure>
@@ -181,7 +182,7 @@ function Home() {
           />
           <Text className="nonClick">
             <AnchorLink href="mailto:opdamsaskia@icloud.com">
-              <Heading>e-mail</Heading>
+              <Heading>contact</Heading>
             </AnchorLink>
 
             {/* <AiOutlineInbox />
