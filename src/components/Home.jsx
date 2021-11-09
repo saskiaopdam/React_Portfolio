@@ -175,9 +175,9 @@ function Home() {
         </Figure>
         <Figure>
           <Image
-            src={portraitDark}
-            alt="portrait photo of Saskia Opdam"
-            style={{ opacity: "0" }}
+            src={lemons}
+            alt="screenshot of lemons project"
+            style={{ visibility: "hidden" }}
           />
           <Text className="nonClick">
             <AnchorLink href="mailto:opdamsaskia@icloud.com">
