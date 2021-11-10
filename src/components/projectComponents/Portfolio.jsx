@@ -1,38 +1,20 @@
 import styled from "styled-components/macro";
 
+import portfolio from "../../assets/portfolio.png";
+
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  background: whitesmoke;
+  padding: 20px;
 `;
 
-const Links = styled.div`
-  display: flex;
-`;
-
-const AnchorLink = styled.a`
-  text-decoration: none;
-  padding: 8px 0 16px 0;
-  & + & {
-    margin-left: 32px;
-  }
-`;
-
-const AnchorLabel = styled.p`
-  color: royalblue;
-`;
-
-const Hovereffect = styled.span`
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Iframe = styled.iframe`
+const Image = styled.img`
   width: 100%;
-  max-width: 460px;
-  border: none;
-  margin-bottom: 16px;
+  display: block;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const Heading = styled.p`
@@ -40,32 +22,26 @@ const Heading = styled.p`
 `;
 
 const Paragraph = styled.p`
-  width: 100%;
-  max-width: 460px;
   margin-bottom: 16px;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+const Link = styled.a`
+  color: mediumvioletred;
+  & + & {
+    margin-left: 32px;
+  }
+  &:hover {
+    font-weight: bold;
+  }
 `;
 
 function Portfolio() {
   return (
     <Wrapper>
-      <Links>
-        <AnchorLink
-          href="https://github.com/saskiaopdam/React_Portfolio"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AnchorLabel>
-            <Hovereffect>code online</Hovereffect> {">"}
-          </AnchorLabel>
-        </AnchorLink>
-      </Links>
-
-      <Iframe
-        width="600"
-        height="400"
-        src="https://saskiaopdam.netlify.app"
-      ></Iframe>
-
+      <Image src={portfolio} alt="screenshot of portfolio project" />
       <Heading>date:</Heading>
       <Paragraph>november 2021</Paragraph>
 
@@ -77,6 +53,14 @@ function Portfolio() {
         Single Page portfolio app to demonstrate acquired skills and show
         projects.
       </Paragraph>
+
+      <Link
+        href="https://github.com/saskiaopdam/React_Portfolio"
+        target="_blank"
+        rel="noreferrer"
+      >
+        code online
+      </Link>
     </Wrapper>
   );
 }

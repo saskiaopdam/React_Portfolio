@@ -1,38 +1,20 @@
 import styled from "styled-components/macro";
 
+import toggle2 from "../../assets/toggle2.png";
+
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  background: whitesmoke;
+  padding: 20px;
 `;
 
-const Links = styled.div`
-  display: flex;
-`;
-
-const AnchorLink = styled.a`
-  text-decoration: none;
-  padding: 8px 0 16px 0;
-  & + & {
-    margin-left: 32px;
-  }
-`;
-
-const AnchorLabel = styled.p`
-  color: royalblue;
-`;
-
-const Hovereffect = styled.span`
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Iframe = styled.iframe`
+const Image = styled.img`
   width: 100%;
-  max-width: 460px;
-  border: none;
-  margin-bottom: 16px;
+  display: block;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const Heading = styled.p`
@@ -40,42 +22,26 @@ const Heading = styled.p`
 `;
 
 const Paragraph = styled.p`
-  width: 100%;
-  max-width: 460px;
   margin-bottom: 16px;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+const Link = styled.a`
+  color: mediumvioletred;
+  & + & {
+    margin-left: 32px;
+  }
+  &:hover {
+    font-weight: bold;
+  }
 `;
 
 function Toggle2() {
   return (
     <Wrapper>
-      <Links>
-        <AnchorLink
-          href="https://suspicious-johnson-c894da.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AnchorLabel>
-            <Hovereffect>site online</Hovereffect> {">"}
-          </AnchorLabel>
-        </AnchorLink>
-
-        <AnchorLink
-          href="https://github.com/saskiaopdam/Colour_Toggle_Design"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AnchorLabel>
-            <Hovereffect>code online</Hovereffect> {">"}
-          </AnchorLabel>
-        </AnchorLink>
-      </Links>
-
-      <Iframe
-        width="600"
-        height="400"
-        src="https://suspicious-johnson-c894da.netlify.app"
-      ></Iframe>
-
+      <Image src={toggle2} alt="screenshot of toggle2 project" />
       <Heading>date:</Heading>
       <Paragraph>june 2021</Paragraph>
 
@@ -86,6 +52,21 @@ function Toggle2() {
       <Paragraph>
         A new version of the Winc Academy colour toggle project.
       </Paragraph>
+
+      <Link
+        href="https://toggle2.netlify.app/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        site online
+      </Link>
+      <Link
+        href="https://github.com/saskiaopdam/Colour_Toggle_Design"
+        target="_blank"
+        rel="noreferrer"
+      >
+        code online
+      </Link>
     </Wrapper>
   );
 }

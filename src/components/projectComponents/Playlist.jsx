@@ -1,38 +1,20 @@
 import styled from "styled-components/macro";
 
+import playlist from "../../assets/playlist.png";
+
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  background: whitesmoke;
+  padding: 20px;
 `;
 
-const Links = styled.div`
-  display: flex;
-`;
-
-const AnchorLink = styled.a`
-  text-decoration: none;
-  padding: 8px 0 16px 0;
-  & + & {
-    margin-left: 32px;
-  }
-`;
-
-const AnchorLabel = styled.p`
-  color: royalblue;
-`;
-
-const Hovereffect = styled.span`
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Iframe = styled.iframe`
+const Image = styled.img`
   width: 100%;
-  max-width: 460px;
-  border: none;
-  margin-bottom: 16px;
+  display: block;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const Heading = styled.p`
@@ -40,42 +22,26 @@ const Heading = styled.p`
 `;
 
 const Paragraph = styled.p`
-  width: 100%;
-  max-width: 460px;
   margin-bottom: 16px;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+const Link = styled.a`
+  color: mediumvioletred;
+  & + & {
+    margin-left: 32px;
+  }
+  &:hover {
+    font-weight: bold;
+  }
 `;
 
 function Playlist() {
   return (
     <Wrapper>
-      <Links>
-        <AnchorLink
-          href="https://playlist-wa.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AnchorLabel>
-            <Hovereffect>site online</Hovereffect> {">"}
-          </AnchorLabel>
-        </AnchorLink>
-
-        <AnchorLink
-          href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AnchorLabel>
-            <Hovereffect>code online</Hovereffect> {">"}
-          </AnchorLabel>
-        </AnchorLink>
-      </Links>
-
-      <Iframe
-        width="600"
-        height="400"
-        src="https://playlist-wa.netlify.app"
-      ></Iframe>
-
+      <Image src={playlist} alt="screenshot of playllist project" />
       <Heading>date:</Heading>
       <Paragraph>september 2021</Paragraph>
 
@@ -87,6 +53,21 @@ function Playlist() {
         Single Page application to save favorite songs with a rating, using
         Redux for state management.
       </Paragraph>
+
+      <Link
+        href="https://playlist-wa.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+        site online
+      </Link>
+      <Link
+        href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
+        target="_blank"
+        rel="noreferrer"
+      >
+        code online
+      </Link>
     </Wrapper>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import { Link } from "react-router-dom";
+
 import styled from "styled-components/macro";
 
 import {
@@ -9,6 +9,7 @@ import {
   AiOutlineLinkedin,
 } from "react-icons/ai";
 
+// import toggle2 from "../assets/toggle2.png";
 import toggle2 from "../assets/coding-projects/toggle2.png";
 import lemons from "../assets/photo-projects/lemons.jpg";
 import portraitDark from "../assets/portraitDark.jpg";
@@ -17,9 +18,9 @@ const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
-    justify-content: center;
-  }
+  // @media (min-width: 768px) {
+  //   justify-content: center;
+  // }
 `;
 
 const Title = styled.h1`
@@ -32,24 +33,19 @@ const Subtitle = styled.p`
 
 const FigureWrapper = styled.div`
   margin-top: 40px;
-  @media (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  & + & {
+    margin-top: 0;
   }
+  background: whitesmoke;
 `;
 
 const Figure = styled.figure`
   position: relative;
-  // background: rgba(0, 0, 0, 0.8);
-  & + & {
-    margin-top: 20px;
-  }
-  @media (min-width: 768px) {
-    width: 50%;
-    height: 50%;
-    & + & {
-      margin-top: 0;
-    }
+  width: 50%;
+  @media (min-width: 1024px) {
+    width: 30%;
   }
   &:hover {
     opacity: 0.5;
@@ -57,7 +53,7 @@ const Figure = styled.figure`
 `;
 
 const Image = styled.img`
-  width: 50%;
+  width: 100%;
   display: block;
 `;
 
@@ -166,6 +162,8 @@ function Home() {
             </AnchorLink>
           </Text>
         </Figure>
+      </FigureWrapper>
+      <FigureWrapper>
         <Figure>
           <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
           <Text

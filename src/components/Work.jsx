@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 //own-projects
-import portfolio from "../assets/coding-projects/portfolio.png";
-import toggle2 from "../assets/coding-projects/toggle2.png";
+import portfolio from "../assets/portfolio.png";
+import toggle2 from "../assets/toggle2.png";
 
 //winc-projects
-// import toggle1 from "../assets/winc-projects/toggle1.png";
-// import dashboard from "../assets/winc-projects/student-dashboard.png";
-// import website from "../assets/winc-projects/website.png";
-// import moviefilter from "../assets/winc-projects/movie-filter.png";
-// import playlist from "../assets/winc-projects/playlist.png";
-// import portfoliogrid from "../assets/winc-projects/portfolio-grid.png";
-// import mediabuttons from "../assets/winc-projects/media-buttons.png";
-// import tdd from "../assets/winc-projects/tdd.png";
-// import testimonial from "../assets/winc-projects/testimonial.png";
-// import todolist from "../assets/winc-projects/todo-list.png";
+import dashboard from "../assets/dashboard.png";
+import playlist from "../assets/playlist.png";
+import tdd from "../assets/tdd.png";
+import todolist from "../assets/todolist.png";
+import moviefilter from "../assets/moviefilter.png";
+import toggle1 from "../assets/toggle1.png";
+import mediabuttons from "../assets/mediabuttons.png";
+import portfoliogrid from "../assets/portfoliogrid.png";
+import testimonial from "../assets/testimonial.png";
+import website from "../assets/website.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
@@ -27,6 +27,10 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   margin-bottom: 16px;
+`;
+
+const Projects = styled.div`
+  background: whitesmoke;
 `;
 
 const Heading = styled.h2`
@@ -46,120 +50,47 @@ const Image = styled.img`
   display: ${({
     portfolioMouseEnter,
     toggle2MouseEnter,
-    // photoProjectsClicked,
-    // switchingCareersClicked,
+    dashboardMouseEnter,
+    playlistMouseEnter,
+    tddMouseEnter,
+    todolistMouseEnter,
+    moviefilterMouseEnter,
+    toggle1MouseEnter,
+    mediabuttonsMouseEnter,
+    portfoliogridMouseEnter,
+    testimonialMouseEnter,
+    websiteMouseEnter,
     visible,
   }) =>
     portfolioMouseEnter && visible
       ? "block"
       : toggle2MouseEnter && visible
       ? "block"
-      : // : photoProjectsClicked && visible
-        // ? "1"
-        // : switchingCareersClicked && visible
-        // ? "1"
-        "none"};
-  @media (min-width: 768px) {
-    width: 25%;
-  }
+      : dashboardMouseEnter && visible
+      ? "block"
+      : playlistMouseEnter && visible
+      ? "block"
+      : tddMouseEnter && visible
+      ? "block"
+      : todolistMouseEnter && visible
+      ? "block"
+      : moviefilterMouseEnter && visible
+      ? "block"
+      : toggle1MouseEnter && visible
+      ? "block"
+      : mediabuttonsMouseEnter && visible
+      ? "block"
+      : portfoliogridMouseEnter && visible
+      ? "block"
+      : testimonialMouseEnter && visible
+      ? "block"
+      : websiteMouseEnter && visible
+      ? "block"
+      : "none"};
+  // @media (min-width: 768px) {
+  //   width: 25%;
+  // }
 `;
-
-// const ProjectList = styled.div`
-//   background: yellow;
-//   display: grid;
-//   grid-template-columns: 1fr;
-//   grid-gap: 20px;
-//   @media (min-width: 768px) {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//   }
-// `;
-
-// const Project = styled.div`
-//   background: violet;
-// `;
-
-// const ProjectName = styled.h2`
-//   background: pink;
-//   height: 100%;
-// `;
-
-// const ProjectDetails = styled.div`
-//   position: relative;
-//   transform: translateY(-100%);
-//   background: whitesmoke;
-//   padding: 20px 0;
-//   opacity: ${({
-//     portfolioClicked,
-//     toggle2Clicked,
-//     dashboardClicked,
-//     playlistClicked,
-//     tddClicked,
-//     todolistClicked,
-//     moviefilterClicked,
-//     toggle1Clicked,
-//     mediabuttonsClicked,
-//     portfoliogridClicked,
-//     testimonialClicked,
-//     websiteClicked,
-
-//     visible,
-//   }) =>
-//     portfolioClicked && visible
-//       ? "1"
-//       : toggle2Clicked && visible
-//       ? "1"
-//       : dashboardClicked && visible
-//       ? "1"
-//       : playlistClicked && visible
-//       ? "1"
-//       : tddClicked && visible
-//       ? "1"
-//       : todolistClicked && visible
-//       ? "1"
-//       : moviefilterClicked && visible
-//       ? "1"
-//       : toggle1Clicked && visible
-//       ? "1"
-//       : mediabuttonsClicked && visible
-//       ? "1"
-//       : portfoliogridClicked && visible
-//       ? "1"
-//       : testimonialClicked && visible
-//       ? "1"
-//       : websiteClicked && visible
-//       ? "1"
-//       : "0"};
-//   transition: opacity 250ms linear;
-// `;
-
-// const Heading = styled.p`
-//   font-weight: bold;
-// `;
-
-// const Paragraph = styled.p`
-//   width: 100%;
-//   max-width: 460px;
-//   margin-bottom: 16px;
-// `;
-
-// const Links = styled.div`
-//   display: flex;
-// `;
-
-// const AnchorLink = styled.a`
-//   text-decoration: none;
-//   color: royalblue;
-//   & + & {
-//     margin-left: 32px;
-//   }
-// `;
-
-// const Hovereffect = styled.span`
-//   &:hover {
-//     text-decoration: underline;
-//   }
-// `;
 
 function Work() {
   const [id, setId] = useState("");
@@ -177,539 +108,215 @@ function Work() {
   const portfolioMouseEnter = id === "portfolio";
   const toggle2MouseEnter = id === "toggle2";
 
-  // const dashboardClicked = id === "dashboard";
-  // const playlistClicked = id === "playlist";
-  // const tddClicked = id === "tdd";
-  // const todolistClicked = id === "todolist";
-  // const moviefilterClicked = id === "moviefilter";
-  // const toggle1Clicked = id === "toggle1";
-  // const mediabuttonsClicked = id === "mediabuttons";
-  // const portfoliogridClicked = id === "portfoliogrid";
-  // const testimonialClicked = id === "testimonial";
-  // const websiteClicked = id === "website";
+  const dashboardMouseEnter = id === "dashboard";
+  const playlistMouseEnter = id === "playlist";
+  const tddMouseEnter = id === "tdd";
+  const todolistMouseEnter = id === "todolist";
+  const moviefilterMouseEnter = id === "moviefilter";
+  const toggle1MouseEnter = id === "toggle1";
+  const mediabuttonsMouseEnter = id === "mediabuttons";
+  const portfoliogridMouseEnter = id === "portfoliogrid";
+  const testimonialMouseEnter = id === "testimonial";
+  const websiteMouseEnter = id === "website";
 
   return (
     <Wrapper>
       <Title>Work</Title>
-      <StyledLink to="/work/portfolio">
-        <Heading
-          id="portfolio"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          portfolio *
-        </Heading>
-      </StyledLink>
-      <Image
-        src={portfolio}
-        alt="screenshot of portfolio project"
-        visible={visible}
-        portfolioMouseEnter={portfolioMouseEnter}
-      />
+      <Projects>
+        <StyledLink to="/work/portfolio">
+          <Heading
+            id="portfolio"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            portfolio *
+          </Heading>
+        </StyledLink>
+        <Image
+          src={portfolio}
+          alt="screenshot of portfolio project"
+          visible={visible}
+          portfolioMouseEnter={portfolioMouseEnter}
+        />
 
-      <StyledLink to="/work/toggle2">
-        <Heading
-          id="toggle2"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          toggle2 *
-        </Heading>
-      </StyledLink>
-      <Image
-        src={toggle2}
-        alt="screenshot of toggle2 project"
-        visible={visible}
-        toggle2MouseEnter={toggle2MouseEnter}
-      />
+        <StyledLink to="/work/toggle2">
+          <Heading
+            id="toggle2"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            toggle2 *
+          </Heading>
+        </StyledLink>
+        <Image
+          src={toggle2}
+          alt="screenshot of toggle2 project"
+          visible={visible}
+          toggle2MouseEnter={toggle2MouseEnter}
+        />
 
-      <StyledLink to="/work/dashboard">
-        <Heading>dashboard</Heading>
-      </StyledLink>
-      <StyledLink to="/work/playlist">
-        <Heading>playlist</Heading>
-      </StyledLink>
-      <StyledLink to="/work/TDD">
-        <Heading>TDD</Heading>
-      </StyledLink>
-      <StyledLink to="/work/todo-list">
-        <Heading>todo-list</Heading>
-      </StyledLink>
-      <StyledLink to="/work/movie-filter">
-        <Heading>moviefilter</Heading>
-      </StyledLink>
-      <StyledLink to="/work/toggle1">
-        <Heading>toggle1</Heading>
-      </StyledLink>
-      <StyledLink to="/work/media-buttons">
-        <Heading>mediabuttons</Heading>
-      </StyledLink>
-      <StyledLink to="/work/portfolio-grid">
-        <Heading>portfolio-grid</Heading>
-      </StyledLink>
-      <StyledLink to="/work/testimonial">
-        <Heading>testimonial</Heading>
-      </StyledLink>
-      <StyledLink to="/work/website">
-        <Heading>website</Heading>
-      </StyledLink>
-      <p>* My own projects. The rest are Winc Academy exam projects.</p>
-      {/* <h2>GitHub</h2> */}
-      {/* <Anchor
-        href="https://github.com/saskiaopdam"
-        target="_blank"
-        rel="noreferrer"
-      >
-        All code is on GitHub
-      </Anchor>{" "}
-      */}
+        <StyledLink to="/work/dashboard">
+          <Heading
+            id="dashboard"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            dashboard
+          </Heading>
+        </StyledLink>
+        <Image
+          src={dashboard}
+          alt="screenshot of dashboard project"
+          visible={visible}
+          dashboardMouseEnter={dashboardMouseEnter}
+        />
+
+        <StyledLink to="/work/playlist">
+          <Heading
+            id="playlist"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            playlist
+          </Heading>
+        </StyledLink>
+        <Image
+          src={playlist}
+          alt="screenshot of playlist project"
+          visible={visible}
+          playlistMouseEnter={playlistMouseEnter}
+        />
+
+        <StyledLink to="/work/tdd">
+          <Heading
+            id="tdd"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            TDD
+          </Heading>
+        </StyledLink>
+        <Image
+          src={tdd}
+          alt="screenshot of TDD project"
+          visible={visible}
+          tddMouseEnter={tddMouseEnter}
+        />
+
+        <StyledLink to="/work/todolist">
+          <Heading
+            id="todolist"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            todo-list
+          </Heading>
+        </StyledLink>
+        <Image
+          src={todolist}
+          alt="screenshot of todo-list project"
+          visible={visible}
+          todolistMouseEnter={todolistMouseEnter}
+        />
+
+        <StyledLink to="/work/moviefilter">
+          <Heading
+            id="moviefilter"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            moviefilter
+          </Heading>
+        </StyledLink>
+        <Image
+          src={moviefilter}
+          alt="screenshot of moviefilter project"
+          visible={visible}
+          moviefilterMouseEnter={moviefilterMouseEnter}
+        />
+
+        <StyledLink to="/work/toggle1">
+          <Heading
+            id="toggle1"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            toggle1
+          </Heading>
+        </StyledLink>
+        <Image
+          src={toggle1}
+          alt="screenshot of toggle1 project"
+          visible={visible}
+          toggle1MouseEnter={toggle1MouseEnter}
+        />
+
+        <StyledLink to="/work/mediabuttons">
+          <Heading
+            id="mediabuttons"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            mediabuttons
+          </Heading>
+        </StyledLink>
+        <Image
+          src={mediabuttons}
+          alt="screenshot of mediabuttons project"
+          visible={visible}
+          mediabuttonsMouseEnter={mediabuttonsMouseEnter}
+        />
+
+        <StyledLink to="/work/portfoliogrid">
+          <Heading
+            id="portfoliogrid"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            portfolio-grid
+          </Heading>
+        </StyledLink>
+        <Image
+          src={portfoliogrid}
+          alt="screenshot of portfolio-grid project"
+          visible={visible}
+          portfoliogridMouseEnter={portfoliogridMouseEnter}
+        />
+
+        <StyledLink to="/work/testimonial">
+          <Heading
+            id="testimonial"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            testimonial
+          </Heading>
+        </StyledLink>
+        <Image
+          src={testimonial}
+          alt="screenshot of testimonial project"
+          visible={visible}
+          testimonialMouseEnter={testimonialMouseEnter}
+        />
+
+        <StyledLink to="/work/website">
+          <Heading
+            id="website"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            website
+          </Heading>
+        </StyledLink>
+        <Image
+          src={website}
+          alt="screenshot of website project"
+          visible={visible}
+          websiteMouseEnter={websiteMouseEnter}
+        />
+        <p>* My own projects. The rest are Winc Academy exam projects.</p>
+      </Projects>
     </Wrapper>
-
-    // <Wrapper>
-    //   <Title>Work</Title>
-    //   <ProjectList>
-    //     <Project>
-    //       <ProjectName id="portfolio" onClick={handleClick}>
-    //         portfolio
-    //       </ProjectName>
-    //       <ProjectDetails visible={visible} portfolioClicked={portfolioClicked}>
-    //         <Heading>date:</Heading>
-    //         <Paragraph>november 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>react</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Single Page portfolio app to demonstrate acquired skills and show
-    //           projects.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/React_Portfolio"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="toggle2" onClick={handleClick}>
-    //         toggle2
-    //       </ProjectName>
-    //       <ProjectDetails visible={visible} toggle2Clicked={toggle2Clicked}>
-    //         <Heading>date:</Heading>
-    //         <Paragraph>june 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>HTML, CSS, JavaScript</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           A new and colourful version of the Winc Academy colour toggle
-    //           project.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://toggle2.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Colour_Toggle_Design"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="dashboard" onClick={handleClick}>
-    //         dashboard
-    //       </ProjectName>
-    //       <ProjectDetails visible={visible} dashboardClicked={dashboardClicked}>
-    //         <Heading>date:</Heading>
-    //         <Paragraph>just started (final front-end assignment)</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>react</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Present data from a Google Sheet in a chart using a JavaScript
-    //           framework such as React.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://dashboard-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_8_Student_Dashboard"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="playlist" onClick={handleClick}>
-    //         playlist
-    //       </ProjectName>
-    //       <ProjectDetails visible={visible} playlistClicked={playlistClicked}>
-    //         <Heading>date:</Heading>
-    //         <Paragraph>september 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>react/redux</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Single Page application to save favorite songs with a rating,
-    //           using Redux for state management.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://playlist-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_7_Playlist"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="tdd" onClick={handleClick}>
-    //         TDD
-    //       </ProjectName>
-    //       <ProjectDetails visible={visible} tddClicked={tddClicked}>
-    //         <Heading>date:</Heading>
-    //         <Paragraph>august 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>TDD testing</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Writing tests to check if functions perform as expected, taking
-    //           into account multiple environment factors.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_6_TDD_testing"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="todolist" onClick={handleClick}>
-    //         Todo-list
-    //       </ProjectName>
-    //       <ProjectDetails visible={visible} todolistClicked={todolistClicked}>
-    //         <Heading>date:</Heading>
-    //         <Paragraph>august 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>HTML, CSS, JavaScript</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Fetching data from an API, gaining understanding of asynchronous
-    //           javascript. Implementing error handling.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://todolist-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_5_To_Do_List"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //       {/* ) : null} */}
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="moviefilter" onClick={handleClick}>
-    //         Moviefilter
-    //       </ProjectName>
-    //       <ProjectDetails
-    //         visible={visible}
-    //         moviefilterClicked={moviefilterClicked}
-    //       >
-    //         <Heading>date:</Heading>
-    //         <Paragraph>june 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>HTML, CSS, JavaScript</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Apply array methods like .filter() and display data by adding
-    //           elements to the DOM.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://moviefilter-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_4_Movie_Filter"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="toggle1" onClick={handleClick}>
-    //         Toggle1
-    //       </ProjectName>
-    //       <ProjectDetails visible={visible} toggle1Clicked={toggle1Clicked}>
-    //         <Heading>date:</Heading>
-    //         <Paragraph>april 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>HTML, CSS, JavaScript</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Add interactivity to a website by adding eventlisteners, making
-    //           the backgroundcolor change.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://toggle1-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_3_Colour_Toggle"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="mediabuttons" onClick={handleClick}>
-    //         Mediabuttons
-    //       </ProjectName>
-    //       <ProjectDetails
-    //         visible={visible}
-    //         mediabuttonsClicked={mediabuttonsClicked}
-    //       >
-    //         <Heading>date:</Heading>
-    //         <Paragraph>april 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>HTML, CSS, SCSS (level 3)</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Code to design, applying Sass and BEM principle. Create transition
-    //           on hover and add icons.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://mediabuttons-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_2C_Social_Media_Buttons"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="portfoliogrid" onClick={handleClick}>
-    //         Portfoliogrid
-    //       </ProjectName>
-    //       <ProjectDetails
-    //         visible={visible}
-    //         portfoliogridClicked={portfoliogridClicked}
-    //       >
-    //         <Heading>date:</Heading>
-    //         <Paragraph>april 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>HTML, CSS, SCSS (level 2)</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Code to design, applying Sass and BEM principle. Create hover
-    //           effect on the image and make responsive grid.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://portfoliogrid-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_2B_Portfolio_Grid"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="testimonial" onClick={handleClick}>
-    //         Testimonial
-    //       </ProjectName>
-    //       <ProjectDetails
-    //         visible={visible}
-    //         testimonialClicked={testimonialClicked}
-    //       >
-    //         <Heading>date:</Heading>
-    //         <Paragraph>april 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>HTML, CSS, SCSS (level 1)</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Code to design, applying Sass and BEM principle. Position the
-    //           image correctly.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://testimonial-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_2A_Testimonial"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-
-    //     <Project>
-    //       <ProjectName id="website" onClick={handleClick}>
-    //         Website
-    //       </ProjectName>
-    //       <ProjectDetails visible={visible} websiteClicked={websiteClicked}>
-    //         <Heading>date:</Heading>
-    //         <Paragraph>april 2021</Paragraph>
-
-    //         <Heading>stack:</Heading>
-    //         <Paragraph>HTML, CSS</Paragraph>
-
-    //         <Heading>description:</Heading>
-    //         <Paragraph>
-    //           Make a website using a mobile-first approach and use flexbox or
-    //           grid for positioning.
-    //         </Paragraph>
-
-    //         <Links>
-    //           <AnchorLink
-    //             href="https://website-wa.netlify.app"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>site online</Hovereffect> {">"}
-    //           </AnchorLink>
-
-    //           <AnchorLink
-    //             href="https://github.com/saskiaopdam/Winc_Assignment_1_Website"
-    //             target="_blank"
-    //             rel="noreferrer"
-    //           >
-    //             <Hovereffect>code online</Hovereffect> {">"}
-    //           </AnchorLink>
-    //         </Links>
-    //       </ProjectDetails>
-    //     </Project>
-    //   </ProjectList>
-    // </Wrapper>
   );
 }
 

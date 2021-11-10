@@ -22,6 +22,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   margin-bottom: 16px;
+  color: mediumvioletred;
 `;
 
 function Project({ match }) {
@@ -39,17 +40,17 @@ function Project({ match }) {
         <Dashboard />
       ) : id === "playlist" ? (
         <Playlist />
-      ) : id === "TDD" ? (
+      ) : id === "tdd" ? (
         <TDD />
-      ) : id === "todo-list" ? (
+      ) : id === "todolist" ? (
         <Todolist />
-      ) : id === "movie-filter" ? (
+      ) : id === "moviefilter" ? (
         <Moviefilter />
       ) : id === "toggle1" ? (
         <Toggle1 />
-      ) : id === "media-buttons" ? (
+      ) : id === "mediabuttons" ? (
         <Mediabuttons />
-      ) : id === "portfolio-grid" ? (
+      ) : id === "portfoliogrid" ? (
         <PortfolioGrid />
       ) : id === "testimonial" ? (
         <Testimonial />

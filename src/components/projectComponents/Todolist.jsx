@@ -1,38 +1,20 @@
 import styled from "styled-components/macro";
 
+import todolist from "../../assets/todolist.png";
+
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  background: whitesmoke;
+  padding: 20px;
 `;
 
-const Links = styled.div`
-  display: flex;
-`;
-
-const AnchorLink = styled.a`
-  text-decoration: none;
-  padding: 8px 0 16px 0;
-  & + & {
-    margin-left: 32px;
-  }
-`;
-
-const AnchorLabel = styled.p`
-  color: royalblue;
-`;
-
-const Hovereffect = styled.span`
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Iframe = styled.iframe`
+const Image = styled.img`
   width: 100%;
-  max-width: 460px;
-  border: none;
-  margin-bottom: 16px;
+  display: block;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const Heading = styled.p`
@@ -40,42 +22,26 @@ const Heading = styled.p`
 `;
 
 const Paragraph = styled.p`
-  width: 100%;
-  max-width: 460px;
   margin-bottom: 16px;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+const Link = styled.a`
+  color: mediumvioletred;
+  & + & {
+    margin-left: 32px;
+  }
+  &:hover {
+    font-weight: bold;
+  }
 `;
 
 function Todolist() {
   return (
     <Wrapper>
-      <Links>
-        <AnchorLink
-          href="https://objective-banach-2a5a85.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AnchorLabel>
-            <Hovereffect>site online</Hovereffect> {">"}
-          </AnchorLabel>
-        </AnchorLink>
-
-        <AnchorLink
-          href="https://github.com/saskiaopdam/Winc_Academy_5_To_Do_List"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AnchorLabel>
-            <Hovereffect>code online</Hovereffect> {">"}
-          </AnchorLabel>
-        </AnchorLink>
-      </Links>
-
-      <Iframe
-        width="600"
-        height="400"
-        src="https://objective-banach-2a5a85.netlify.app"
-      ></Iframe>
-
+      <Image src={todolist} alt="screenshot of todo-list project" />
       <Heading>date:</Heading>
       <Paragraph>august 2021</Paragraph>
 
@@ -87,6 +53,21 @@ function Todolist() {
         Fetching data from an API, gaining understanding of asynchronous
         javascript. Implementing error handling.
       </Paragraph>
+
+      <Link
+        href="https://todolist-wa.netlify.app/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        site online
+      </Link>
+      <Link
+        href="https://github.com/saskiaopdam/Winc_Academy_5_To_Do_List"
+        target="_blank"
+        rel="noreferrer"
+      >
+        code online
+      </Link>
     </Wrapper>
   );
 }
