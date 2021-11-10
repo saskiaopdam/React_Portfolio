@@ -9,11 +9,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  margin-top: 32px;
-  margin-bottom: 52px;
-  @media (min-width: 500px) {
-    text-align: center;
-  }
+  margin-bottom: 16px;
 `;
 
 const Summary = styled.div`
@@ -51,7 +47,7 @@ const Image = styled.img`
 function About() {
   return (
     <Wrapper>
-      <h1>About</h1>
+      <Title>About</Title>
       <p>I'm working on this page</p>
       {/* <Title>about me</Title>
       <Summary>

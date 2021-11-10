@@ -40,6 +40,7 @@ const FigureWrapper = styled.div`
 
 const Figure = styled.figure`
   position: relative;
+  // background: rgba(0, 0, 0, 0.8);
   & + & {
     margin-top: 20px;
   }
@@ -62,7 +63,7 @@ const Image = styled.img`
 
 const Text = styled.div`
   position: absolute;
-  width: 50%;
+  width: 100%;
   height: 100%;
   top: 0;
   right: 0;
@@ -71,10 +72,23 @@ const Text = styled.div`
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.8);
-  // background: rgba(0, 0, 0, 0.8);
-  // &:hover {
-  //   opacity: 0.5;
-  // }
+  opacity: ${({
+    codingProjectsClicked,
+    photoProjectsClicked,
+    switchingCareersClicked,
+    visible,
+  }) =>
+    codingProjectsClicked && visible
+      ? "1"
+      : photoProjectsClicked && visible
+      ? "1"
+      : switchingCareersClicked && visible
+      ? "1"
+      : "0"};
+  transition: opacity 250ms linear;
+  &:hover {
+    opacity: 1;
+  }
   &.nonClick {
     background: mediumvioletred;
     opacity: 1;
@@ -91,8 +105,7 @@ const AnchorLink = styled.a`
   color: white;
 `;
 
-const Heading = styled.h3`
-  font-size: 24px;
+const Heading = styled.h2`
   font-weight: 400;
   color: white;
   text-align: center;
@@ -105,12 +118,11 @@ function Home() {
   const handleClick = (event) => {
     setId(event.target.id);
     setVisible(!visible);
-    console.log(event.target.id);
   };
 
-  const codingProjectsClicked = id === "coding-projects";
-  const photoProjectsClicked = id === "photo-projects";
-  const switchingCareersClicked = id === "switching-careers";
+  const codingClicked = id === "coding";
+  const photoEditingClicked = id === "photo-editing";
+  const infoClicked = id === "info";
 
   return (
     <Wrapper>
@@ -122,10 +134,10 @@ function Home() {
         <Figure>
           <Image src={toggle2} alt="screenshot of toggle2 project" />
           <Text
-            id="coding-projects"
+            id="coding"
             onClick={handleClick}
             visible={visible}
-            codingProjectsClicked={codingProjectsClicked}
+            codingClicked={codingClicked}
           >
             <StyledLink to="/work">
               <Heading>coding</Heading>
@@ -139,10 +151,10 @@ function Home() {
             className="middle"
           />
           <Text
-            id="photo-projects"
+            id="photo-editing"
             onClick={handleClick}
             visible={visible}
-            photoProjectsClicked={photoProjectsClicked}
+            photoEditingClicked={photoEditingClicked}
             className="middle"
           >
             <AnchorLink
@@ -157,10 +169,10 @@ function Home() {
         <Figure>
           <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
           <Text
-            id="switching-careers"
+            id="info"
             onClick={handleClick}
             visible={visible}
-            switchingCareersClicked={switchingCareersClicked}
+            infoClicked={infoClicked}
           >
             <StyledLink to="/about">
               <Heading>info</Heading>

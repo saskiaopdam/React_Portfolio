@@ -1,12 +1,13 @@
-// import { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
 
-// // //own-projects
-// import toggle2 from "../assets/coding-projects/toggle2.png";
-// import portfolio from "../assets/coding-projects/portfolio.png";
+//own-projects
+import portfolio from "../assets/coding-projects/portfolio.png";
+import toggle2 from "../assets/coding-projects/toggle2.png";
 
-// // //winc-projects
+//winc-projects
 // import toggle1 from "../assets/winc-projects/toggle1.png";
 // import dashboard from "../assets/winc-projects/student-dashboard.png";
 // import website from "../assets/winc-projects/website.png";
@@ -28,13 +29,41 @@ const Title = styled.h1`
   margin-bottom: 16px;
 `;
 
-const Anchor = styled.a`
-  display: block;
-  color: black;
+const Heading = styled.h2`
+  margin-bottom: 12px;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: mediumvioletred;
   &:hover {
-    font-weight: bold;
+    text-decoration: underline;
   }
 `;
+
+const Image = styled.img`
+  width: 50%;
+  display: ${({
+    portfolioMouseEnter,
+    toggle2MouseEnter,
+    // photoProjectsClicked,
+    // switchingCareersClicked,
+    visible,
+  }) =>
+    portfolioMouseEnter && visible
+      ? "block"
+      : toggle2MouseEnter && visible
+      ? "block"
+      : // : photoProjectsClicked && visible
+        // ? "1"
+        // : switchingCareersClicked && visible
+        // ? "1"
+        "none"};
+  @media (min-width: 768px) {
+    width: 25%;
+  }
+`;
+
 // const ProjectList = styled.div`
 //   background: yellow;
 //   display: grid;
@@ -133,129 +162,108 @@ const Anchor = styled.a`
 // `;
 
 function Work() {
-  // const [visible, setVisible] = useState(false);
-  // const [clickedProject, setClickedProject] = useState("");
+  const [id, setId] = useState("");
+  const [visible, setVisible] = useState(false);
 
-  // const handleClick = (event) => {
-  //   setClickedProject(event.target.id);
-  //   setVisible(!visible);
-  // };
+  const handleMouseEnter = (event) => {
+    setId(event.target.id);
+    setVisible(true);
+  };
 
-  // const portfolioClicked = clickedProject === "portfolio";
-  // const toggle2Clicked = clickedProject === "toggle2";
+  const handleMouseLeave = () => {
+    setVisible(false);
+  };
 
-  // const dashboardClicked = clickedProject === "dashboard";
-  // const playlistClicked = clickedProject === "playlist";
-  // const tddClicked = clickedProject === "tdd";
-  // const todolistClicked = clickedProject === "todolist";
-  // const moviefilterClicked = clickedProject === "moviefilter";
-  // const toggle1Clicked = clickedProject === "toggle1";
-  // const mediabuttonsClicked = clickedProject === "mediabuttons";
-  // const portfoliogridClicked = clickedProject === "portfoliogrid";
-  // const testimonialClicked = clickedProject === "testimonial";
-  // const websiteClicked = clickedProject === "website";
+  const portfolioMouseEnter = id === "portfolio";
+  const toggle2MouseEnter = id === "toggle2";
+
+  // const dashboardClicked = id === "dashboard";
+  // const playlistClicked = id === "playlist";
+  // const tddClicked = id === "tdd";
+  // const todolistClicked = id === "todolist";
+  // const moviefilterClicked = id === "moviefilter";
+  // const toggle1Clicked = id === "toggle1";
+  // const mediabuttonsClicked = id === "mediabuttons";
+  // const portfoliogridClicked = id === "portfoliogrid";
+  // const testimonialClicked = id === "testimonial";
+  // const websiteClicked = id === "website";
 
   return (
-    <div>
-      <h1>Work</h1>
-      <p>I'm working on this page</p>
-      <h2>Projects</h2>
-      <Anchor
-        href="https://github.com/saskiaopdam/React_Portfolio"
-        target="_blank"
-        rel="noreferrer"
-      >
-        portfolio *
-      </Anchor>
-      <Anchor
-        href="https://toggle2.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        toggle2 *
-      </Anchor>
-      <Anchor
-        href="https://dashboard-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        dashboard (just started, final front-end exam project)
-      </Anchor>
-      <Anchor
-        href="https://playlist-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        playlist
-      </Anchor>
-      <Anchor
-        href="https://github.com/saskiaopdam/Winc_Assignment_6_TDD_testing"
-        target="_blank"
-        rel="noreferrer"
-      >
-        tdd
-      </Anchor>
-      <Anchor
-        href="https://todolist-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        todolist
-      </Anchor>
-      <Anchor
-        href="https://moviefilter-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        moviefilter
-      </Anchor>
-      <Anchor
-        href="https://toggle1-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        toggle1
-      </Anchor>
-      <Anchor
-        href="https://mediabuttons-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        mediabuttons
-      </Anchor>
-      <Anchor
-        href="https://portfoliogrid-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        portfoliogrid
-      </Anchor>
-      <Anchor
-        href="https://testimonial-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        testimonial
-      </Anchor>
-      <Anchor
-        href="https://website-wa.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        website
-      </Anchor>
-      <br />
+    <Wrapper>
+      <Title>Work</Title>
+      <StyledLink to="/work/portfolio">
+        <Heading
+          id="portfolio"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          portfolio *
+        </Heading>
+      </StyledLink>
+      <Image
+        src={portfolio}
+        alt="screenshot of portfolio project"
+        visible={visible}
+        portfolioMouseEnter={portfolioMouseEnter}
+      />
+
+      <StyledLink to="/work/toggle2">
+        <Heading
+          id="toggle2"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          toggle2 *
+        </Heading>
+      </StyledLink>
+      <Image
+        src={toggle2}
+        alt="screenshot of toggle2 project"
+        visible={visible}
+        toggle2MouseEnter={toggle2MouseEnter}
+      />
+
+      <StyledLink to="/work/dashboard">
+        <Heading>dashboard</Heading>
+      </StyledLink>
+      <StyledLink to="/work/playlist">
+        <Heading>playlist</Heading>
+      </StyledLink>
+      <StyledLink to="/work/TDD">
+        <Heading>TDD</Heading>
+      </StyledLink>
+      <StyledLink to="/work/todo-list">
+        <Heading>todo-list</Heading>
+      </StyledLink>
+      <StyledLink to="/work/movie-filter">
+        <Heading>moviefilter</Heading>
+      </StyledLink>
+      <StyledLink to="/work/toggle1">
+        <Heading>toggle1</Heading>
+      </StyledLink>
+      <StyledLink to="/work/media-buttons">
+        <Heading>mediabuttons</Heading>
+      </StyledLink>
+      <StyledLink to="/work/portfolio-grid">
+        <Heading>portfolio-grid</Heading>
+      </StyledLink>
+      <StyledLink to="/work/testimonial">
+        <Heading>testimonial</Heading>
+      </StyledLink>
+      <StyledLink to="/work/website">
+        <Heading>website</Heading>
+      </StyledLink>
       <p>* My own projects. The rest are Winc Academy exam projects.</p>
-      <br />
-      <h2>GitHub</h2>
-      <Anchor
+      {/* <h2>GitHub</h2> */}
+      {/* <Anchor
         href="https://github.com/saskiaopdam"
         target="_blank"
         rel="noreferrer"
       >
         All code is on GitHub
-      </Anchor>
-    </div>
+      </Anchor>{" "}
+      */}
+    </Wrapper>
 
     // <Wrapper>
     //   <Title>Work</Title>

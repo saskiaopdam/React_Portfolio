@@ -21,9 +21,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 `;
 
 function Project({ match }) {
