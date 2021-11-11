@@ -19,14 +19,16 @@ import testimonial from "../assets/testimonial.png";
 import website from "../assets/website.png";
 
 const Wrapper = styled.div`
-  flex-grow: visible;
+  flex-grow: 1;
 `;
 
 const Title = styled.h1`
+  margin-top: 20px;
   margin-bottom: 16px;
 `;
 
 const FigureWrapper = styled.div`
+  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -267,7 +269,7 @@ function Work() {
 
   return (
     <Wrapper>
-      <Title>Work</Title>
+      <Title>Coding projects</Title>
       <FigureWrapper>
         <Figure>
           <Image src={portfolio} alt="screenshot of portfolio project" />

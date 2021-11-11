@@ -7,45 +7,49 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
+  margin-top: 20px;
   margin-bottom: 16px;
-`;
-
-const Summary = styled.div`
-  margin-bottom: 32px;
-`;
-
-const H2 = styled.h2`
-  margin-bottom: 24px;
-  color: darkgray;
-  @media (min-width: 500px) {
-    text-align: center;
-  }
-`;
-
-const Paragraph = styled.p`
-  margin-bottom: 16px;
-  line-height: 1.25;
-  // max-width: 500px;
-`;
-
-const Accent = styled.span`
-  font-weight: bold;
-`;
-
-const Anchor = styled.a`
-  color: black;
 `;
 
 const Image = styled.img`
   width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
+  display: block;
+  margin: 40px 0;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
+
+// const Summary = styled.div`
+//   margin-bottom: 32px;
+// `;
+
+// const H2 = styled.h2`
+//   margin-bottom: 24px;
+//   color: darkgray;
+//   @media (min-width: 500px) {
+//     text-align: center;
+//   }
+// `;
+
+// const Paragraph = styled.p`
+//   margin-bottom: 16px;
+//   line-height: 1.25;
+//   // max-width: 500px;
+// `;
+
+// const Accent = styled.span`
+//   font-weight: bold;
+// `;
+
+// const Anchor = styled.a`
+//   color: black;
+// `;
 
 function About() {
   return (
     <Wrapper>
-      <Title>About</Title>
+      <Title>Background</Title>
       <p>I'm working on this page</p>
       {/* <Title>about me</Title>
       <Summary>

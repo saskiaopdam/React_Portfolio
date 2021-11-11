@@ -9,7 +9,6 @@ import SlideMenu from "./components/SlideMenu";
 import Home from "./components/Home";
 import About from "./components/About";
 import Work from "./components/Work";
-import Project from "./components/projectComponents/Project";
 
 const Wrapper = styled.div`
   display: flex;
@@ -42,8 +41,10 @@ const Footer = styled.footer`
   padding: 20px;
 `;
 
-const Copyright = styled.small`
-  font-size: 12px;
+const FooterContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
 `;
 
 const Inner = styled.div`
@@ -81,12 +82,14 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/work" exact component={Work} />
-              <Route path="/work/:id" component={Project} />
             </Inner>
           </Main>
           <Footer>
             <Inner>
-              <Copyright>© 2021 Saskia Opdam</Copyright>
+              <FooterContent>
+                <small>© 2021 Saskia Opdam</small>
+                <small>Made with React</small>
+              </FooterContent>
             </Inner>
           </Footer>
         </ScrollToTop>
