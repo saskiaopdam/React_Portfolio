@@ -24,18 +24,22 @@ const Header = styled.header`
   right: 0;
   z-index: 1;
   background: white;
+  padding: 20px;
 `;
 
 const Main = styled.main`
   flex-grow: 1;
   display: flex;
   margin-top: 61px;
+  background: whitesmoke;
+  padding: 20px;
 `;
 
 const Footer = styled.footer`
   flex-shrink: 0;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
+  padding: 20px;
 `;
 
 const Copyright = styled.small`
@@ -46,12 +50,8 @@ const Inner = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  max-width: 1240px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
-  &.headerInner {
-    padding: 0;
-  }
 `;
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
       <Router>
         <ScrollToTop>
           <Header open={open}>
-            <Inner className="headerInner">
+            <Inner>
               <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
             </Inner>
           </Header>

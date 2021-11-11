@@ -12,7 +12,6 @@ const Wrapper = styled.nav`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
-  padding: 20px;
 `;
 
 const Name = styled.p`
@@ -24,7 +23,6 @@ const BurgerMenu = styled.button`
   background: white;
   border: none;
   font-size: 18px;
-  padding: 20px;
   @media (min-width: 500px) {
     display: none;
   }
@@ -44,8 +42,9 @@ const FullMenu = styled.div`
 
 const StyledNavLink = styled(NavLink)`
   color: black;
-  padding: 20px;
-
+  & + & {
+    margin-left: 20px;
+  }
   &.selected {
     pointer-events: none;
     font-weight: bold;

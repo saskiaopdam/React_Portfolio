@@ -4,8 +4,6 @@ import portraitLight from "../assets/portraitLight.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
 `;
 
 const Title = styled.h1`
