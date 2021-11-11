@@ -19,7 +19,7 @@ import testimonial from "../assets/testimonial.png";
 import website from "../assets/website.png";
 
 const Wrapper = styled.div`
-  flex-grow: 1;
+  flex-grow: block;
 `;
 
 const Title = styled.h1`
@@ -49,6 +49,7 @@ const Figure = styled.figure`
     }
     &:nth-child(even) {
       padding-left: 10px;
+      padding-bottom: 20px;
     }
     &:nth-last-child(visible) {
       padding-bottom: 0;
@@ -65,14 +66,8 @@ const Image = styled.img`
 `;
 
 const Text = styled.div`
-  position: absolute;
-  background: white;
-  top: 0;
-  bottom: 20px;
-  left: 0;
-  right: 0;
   padding: 20px;
-  opacity: ${({
+  display: ${({
     portfolioClicked,
     toggle2Clicked,
     dashboardClicked,
@@ -88,56 +83,30 @@ const Text = styled.div`
     visible,
   }) =>
     portfolioClicked && visible
-      ? "1"
+      ? "block"
       : toggle2Clicked && visible
-      ? "1"
+      ? "block"
       : dashboardClicked && visible
-      ? "1"
+      ? "block"
       : playlistClicked && visible
-      ? "1"
+      ? "block"
       : tddClicked && visible
-      ? "1"
+      ? "block"
       : todolistClicked && visible
-      ? "1"
+      ? "block"
       : moviefilterClicked && visible
-      ? "1"
+      ? "block"
       : toggle1Clicked && visible
-      ? "1"
+      ? "block"
       : mediabuttonsClicked && visible
-      ? "1"
+      ? "block"
       : portfoliogridClicked && visible
-      ? "1"
+      ? "block"
       : testimonialClicked && visible
-      ? "1"
+      ? "block"
       : websiteClicked && visible
-      ? "1"
-      : "0"};
-  @media (min-width: 768px) {
-    &.left {
-      top: 0;
-      bottom: 20px;
-      left: 0;
-      right: 10px;
-    }
-    &.right {
-      top: 0;
-      bottom: 20px;
-      left: 10px;
-      right: 0;
-    }
-    &.bottom-left {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 10px;
-    }
-    &.bottom-right {
-      top: 0;
-      bottom: 0;
-      left: 10px;
-      right: 0;
-    }
-  }
+      ? "block"
+      : "none"};
 `;
 
 const Heading2 = styled.h2`
@@ -272,14 +241,13 @@ function Work() {
       <Title>Coding projects</Title>
       <FigureWrapper>
         <Figure>
-          <Image src={portfolio} alt="screenshot of portfolio project" />
-          <Text
-            className="left"
+          <Image
+            src={portfolio}
+            alt="screenshot of portfolio project"
             id="portfolio"
             onClick={handleClick}
-            visible={visible}
-            portfolioClicked={portfolioClicked}
-          >
+          />
+          <Text visible={visible} portfolioClicked={portfolioClicked}>
             <Heading2>Portfolio</Heading2>
             <Paragraph>November 2021 - React</Paragraph>
             <Paragraph>
@@ -297,14 +265,13 @@ function Work() {
         </Figure>
 
         <Figure>
-          <Image src={toggle2} alt="screenshot of toggle2 project" />
-          <Text
-            className="right"
+          <Image
+            src={toggle2}
+            alt="screenshot of toggle2 project"
             id="toggle2"
             onClick={handleClick}
-            visible={visible}
-            toggle2Clicked={toggle2Clicked}
-          >
+          />
+          <Text visible={visible} toggle2Clicked={toggle2Clicked}>
             <Heading2>Toggle2</Heading2>
             <Paragraph>June 2021 - HTML, CSS, JavaScript</Paragraph>
             <Paragraph>
@@ -328,14 +295,13 @@ function Work() {
           </Text>
         </Figure>
         <Figure>
-          <Image src={dashboard} alt="screenshot of dashboard project" />
-          <Text
-            className="left"
+          <Image
+            src={dashboard}
+            alt="screenshot of dashboard project"
             id="dashboard"
             onClick={handleClick}
-            visible={visible}
-            dashboardClicked={dashboardClicked}
-          >
+          />
+          <Text visible={visible} dashboardClicked={dashboardClicked}>
             <Heading2>Dashboard</Heading2>
             <Paragraph>Just started - React</Paragraph>
             <Paragraph>
@@ -361,14 +327,13 @@ function Work() {
           </Text>
         </Figure>
         <Figure>
-          <Image src={playlist} alt="screenshot of playlist project" />
-          <Text
-            className="right"
+          <Image
+            src={playlist}
+            alt="screenshot of playlist project"
             id="playlist"
             onClick={handleClick}
-            visible={visible}
-            playlistClicked={playlistClicked}
-          >
+          />
+          <Text visible={visible} playlistClicked={playlistClicked}>
             <Heading2>Playlist</Heading2>
             <Paragraph>September 2021 - React/Redux</Paragraph>
             <Paragraph>
@@ -394,14 +359,13 @@ function Work() {
           </Text>
         </Figure>
         <Figure>
-          <Image src={tdd} alt="screenshot of tdd project" />
-          <Text
-            className="left"
+          <Image
+            src={tdd}
+            alt="screenshot of tdd project"
             id="tdd"
             onClick={handleClick}
-            visible={visible}
-            tddClicked={tddClicked}
-          >
+          />
+          <Text visible={visible} tddClicked={tddClicked}>
             <Heading2>TDD</Heading2>
             <Paragraph>August 2021 - TDD testing</Paragraph>
             <Paragraph>
@@ -420,14 +384,13 @@ function Work() {
           </Text>
         </Figure>
         <Figure>
-          <Image src={todolist} alt="screenshot of todolist project" />
-          <Text
-            className="right"
+          <Image
+            src={todolist}
+            alt="screenshot of todolist project"
             id="todolist"
             onClick={handleClick}
-            visible={visible}
-            todolistClicked={todolistClicked}
-          >
+          />
+          <Text visible={visible} todolistClicked={todolistClicked}>
             <Heading2>Todo-list</Heading2>
             <Paragraph>August 2021 - HTML, CSS, JavaScript</Paragraph>
             <Paragraph>
@@ -453,14 +416,13 @@ function Work() {
           </Text>
         </Figure>
         <Figure>
-          <Image src={moviefilter} alt="screenshot of moviefilter project" />
-          <Text
-            className="left"
+          <Image
+            src={moviefilter}
+            alt="screenshot of moviefilter project"
             id="moviefilter"
             onClick={handleClick}
-            visible={visible}
-            moviefilterClicked={moviefilterClicked}
-          >
+          />
+          <Text visible={visible} moviefilterClicked={moviefilterClicked}>
             <Heading2>Moviefilter</Heading2>
             <Paragraph>June 2021 - HTML, CSS, JavaScript</Paragraph>
             <Paragraph>
@@ -486,14 +448,13 @@ function Work() {
           </Text>
         </Figure>
         <Figure>
-          <Image src={toggle1} alt="screenshot of toggle1 project" />
-          <Text
-            className="right"
+          <Image
+            src={toggle1}
+            alt="screenshot of toggle1 project"
             id="toggle1"
             onClick={handleClick}
-            visible={visible}
-            toggle1Clicked={toggle1Clicked}
-          >
+          />
+          <Text visible={visible} toggle1Clicked={toggle1Clicked}>
             <Heading2>Toggle</Heading2>
             <Paragraph>April 2021 - HTML, CSS, JavaScript</Paragraph>
             <Paragraph>
@@ -519,14 +480,13 @@ function Work() {
           </Text>
         </Figure>
         <Figure>
-          <Image src={mediabuttons} alt="screenshot of mediabuttons project" />
-          <Text
-            className="left"
+          <Image
+            src={mediabuttons}
+            alt="screenshot of mediabuttons project"
             id="mediabuttons"
             onClick={handleClick}
-            visible={visible}
-            mediabuttonsClicked={mediabuttonsClicked}
-          >
+          />
+          <Text visible={visible} mediabuttonsClicked={mediabuttonsClicked}>
             <Heading2>Mediabuttons</Heading2>
             <Paragraph>April 2021 - HTML, CSS, SCSS</Paragraph>
             <Paragraph>
@@ -555,14 +515,10 @@ function Work() {
           <Image
             src={portfoliogrid}
             alt="screenshot of portfoliogrid project"
-          />
-          <Text
-            className="right"
             id="portfoliogrid"
             onClick={handleClick}
-            visible={visible}
-            portfoliogridClicked={portfoliogridClicked}
-          >
+          />
+          <Text visible={visible} portfoliogridClicked={portfoliogridClicked}>
             <Heading2>Portfolio-grid</Heading2>
             <Paragraph>April 2021 - HTML, CSS, SCSS</Paragraph>
             <Paragraph>
@@ -588,18 +544,17 @@ function Work() {
           </Text>
         </Figure>
         <Figure className="bottom">
-          <Image src={testimonial} alt="screenshot of testimonial project" />
-          <Text
-            className="bottom-left"
+          <Image
+            src={testimonial}
+            alt="screenshot of testimonial project"
             id="testimonial"
             onClick={handleClick}
-            visible={visible}
-            testimonialClicked={testimonialClicked}
-          >
+          />
+          <Text visible={visible} testimonialClicked={testimonialClicked}>
             <Heading2>Testimonial</Heading2>
             <Paragraph>April 2021 - HTML, CSS, SCSS</Paragraph>
             <Paragraph>
-              Second Winc Academy front-end assignment, level 1:
+              Second Winc Academy front-end assignment, level block:
               <br />
               Code to design, applying Sass and BEM principle. Position the
               image correctly.
@@ -621,14 +576,13 @@ function Work() {
           </Text>
         </Figure>
         <Figure className="bottom">
-          <Image src={website} alt="screenshot of website project" />
-          <Text
-            className="bottom-right"
+          <Image
+            src={website}
+            alt="screenshot of website project"
             id="website"
             onClick={handleClick}
-            visible={visible}
-            websiteClicked={websiteClicked}
-          >
+          />
+          <Text visible={visible} websiteClicked={websiteClicked}>
             <Heading2>Website</Heading2>
             <Paragraph>April 2021 - HTML, CSS</Paragraph>
             <Paragraph>
