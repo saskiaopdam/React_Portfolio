@@ -83,9 +83,11 @@ const AnchorLink = styled.a`
   &.contact {
     color: white;
     font-size: 24px;
-    padding: 20px;
+    padding: 10px;
     background: gray;
     opacity: 0.5;
+    display: flex;
+    align-items: center;
     border-radius: 50%;
     & + & {
       margin-left: 20px;
@@ -113,9 +115,7 @@ const Icons = styled.div`
 `;
 
 const Icon = styled.div`
-  height: 32px;
-  margin-right: 8px;
-  color: royalblue;
+  height: 24px;
 `;
 
 function Home() {
