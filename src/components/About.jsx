@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import portraitLight from "../assets/portraitLight.jpg";
+import portraitLight from "../assets/portrait-layout/portraitLight.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;

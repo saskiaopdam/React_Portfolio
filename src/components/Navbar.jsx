@@ -59,7 +59,7 @@ function NavBar({ open, setOpen, toggleMenu }) {
   return (
     <Wrapper>
       <StyledLink to="/">
-        <Name>Saskia Opdam</Name>
+        <Name>Home</Name>
       </StyledLink>
 
       <BurgerMenu

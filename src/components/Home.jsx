@@ -8,35 +8,42 @@ import {
   AiOutlineGithub,
 } from "react-icons/ai";
 
-import portraitDark from "../assets/portraitDark.jpg";
+import portraitDark from "../assets/portrait-layout/portraitDark.jpg";
+import toggle2 from "../assets/portrait-layout/toggle2.png";
+import lemons from "../assets/portrait-layout/lemons.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 768px) {
-    align-items: center;
-  }
 `;
 
 const Title = styled.h1`
-  margin-top: 20px;
-  margin-bottom: 16px;
+  margin-top: 40px;
+  margin-bottom: 36px;
+  text-align: center;
+  font-weight: 500;
 `;
 
 const Subtitle = styled.h2`
-  margin-bottom: 12px;
+  text-align: center;
   font-weight: 500;
+`;
+
+const FigureWrapper = styled.div`
+  margin-top: 40px;
+`;
+
+const Figure = styled.figure`
+  position: relative;
+  padding: 40px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
-  max-width: 400px;
   display: block;
-  margin: 40px 0;
-  @media (min-width: 768px) {
-    margin: 40px auto;
-  }
 `;
 
 const Heading2 = styled.h2`
@@ -81,15 +88,31 @@ const AnchorLink = styled.a`
 function Home() {
   return (
     <Wrapper>
-      <Title>Junior front-end developer learning full-stack</Title>
+      <Title>Saskia Opdam</Title>
+      <Subtitle>Junior front-end developer</Subtitle>
+      {/* <Subtitle>
+        HTML | CSS | JavaScript | React/Redux | NodeJS | Python | Flask | SQL
+      </Subtitle> */}
+      {/* <Title>Junior front-end developer learning full-stack</Title>
       <Subtitle>
         HTML | CSS | JavaScript | React/Redux | NodeJS | Python | Flask | SQL
-      </Subtitle>
-      <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
-      <Links className="information">
+      </Subtitle> */}
+      <FigureWrapper>
+        <Figure>
+          <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
+        </Figure>
+        <Figure>
+          <Image src={toggle2} alt="screenshot of toggle2 project" />
+        </Figure>
+        <Figure>
+          <Image src={lemons} alt="screenshot of lemons project" />
+        </Figure>
+      </FigureWrapper>
+      {/* <Links className="information">
         <StyledLink to="/about" className="information">
           <Heading3>Background</Heading3>
         </StyledLink>
+
         <StyledLink to="/work" className="information">
           <Heading3>Coding projects</Heading3>
         </StyledLink>
@@ -104,35 +127,35 @@ function Home() {
 
       <Heading2>Contact</Heading2>
       <Links className="contact">
-        <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
-          {/* <Icon> */}
-          <AiOutlineInbox aria-label="email" />
-          {/* </Icon> */}
-          {/* <Heading3>mail</Heading3> */}
-        </AnchorLink>
+        <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact"> */}
+      {/* <Icon> */}
+      {/* <AiOutlineInbox aria-label="email" /> */}
+      {/* </Icon> */}
+      {/* <Heading3>mail</Heading3> */}
+      {/* </AnchorLink>
         <AnchorLink
           href="https://www.linkedin.com/in/saskiaopdam/"
           target="_blank"
           rel="noreferrer"
           className="contact"
-        >
-          {/* <Icon> */}
-          <AiOutlineLinkedin aria-label="linkedin" />
-          {/* </Icon> */}
-          {/* <Heading3>linkedin</Heading3> */}
-        </AnchorLink>
+        > */}
+      {/* <Icon> */}
+      {/* <AiOutlineLinkedin aria-label="linkedin" /> */}
+      {/* </Icon> */}
+      {/* <Heading3>linkedin</Heading3> */}
+      {/* </AnchorLink>
         <AnchorLink
           href="https://github.com/saskiaopdam"
           target="_blank"
           rel="noreferrer"
           className="contact"
-        >
-          {/* <Icon> */}
-          <AiOutlineGithub aria-label="github" />
-          {/* </Icon> */}
-          {/* <Heading3>github</Heading3> */}
-        </AnchorLink>
-      </Links>
+        > */}
+      {/* <Icon> */}
+      {/* <AiOutlineGithub aria-label="github" /> */}
+      {/* </Icon> */}
+      {/* <Heading3>github</Heading3> */}
+      {/* </AnchorLink>
+      </Links> */}
     </Wrapper>
   );
 }

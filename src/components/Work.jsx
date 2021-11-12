@@ -51,7 +51,7 @@ const Figure = styled.figure`
       padding-left: 10px;
       padding-bottom: 20px;
     }
-    &:nth-last-child(visible) {
+    &:nth-last-child(1) {
       padding-bottom: 0;
     }
     &:nth-last-child(2) {
