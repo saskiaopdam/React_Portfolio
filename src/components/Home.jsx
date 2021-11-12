@@ -3,14 +3,7 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
 
-import {
-  AiFillMail,
-  AiFillLinkedin,
-  AiFillGithub,
-  // AiOutlineInbox,
-  // AiOutlineLinkedin,
-  // AiOutlineGithub,
-} from "react-icons/ai";
+import { AiFillMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 import portraitDark from "../assets/portrait-layout/portraitDark.jpg";
 import toggle2 from "../assets/portrait-layout/toggle2.png";
@@ -135,10 +128,7 @@ function Home() {
     <Wrapper>
       <Title>Saskia Opdam</Title>
       <Subtitle>Junior front-end developer</Subtitle>
-      {/* <p>
-        HTML | CSS | JavaScript | React/Redux | NodeJS | Python | Flask | SQL
-      </p> */}
-      <FigureWrapper>
+      <FigureWrapper role="navigation">
         <Figure>
           <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
           <Text
@@ -160,7 +150,7 @@ function Home() {
             visible={visible}
             toggle2Clicked={toggle2Clicked}
           >
-            <StyledLink to="/work" className="information">
+            <StyledLink to="/work">
               <Heading3>Coding projects</Heading3>
             </StyledLink>
           </Text>
@@ -187,11 +177,7 @@ function Home() {
         <Heading3 className="contact">Contact</Heading3>
         <Icons>
           <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
-            {/* <Icon> */}
-            {/* <AiOutlineInbox aria-label="email" /> */}
             <AiFillMail aria-label="email" />
-            {/* </Icon> */}
-            {/* <Heading3>mail</Heading3> */}
           </AnchorLink>
           <AnchorLink
             href="https://www.linkedin.com/in/saskiaopdam/"
@@ -199,11 +185,7 @@ function Home() {
             rel="noreferrer"
             className="contact"
           >
-            {/* <Icon> */}
             <AiFillLinkedin aria-label="linkedin" />
-            {/* <AiOutlineLinkedin aria-label="linkedin" /> */}
-            {/* </Icon> */}
-            {/* <Heading3>linkedin</Heading3> */}
           </AnchorLink>
           <AnchorLink
             href="https://github.com/saskiaopdam"
@@ -211,45 +193,10 @@ function Home() {
             rel="noreferrer"
             className="contact"
           >
-            {/* <Icon> */}
             <AiFillGithub aria-label="github" />
-            {/* <AiOutlineGithub aria-label="github" /> */}
-            {/* </Icon> */}
-            {/* <Heading3>github</Heading3> */}
           </AnchorLink>
         </Icons>
       </ContactWrapper>
-      {/* <Heading2>Contact</Heading2>
-      <Links className="contact">
-        <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
-          <Icon>
-            <AiOutlineInbox aria-label="email" />
-          </Icon>
-          <Heading3>mail</Heading3>
-        </AnchorLink>
-        <AnchorLink
-          href="https://www.linkedin.com/in/saskiaopdam/"
-          target="_blank"
-          rel="noreferrer"
-          className="contact"
-        >
-          <Icon>
-            <AiOutlineLinkedin aria-label="linkedin" />
-          </Icon>
-          <Heading3>linkedin</Heading3>
-        </AnchorLink>
-        <AnchorLink
-          href="https://github.com/saskiaopdam"
-          target="_blank"
-          rel="noreferrer"
-          className="contact"
-        >
-          <Icon>
-            <AiOutlineGithub aria-label="github" />
-          </Icon>
-          <Heading3>github</Heading3>
-        </AnchorLink>
-      </Links> */}
     </Wrapper>
   );
 }
