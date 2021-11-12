@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import {
-  AiOutlineInbox,
-  AiOutlineLinkedin,
-  AiOutlineGithub,
+  AiFillMail,
+  AiFillLinkedin,
+  AiFillGithub,
+  // AiOutlineInbox,
+  // AiOutlineLinkedin,
+  // AiOutlineGithub,
 } from "react-icons/ai";
 
 import portraitDark from "../assets/portrait-layout/portraitDark.jpg";
@@ -24,7 +27,6 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.h2`
-  margin-bottom: 12px;
   font-weight: 500;
   text-align: center;
 `;
@@ -78,26 +80,42 @@ const StyledLink = styled(Link)`
 
 const AnchorLink = styled.a`
   color: white;
+  &.contact {
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    background: gray;
+    opacity: 0.5;
+    border-radius: 50%;
+    & + & {
+      margin-left: 20px;
+    }
+  }
 `;
 
 const Heading3 = styled.h3`
   font-size: 24px;
-`;
-
-const Heading2 = styled.h2`
-  margin-bottom: 24px;
-`;
-
-const Links = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &.information {
-    margin-bottom: 40px;
-  }
+  font-weight: 500;
   &.contact {
-    flex-direction: row;
+    font-weight: 700;
+    text-align: center;
   }
+`;
+
+const ContactWrapper = styled.div`
+  margin-top: 20px;
+`;
+
+const Icons = styled.div`
+  margin: 40px 0 20px;
+  display: flex;
+  justify-content: center;
+`;
+
+const Icon = styled.div`
+  height: 32px;
+  margin-right: 8px;
+  color: royalblue;
 `;
 
 function Home() {
@@ -165,38 +183,72 @@ function Home() {
           </Text>
         </Figure>
       </FigureWrapper>
-      {/* 
-
-      <Heading2>Contact</Heading2>
+      <ContactWrapper>
+        <Heading3 className="contact">Contact</Heading3>
+        <Icons>
+          <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
+            {/* <Icon> */}
+            {/* <AiOutlineInbox aria-label="email" /> */}
+            <AiFillMail aria-label="email" />
+            {/* </Icon> */}
+            {/* <Heading3>mail</Heading3> */}
+          </AnchorLink>
+          <AnchorLink
+            href="https://www.linkedin.com/in/saskiaopdam/"
+            target="_blank"
+            rel="noreferrer"
+            className="contact"
+          >
+            {/* <Icon> */}
+            <AiFillLinkedin aria-label="linkedin" />
+            {/* <AiOutlineLinkedin aria-label="linkedin" /> */}
+            {/* </Icon> */}
+            {/* <Heading3>linkedin</Heading3> */}
+          </AnchorLink>
+          <AnchorLink
+            href="https://github.com/saskiaopdam"
+            target="_blank"
+            rel="noreferrer"
+            className="contact"
+          >
+            {/* <Icon> */}
+            <AiFillGithub aria-label="github" />
+            {/* <AiOutlineGithub aria-label="github" /> */}
+            {/* </Icon> */}
+            {/* <Heading3>github</Heading3> */}
+          </AnchorLink>
+        </Icons>
+      </ContactWrapper>
+      {/* <Heading2>Contact</Heading2>
       <Links className="contact">
-        <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact"> */}
-      {/* <Icon> */}
-      {/* <AiOutlineInbox aria-label="email" /> */}
-      {/* </Icon> */}
-      {/* <Heading3>mail</Heading3> */}
-      {/* </AnchorLink>
+        <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
+          <Icon>
+            <AiOutlineInbox aria-label="email" />
+          </Icon>
+          <Heading3>mail</Heading3>
+        </AnchorLink>
         <AnchorLink
           href="https://www.linkedin.com/in/saskiaopdam/"
           target="_blank"
           rel="noreferrer"
           className="contact"
-        > */}
-      {/* <Icon> */}
-      {/* <AiOutlineLinkedin aria-label="linkedin" /> */}
-      {/* </Icon> */}
-      {/* <Heading3>linkedin</Heading3> */}
-      {/* </AnchorLink>
+        >
+          <Icon>
+            <AiOutlineLinkedin aria-label="linkedin" />
+          </Icon>
+          <Heading3>linkedin</Heading3>
+        </AnchorLink>
         <AnchorLink
           href="https://github.com/saskiaopdam"
           target="_blank"
           rel="noreferrer"
           className="contact"
-        > */}
-      {/* <Icon> */}
-      {/* <AiOutlineGithub aria-label="github" /> */}
-      {/* </Icon> */}
-      {/* <Heading3>github</Heading3> */}
-      {/* </AnchorLink>
+        >
+          <Icon>
+            <AiOutlineGithub aria-label="github" />
+          </Icon>
+          <Heading3>github</Heading3>
+        </AnchorLink>
       </Links> */}
     </Wrapper>
   );
