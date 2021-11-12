@@ -19,12 +19,13 @@ import testimonial from "../assets/testimonial.png";
 import website from "../assets/website.png";
 
 const Wrapper = styled.div`
-  flex-grow: block;
+  flex-grow: 1;
 `;
 
 const Title = styled.h1`
   margin-top: 20px;
   margin-bottom: 16px;
+  text-align: center;
 `;
 
 const FigureWrapper = styled.div`
@@ -38,24 +39,18 @@ const Figure = styled.figure`
   & + & {
     margin-top: 20px;
   }
+  padding: 0 20px 20px 20px;
   @media (min-width: 768px) {
     width: 50%;
     & + & {
       margin-top: 0;
     }
-    &:nth-child(odd) {
-      padding-right: 10px;
-      padding-bottom: 20px;
-    }
-    &:nth-child(even) {
-      padding-left: 10px;
-      padding-bottom: 20px;
-    }
+    padding-bottom: 40px;
     &:nth-last-child(1) {
-      padding-bottom: 0;
+      padding-bottom: 20px;
     }
     &:nth-last-child(2) {
-      padding-bottom: 0;
+      padding-bottom: 20px;
     }
   }
 `;

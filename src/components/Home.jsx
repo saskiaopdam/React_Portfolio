@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components/macro";
@@ -17,25 +18,30 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  margin-top: 40px;
-  margin-bottom: 36px;
+  margin-top: 20px;
+  margin-bottom: 16px;
   text-align: center;
-  font-weight: 500;
 `;
 
 const Subtitle = styled.h2`
-  text-align: center;
+  margin-bottom: 12px;
   font-weight: 500;
+  text-align: center;
 `;
 
 const FigureWrapper = styled.div`
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Figure = styled.figure`
   position: relative;
-  padding: 40px;
-  margin: 0 auto;
+  & + & {
+    margin-top: 20px;
+  }
+  padding: 0 20px 20px 20px;
   @media (min-width: 768px) {
     width: 50%;
   }
@@ -46,13 +52,40 @@ const Image = styled.img`
   display: block;
 `;
 
-const Heading2 = styled.h2`
-  margin-bottom: 24px;
+const Text = styled.div`
+  position: absolute;
+  top: 0;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: ${({ portraitClicked, toggle2Clicked, lemonsClicked, visible }) =>
+    portraitClicked && visible
+      ? "1"
+      : toggle2Clicked && visible
+      ? "1"
+      : lemonsClicked && visible
+      ? "1"
+      : "0"};
+`;
+
+const StyledLink = styled(Link)`
+  color: white;
+`;
+
+const AnchorLink = styled.a`
+  color: white;
 `;
 
 const Heading3 = styled.h3`
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 24px;
+`;
+
+const Heading2 = styled.h2`
+  margin-bottom: 24px;
 `;
 
 const Links = styled.div`
@@ -67,63 +100,72 @@ const Links = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  color: black;
-  &.information {
-    margin-bottom: 9px;
-  }
-`;
-
-const AnchorLink = styled.a`
-  color: black;
-  &.contact {
-    color: royalblue;
-    font-size: 24px;
-    & + & {
-      margin-left: 32px;
-    }
-  }
-`;
-
 function Home() {
+  const [id, setId] = useState("");
+  const [visible, setVisible] = useState(false);
+
+  const handleClick = (event) => {
+    setId(event.target.id);
+    setVisible(!visible);
+  };
+
+  const portraitClicked = id === "portrait";
+  const toggle2Clicked = id === "toggle2";
+  const lemonsClicked = id === "lemons";
+
   return (
     <Wrapper>
       <Title>Saskia Opdam</Title>
       <Subtitle>Junior front-end developer</Subtitle>
-      {/* <Subtitle>
+      {/* <p>
         HTML | CSS | JavaScript | React/Redux | NodeJS | Python | Flask | SQL
-      </Subtitle> */}
-      {/* <Title>Junior front-end developer learning full-stack</Title>
-      <Subtitle>
-        HTML | CSS | JavaScript | React/Redux | NodeJS | Python | Flask | SQL
-      </Subtitle> */}
+      </p> */}
       <FigureWrapper>
         <Figure>
           <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
+          <Text
+            id="portrait"
+            onClick={handleClick}
+            visible={visible}
+            portraitClicked={portraitClicked}
+          >
+            <StyledLink to="/about">
+              <Heading3>Background</Heading3>
+            </StyledLink>
+          </Text>
         </Figure>
         <Figure>
           <Image src={toggle2} alt="screenshot of toggle2 project" />
+          <Text
+            id="toggle2"
+            onClick={handleClick}
+            visible={visible}
+            toggle2Clicked={toggle2Clicked}
+          >
+            <StyledLink to="/work" className="information">
+              <Heading3>Coding projects</Heading3>
+            </StyledLink>
+          </Text>
         </Figure>
         <Figure>
           <Image src={lemons} alt="screenshot of lemons project" />
+          <Text
+            id="lemons"
+            onClick={handleClick}
+            visible={visible}
+            lemonsClicked={lemonsClicked}
+          >
+            <AnchorLink
+              href="https://www.behance.net/opdamsaski0505"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Heading3>Photo projects</Heading3>
+            </AnchorLink>
+          </Text>
         </Figure>
       </FigureWrapper>
-      {/* <Links className="information">
-        <StyledLink to="/about" className="information">
-          <Heading3>Background</Heading3>
-        </StyledLink>
-
-        <StyledLink to="/work" className="information">
-          <Heading3>Coding projects</Heading3>
-        </StyledLink>
-        <AnchorLink
-          href="https://www.behance.net/opdamsaski0505"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Heading3>Photo projects</Heading3>
-        </AnchorLink>
-      </Links>
+      {/* 
 
       <Heading2>Contact</Heading2>
       <Links className="contact">

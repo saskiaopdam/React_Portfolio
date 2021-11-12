@@ -9,12 +9,14 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   margin-top: 20px;
   margin-bottom: 16px;
+  text-align: center;
 `;
 
 const Image = styled.img`
   width: 100%;
   display: block;
-  margin: 40px 0;
+  margin: 40px auto 0px;
+  padding: 0 20px 20px 20px;
   @media (min-width: 768px) {
     width: 50%;
   }
