@@ -18,7 +18,7 @@ const Wrapper = styled.nav`
   display: flex;
   flex-direction: column;
   z-index: 1;
-  background: ${({ open }) => (open ? "royalblue" : "white")};
+  background: ${({ open }) => (open ? "whitesmoke" : "white")};
   transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0%)")};
 
   transition: transform 0.7s ease, background 0.7s ease;
@@ -40,7 +40,7 @@ const StyledLink = styled(NavLink)`
   //   text-decoration: underline;
   // }
 
-  color: white;
+  color: black;
   font-size: 20px;
   padding-top: 12px;
   & + & {
@@ -61,7 +61,7 @@ const AnchorLink = styled.a`
     text-decoration: underline;
   }
 
-  color: white;
+  color: black;
   font-size: 20px;
   padding-top: 32px;
 `;
@@ -81,21 +81,24 @@ function SlideMenu({ open, setOpen, toggleMenu }) {
         target="_blank"
         rel="noreferrer"
       >
-        <AiOutlineInbox />
+        e-mail
+        {/* <AiOutlineInbox /> */}
       </AnchorLink>
       <AnchorLink
         href="https://www.linkedin.com/in/saskiaopdam/"
         target="_blank"
         rel="noreferrer"
       >
-        <AiOutlineLinkedin />
+        linkedin
+        {/* <AiOutlineLinkedin /> */}
       </AnchorLink>
       <AnchorLink
         href="https://github.com/saskiaopdam"
         target="_blank"
         rel="noreferrer"
       >
-        <AiOutlineGithub />
+        github
+        {/* <AiOutlineGithub /> */}
       </AnchorLink>
     </Wrapper>
   );

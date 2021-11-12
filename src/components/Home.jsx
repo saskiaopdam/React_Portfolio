@@ -83,14 +83,14 @@ const AnchorLink = styled.a`
   &.contact {
     color: white;
     font-size: 24px;
-    padding: 10px;
-    background: gray;
+    padding: 12px;
+    background: darkblue;
     opacity: 0.5;
     display: flex;
     align-items: center;
     border-radius: 50%;
     & + & {
-      margin-left: 20px;
+      margin-left: 24px;
     }
   }
 `;
