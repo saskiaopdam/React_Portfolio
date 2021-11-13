@@ -4,63 +4,46 @@ import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-`;
-
-const Role = styled.h2`
-  font-size: 18px;
-  font-weight: 500;
-  // block-size: fit-content;
-`;
-
-const Social = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
 `;
 
 const AnchorLink = styled.a`
   color: black;
-  margin-left: 18px;
+  padding: 20px;
   &:hover {
     opacity: 0.5;
   }
 `;
 
 const Icon = styled.div`
-  width: 21px;
-  height: 21px;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
   font-size: 18px;
 `;
 
 function FooterContent() {
   return (
     <Wrapper>
-      <Role>Junior front-end developer</Role>
-      <Social>
-        <AnchorLink
-          href="https://www.linkedin.com/in/saskiaopdam/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon>
-            <AiOutlineLinkedin />
-          </Icon>
-        </AnchorLink>
+      <AnchorLink
+        href="https://www.linkedin.com/in/saskiaopdam/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Icon>
+          <AiOutlineLinkedin />
+        </Icon>
+      </AnchorLink>
 
-        <AnchorLink
-          href="https://github.com/saskiaopdam"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon>
-            <AiOutlineGithub />
-          </Icon>
-        </AnchorLink>
-      </Social>
+      <AnchorLink
+        href="https://github.com/saskiaopdam"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Icon>
+          <AiOutlineGithub />
+        </Icon>
+      </AnchorLink>
     </Wrapper>
   );
 }
