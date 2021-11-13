@@ -10,18 +10,30 @@ import toggle2 from "../assets/portrait-layout/toggle2.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  @media (min-width: 500px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  // background: pink;
+  // @media (min-width: 500px) {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
 `;
 
-// const Title = styled.h1`
-//   font-size: 22px;
-//   margin-bottom: 11px;
-// `;
+const Role = styled.h2`
+  font-size: 18px;
+  font-weight: 500;
+`;
+
+const Location = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+`;
+
+const Title = styled.h2`
+  font-size: 22px;
+  margin-bottom: 11px;
+  // font-weight: 500;
+`;
 
 const Image = styled.img`
   width: 100%;
@@ -147,7 +159,7 @@ function Home() {
 
   return (
     <Wrapper>
-      {/* <Title>Intro</Title> */}
+      <Title>Junior front-end developer learning full-stack</Title>
       {/* <Links>
         <StyledLink to="/about">Info</StyledLink>
         <StyledLink to="/work">Projects</StyledLink>

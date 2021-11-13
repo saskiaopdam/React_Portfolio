@@ -29,11 +29,8 @@ const Header = styled.header`
 const Main = styled.main`
   flex-grow: 1;
   display: flex;
-  margin-top: 125px;
-  padding: 20px;
-  @media (min-width: 281px) {
-    margin-top: 104px;
-  }
+  margin-top: 61px;
+  padding: 0px 20px;
 `;
 
 const Footer = styled.footer`

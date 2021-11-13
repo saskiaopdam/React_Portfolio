@@ -9,31 +9,21 @@ const Wrapper = styled.nav`
   justify-content: space-between;
 `;
 
-const Info = styled.div``;
-
 const Name = styled.h1`
   font-size: 18px;
   font-weight: 500;
   block-size: fit-content;
 `;
 
-const Role = styled.h2`
-  font-size: 18px;
-  font-weight: 500;
-`;
-const Location = styled.p`
-  font-size: 14px;
-  font-weight: 500;
-`;
-
 const Burger = styled.button`
-  flex-grow: 1;
+  width: 21px;
   height: 21px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   border: none;
   font-size: 18px;
+  background: transparent;
   @media (min-width: 500px) {
     display: none;
   }
@@ -89,9 +79,7 @@ function NavBar({ open, setOpen, toggleMenu }) {
       >
         <Name>Saskia Opdam</Name>
       </StyledNavLink>
-      {/* <Role>Junior front-end developer</Role>
-        <Location>The Hague</Location> */}
-      {/* </StyledNavLink> */}
+
       <Burger
         open={open}
         setOpen={setOpen}
