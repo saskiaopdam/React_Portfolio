@@ -41,13 +41,12 @@ const Location = styled.p`
 `;
 
 const BurgerMenu = styled.button`
-  background: pink;
-  flex-grow: 1;
   display: flex;
   justify-content: flex-end;
   background: transparent;
   border: none;
   font-size: 20px;
+  padding-left: 44px;
   @media (min-width: 500px) {
     display: none;
   }
@@ -61,10 +60,12 @@ const Icon = styled.div`
 
 const FullMenu = styled.div`
   display: none;
-  @media (min-width: 500px) {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-end;
+  @media (min-width: 768px) {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
   }
 `;
 
