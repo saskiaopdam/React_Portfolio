@@ -34,6 +34,11 @@ const Title = styled.h2`
   margin-bottom: 11px;
   // font-weight: 500;
 `;
+const SubTitle = styled.h3`
+  font-size: 18px;
+  margin-bottom: 9px;
+  // font-weight: 500;
+`;
 
 const Image = styled.img`
   width: 100%;
@@ -159,7 +164,7 @@ function Home() {
 
   return (
     <Wrapper>
-      <Title>Junior front-end developer learning full-stack</Title>
+      <Title>Junior front-end developer</Title>
       {/* <Links>
         <StyledLink to="/about">Info</StyledLink>
         <StyledLink to="/work">Projects</StyledLink>
