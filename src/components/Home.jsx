@@ -5,40 +5,44 @@ import styled from "styled-components/macro";
 
 import { AiFillMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
-import portraitDark from "../assets/portrait-layout/portraitDark.jpg";
+import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.jpg";
 import toggle2 from "../assets/portrait-layout/toggle2.png";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  // background: pink;
-  // @media (min-width: 500px) {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
+  display: flex;
+  flex-direction: column;
 `;
 
-const Role = styled.h2`
-  font-size: 18px;
-  font-weight: 500;
-`;
-
-const Location = styled.p`
-  font-size: 14px;
-  font-weight: 500;
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: yellow;
 `;
 
 const Title = styled.h2`
   font-size: 22px;
-  margin-bottom: 11px;
+  // background: green;
+  margin: 22px auto;
+`;
+
+const Figure = styled.figure`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // background: pink;
 `;
 
 const Image = styled.img`
   width: 100%;
   display: block;
+  border-radius: 50%;
   @media (min-width: 500px) {
-    max-width: 500px;
+    width: 50%;
   }
 `;
 
@@ -68,16 +72,16 @@ const AnchorLink = styled.a`
 
 const FigureWrapper = styled.div``;
 
-const Figure = styled.figure`
-  position: relative;
-  & + & {
-    margin-top: 20px;
-  }
-  // padding: 0 20px 20px 20px;
-  @media (min-width: 768px) {
-    width: 50%;
-  }
-`;
+// const Figure = styled.figure`
+//   position: relative;
+//   & + & {
+//     margin-top: 20px;
+//   }
+//   // padding: 0 20px 20px 20px;
+//   @media (min-width: 768px) {
+//     width: 50%;
+//   }
+// `;
 
 const Text = styled.div`
   position: absolute;
@@ -158,7 +162,9 @@ function Home() {
 
   return (
     <Wrapper>
-      <Title>Junior front-end developer</Title>
+      {/* <Header> */}
+      {/* <Title>Junior front-end developer</Title> */}
+      {/* </Header> */}
       {/* <Links>
         <StyledLink to="/about">Info</StyledLink>
         <StyledLink to="/work">Projects</StyledLink>
@@ -169,8 +175,10 @@ function Home() {
         >
           Hobby
         </AnchorLink>
-      </Links> */}
-      <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />{" "}
+      </Links> */}{" "}
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
       {/* <FigureWrapper role="navigation">
         <Figure>
           <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />

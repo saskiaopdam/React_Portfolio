@@ -16,6 +16,7 @@ const Name = styled.h1`
 `;
 
 const Burger = styled.button`
+  flex-grow: 1;
   width: 21px;
   height: 21px;
   display: flex;
@@ -23,7 +24,7 @@ const Burger = styled.button`
   align-items: center;
   border: none;
   font-size: 18px;
-  background: transparent;
+  background: pink;
   @media (min-width: 500px) {
     display: none;
   }
@@ -41,7 +42,7 @@ const StyledNavLink = styled(NavLink)`
   color: black;
   text-decoration: none;
   font-size: 14px;
-  block-size: fit-content;
+  // block-size: fit-content;
   & + & {
     margin-left: 14px;
   }

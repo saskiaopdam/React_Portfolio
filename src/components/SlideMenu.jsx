@@ -112,6 +112,8 @@ function SlideMenu({ open, setOpen, toggleMenu }) {
         GitHub
         {/* <AiOutlineGithub /> */}
       </AnchorLink>
+      <small>© 2021 Saskia Opdam</small>
+      <small>Made with React</small>
     </Wrapper>
   );
 }
