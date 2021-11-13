@@ -31,7 +31,6 @@ const Main = styled.main`
   flex-grow: 1;
   display: flex;
   margin-top: 61px;
-  margin-bottom: 60px;
   padding: 0px 20px;
 `;
 
@@ -42,7 +41,6 @@ const Footer = styled.footer`
   right: 0;
   // flex-shrink: 0;
   padding: 20px;
-  // background: white;
 `;
 
 const Inner = styled.div`
