@@ -4,15 +4,23 @@ import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.j
 
 const Wrapper = styled.div`
   flex-grow: 1;
+  // background: orange;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  @media (min-width: 500px) {
+    justify-content: center;
+  }
 `;
 
 const Figure = styled.figure`
+  margin-top: 60px;
+  // background: pink;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (min-width: 500px) {
+    margin-top: 0;
+  }
 `;
 
 const Image = styled.img`
