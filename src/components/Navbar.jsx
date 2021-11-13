@@ -12,11 +12,10 @@ const Wrapper = styled.nav`
 const Name = styled.h1`
   font-size: 18px;
   font-weight: 500;
-  block-size: fit-content;
+  // block-size: fit-content;
 `;
 
 const Burger = styled.button`
-  flex-grow: 1;
   width: 21px;
   height: 21px;
   display: flex;
@@ -31,6 +30,7 @@ const Burger = styled.button`
 `;
 
 const FullMenu = styled.div`
+  flex-grow: 1;
   display: none;
   @media (min-width: 500px) {
     display: flex;
@@ -62,7 +62,7 @@ const AnchorLink = styled.a`
   color: black;
   text-decoration: none;
   font-size: 14px;
-  block-size: fit-content;
+  // block-size: fit-content;
   margin-left: 14px;
   &:hover {
     text-decoration: underline;

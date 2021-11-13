@@ -10,11 +10,10 @@ const Wrapper = styled.div`
 const Role = styled.h2`
   font-size: 18px;
   font-weight: 500;
-  block-size: fit-content;
+  // block-size: fit-content;
 `;
 
 const Social = styled.div`
-  flex-grow: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
