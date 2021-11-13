@@ -34,6 +34,7 @@ const FullMenu = styled.div`
   display: none;
   @media (min-width: 500px) {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
   }
 `;
