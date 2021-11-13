@@ -8,9 +8,7 @@ const Wrapper = styled.div`
 `;
 
 const AnchorLink = styled.a`
-  // background: green;
   color: black;
-  padding: 20px;
   & + & {
     margin-left: 20px;
   }
