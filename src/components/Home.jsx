@@ -30,14 +30,8 @@ const Location = styled.p`
 `;
 
 const Title = styled.h2`
-  margin-bottom: 12px;
-  // font-weight: 500;
-`;
-
-const SubTitle = styled.h3`
-  font-size: 18px;
-  margin-bottom: 9px;
-  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 11px;
 `;
 
 const Image = styled.img`
@@ -164,10 +158,7 @@ function Home() {
 
   return (
     <Wrapper>
-      <Title>Junior front-end developer learning full-stack</Title>
-      <SubTitle>
-        HTML | CSS | JavaScript | React | NodeJS | Python | Flask | SQL
-      </SubTitle>
+      <Title>Junior front-end developer</Title>
       {/* <Links>
         <StyledLink to="/about">Info</StyledLink>
         <StyledLink to="/work">Projects</StyledLink>
