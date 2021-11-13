@@ -37,6 +37,7 @@ const Main = styled.main`
 const Footer = styled.footer`
   flex-shrink: 0;
   padding: 20px;
+  // background: white;
 `;
 
 const Inner = styled.div`

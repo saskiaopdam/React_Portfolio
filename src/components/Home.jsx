@@ -17,7 +17,7 @@ const Figure = styled.figure`
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 75%;
   display: block;
   border-radius: 50%;
   @media (min-width: 500px) {
@@ -26,9 +26,10 @@ const Image = styled.img`
 `;
 
 const Title = styled.h2`
+  flex-grow: 1;
   font-size: 18px;
   font-weight: 500;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 `;
 
 function Home() {

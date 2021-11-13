@@ -9,7 +9,9 @@ const Wrapper = styled.div`
 
 const AnchorLink = styled.a`
   color: black;
-  padding: 20px;
+  & + & {
+    margin-left: 18px;
+  }
   &:hover {
     opacity: 0.5;
   }
