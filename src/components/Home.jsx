@@ -4,19 +4,15 @@ import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.j
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  background: pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
 const Figure = styled.figure`
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: orange;
 `;
 
 const Image = styled.img`
@@ -31,7 +27,7 @@ const Image = styled.img`
 const Title = styled.h2`
   font-size: 18px;
   font-weight: 500;
-  margin: 20px auto;
+  margin: 20px auto 0px;
 `;
 
 function Home() {
