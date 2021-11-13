@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.jpg";
 
 const Wrapper = styled.div`
-  flex-grow: 1;
+  // flex-grow: 1;
   // background: orange;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const Figure = styled.figure`
-  margin-top: 60px;
+  margin-top: 20px;
   // background: pink;
   display: flex;
   flex-direction: column;
