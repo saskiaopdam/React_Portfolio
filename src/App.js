@@ -31,11 +31,16 @@ const Main = styled.main`
   flex-grow: 1;
   display: flex;
   margin-top: 61px;
+  margin-bottom: 60px;
   padding: 0px 20px;
 `;
 
 const Footer = styled.footer`
-  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // flex-shrink: 0;
   padding: 20px;
   // background: white;
 `;

@@ -21,7 +21,7 @@ const Icon = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: 18px;
+  font-size: 20px;
 `;
 
 function FooterContent() {
