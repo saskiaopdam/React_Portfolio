@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `;
 
 const Figure = styled.figure`
-  flex-grow: 1;
+  // flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +27,7 @@ const Image = styled.img`
 `;
 
 const Title = styled.h2`
-  flex-grow: 1;
+  // flex-grow: 1;
   font-size: 18px;
   font-weight: 500;
   margin: 0 auto 20px;
