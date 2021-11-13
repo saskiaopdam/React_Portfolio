@@ -24,7 +24,7 @@ const Burger = styled.button`
   align-items: center;
   border: none;
   font-size: 18px;
-  background: pink;
+  background: transparent;
   @media (min-width: 500px) {
     display: none;
   }
