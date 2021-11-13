@@ -5,14 +5,18 @@ import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.j
 const Wrapper = styled.div`
   flex-grow: 1;
   background: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Figure = styled.figure`
-  height: 100%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: orange;
 `;
 
 const Image = styled.img`
