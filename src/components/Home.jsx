@@ -7,52 +7,72 @@ import { AiFillMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 import portraitDark from "../assets/portrait-layout/portraitDark.jpg";
 import toggle2 from "../assets/portrait-layout/toggle2.png";
-import lemons from "../assets/portrait-layout/lemons.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
+  @media (min-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
-const Title = styled.h1`
-  margin-top: 20px;
-  margin-bottom: 16px;
-  text-align: center;
+// const Title = styled.h1`
+//   font-size: 22px;
+//   margin-bottom: 11px;
+// `;
+
+const Image = styled.img`
+  width: 100%;
+  display: block;
+  @media (min-width: 500px) {
+    max-width: 500px;
+  }
 `;
 
-const Subtitle = styled.h2`
-  font-weight: 500;
-  text-align: center;
-`;
-
-const FigureWrapper = styled.div`
-  margin-top: 40px;
+const Links = styled.nav`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  @media (min-width: 500px) {
+    max-width: 500px;
+  }
 `;
+
+const StyledLink = styled(Link)`
+  color: black;
+  padding: 20px 10px 0px;
+  &:hover {
+    font-weight: bold;
+  }
+`;
+
+const AnchorLink = styled.a`
+  color: black;
+  padding: 20px 10px 0px;
+  &:hover {
+    font-weight: bold;
+  }
+`;
+
+const FigureWrapper = styled.div``;
 
 const Figure = styled.figure`
   position: relative;
   & + & {
     margin-top: 20px;
   }
-  padding: 0 20px 20px 20px;
+  // padding: 0 20px 20px 20px;
   @media (min-width: 768px) {
     width: 50%;
   }
 `;
 
-const Image = styled.img`
-  width: 100%;
-  display: block;
-`;
-
 const Text = styled.div`
   position: absolute;
   top: 0;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
+  width: 100%;
+  height: 100%;
   background: black;
   display: flex;
   justify-content: center;
@@ -67,26 +87,26 @@ const Text = styled.div`
       : "0"};
 `;
 
-const StyledLink = styled(Link)`
-  color: white;
-`;
+// const StyledLink = styled(Link)`
+//   color: white;
+// `;
 
-const AnchorLink = styled.a`
-  color: white;
-  &.contact {
-    color: white;
-    font-size: 24px;
-    padding: 12px;
-    background: darkblue;
-    opacity: 0.5;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-    & + & {
-      margin-left: 24px;
-    }
-  }
-`;
+// const AnchorLink = styled.a`
+//   color: white;
+//   &.contact {
+//     color: white;
+//     font-size: 24px;
+//     padding: 12px;
+//     background: darkblue;
+//     opacity: 0.5;
+//     display: flex;
+//     align-items: center;
+//     border-radius: 50%;
+//     & + & {
+//       margin-left: 24px;
+//     }
+//   }
+// `;
 
 const Heading3 = styled.h3`
   font-size: 24px;
@@ -118,6 +138,7 @@ function Home() {
   const handleClick = (event) => {
     setId(event.target.id);
     setVisible(!visible);
+    console.log("clicked");
   };
 
   const portraitClicked = id === "portrait";
@@ -126,9 +147,20 @@ function Home() {
 
   return (
     <Wrapper>
-      <Title>Saskia Opdam</Title>
-      <Subtitle>Junior front-end developer</Subtitle>
-      <FigureWrapper role="navigation">
+      {/* <Title>Intro</Title> */}
+      {/* <Links>
+        <StyledLink to="/about">Info</StyledLink>
+        <StyledLink to="/work">Projects</StyledLink>
+        <AnchorLink
+          href="https://www.behance.net/opdamsaski0505"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Hobby
+        </AnchorLink>
+      </Links> */}
+      <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />{" "}
+      {/* <FigureWrapper role="navigation">
         <Figure>
           <Image src={portraitDark} alt="portrait photo of Saskia Opdam" />
           <Text
@@ -138,11 +170,11 @@ function Home() {
             portraitClicked={portraitClicked}
           >
             <StyledLink to="/about">
-              <Heading3>Background</Heading3>
+              <Heading3>Info</Heading3>
             </StyledLink>
           </Text>
-        </Figure>
-        <Figure>
+        </Figure> */}
+      {/* <Figure>
           <Image src={toggle2} alt="screenshot of toggle2 project" />
           <Text
             id="toggle2"
@@ -151,7 +183,7 @@ function Home() {
             toggle2Clicked={toggle2Clicked}
           >
             <StyledLink to="/work">
-              <Heading3>Coding projects</Heading3>
+              <Heading3>Projects</Heading3>
             </StyledLink>
           </Text>
         </Figure>
@@ -168,35 +200,10 @@ function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              <Heading3>Photo projects</Heading3>
+              <Heading3>Hobby</Heading3>
             </AnchorLink>
           </Text>
-        </Figure>
-      </FigureWrapper>
-      <ContactWrapper>
-        <Heading3 className="contact">Contact</Heading3>
-        <Icons>
-          <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
-            <AiFillMail aria-label="email" />
-          </AnchorLink>
-          <AnchorLink
-            href="https://www.linkedin.com/in/saskiaopdam/"
-            target="_blank"
-            rel="noreferrer"
-            className="contact"
-          >
-            <AiFillLinkedin aria-label="linkedin" />
-          </AnchorLink>
-          <AnchorLink
-            href="https://github.com/saskiaopdam"
-            target="_blank"
-            rel="noreferrer"
-            className="contact"
-          >
-            <AiFillGithub aria-label="github" />
-          </AnchorLink>
-        </Icons>
-      </ContactWrapper>
+        </Figure> */}
     </Wrapper>
   );
 }

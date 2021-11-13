@@ -1,24 +1,15 @@
 import styled from "styled-components/macro";
 
 import portraitLight from "../assets/portrait-layout/portraitLight.jpg";
+import lemons from "../assets/portrait-layout/lemons.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  position: relative;
-  // background-image: url(${portraitLight});
-  // background-size: 100%;
-  // background-repeat: no-repeat;
-  // background-position: bottom;
-  // @media (min-width: 500px) {
-  //   background-size: 50%;
-  // }
-  // opacity: 0.5;
 `;
 
 const Title = styled.h1`
-  margin-top: 20px;
-  margin-bottom: 16px;
-  text-align: center;
+  font-size: 22px;
+  margin-bottom: 11px;
 `;
 
 const Paragraph = styled.p`
@@ -61,9 +52,9 @@ const AnchorLink = styled.a`
 //   // max-width: 500px;
 // `;
 
-// const Accent = styled.span`
-//   font-weight: bold;
-// `;
+const Accent = styled.span`
+  font-weight: bold;
+`;
 
 // const Anchor = styled.a`
 //   color: black;
@@ -72,11 +63,12 @@ const AnchorLink = styled.a`
 function About() {
   return (
     <Wrapper>
-      <Title>Background</Title>
+      <Title>Info</Title>
       <Paragraph>
         After working on a website some time ago I got hooked and decided to
         learn more and switch careers from translation to development. Since
-        February this year I follow a full-stack development course at{" "}
+        February this year I follow a{" "}
+        <strong>full-stack development course</strong> at{" "}
         <AnchorLink
           href="https://www.wincacademy.nl/#"
           target="_blank"
@@ -88,6 +80,20 @@ function About() {
         assignment.
       </Paragraph>
       <Paragraph>
+        What I love about programming is that it allows for creativity and
+        logical thinking at the same time. The result is visual and - if done
+        well - appealing to the eye. An anspect I miss in translation.
+      </Paragraph>
+      <Paragraph>
+        I'm looking for an opportunity to gain experience and broaden my
+        front-end skills in a junior developer role, while in the spare time
+        finishing the back-end curriculum.
+      </Paragraph>
+      <Paragraph>
+        If you are looking for someone with endless curiosity, eagerness to
+        learn and love of creating and problem solving, please let me know.
+      </Paragraph>
+      <Paragraph>
         <strong>Current skills:</strong>
         <br /> HTML, CSS, JavaScript, React/Redux, NodeJS
       </Paragraph>
@@ -95,9 +101,19 @@ function About() {
         <strong> Upcoming skills:</strong>
         <br /> Python, Flask, SQL
       </Paragraph>
-      <Paragraph></Paragraph>
-
-      <Image src={portraitLight} alt="portrait photo of Saskia Opdam" />
+      {/* <Image src={portraitLight} alt="portrait photo of Saskia Opdam" /> */}
+      <Paragraph>
+        <strong> Photo-editing:</strong>
+      </Paragraph>
+      <Image src={lemons} alt="screenshot of lemons project" />
+      {/* <h3>Photo-editing</h3>
+      <a
+        href="https://www.behance.net/opdamsaski0505"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={lemons} alt="screenshot of lemons project" />
+      </a> */}
       {/* <Summary>
       
 

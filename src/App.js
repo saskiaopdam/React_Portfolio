@@ -17,27 +17,27 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
+  background: whitesmoke;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  background: white;
   padding: 20px;
 `;
 
 const Main = styled.main`
   flex-grow: 1;
   display: flex;
-  margin-top: 61px;
-  background: whitesmoke;
+  margin-top: 125px;
   padding: 20px;
+  @media (min-width: 281px) {
+    margin-top: 104px;
+  }
 `;
 
 const Footer = styled.footer`
   flex-shrink: 0;
-  background: white;
-  color: black;
   padding: 20px;
 `;
 

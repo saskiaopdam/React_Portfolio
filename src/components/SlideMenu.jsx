@@ -10,7 +10,7 @@ import {
 
 const Wrapper = styled.nav`
   position: fixed;
-  top: 58px;
+  top: 125px;
   left: -100%;
   width: 100%;
   height: 100%;
@@ -22,6 +22,9 @@ const Wrapper = styled.nav`
   transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0%)")};
 
   transition: transform 0.7s ease, background 0.7s ease;
+  @media (min-width: 281px) {
+    top: 104px;
+  }
   @media (min-width: 500px) {
     display: none;
   }
@@ -69,19 +72,28 @@ const AnchorLink = styled.a`
 function SlideMenu({ open, setOpen, toggleMenu }) {
   return (
     <Wrapper open={open} setOpen={setOpen} onClick={toggleMenu}>
+      <StyledLink exact to="/" activeClassName="selected">
+        Home
+      </StyledLink>
       <StyledLink to="/about" className="mobile" activeClassName="selected">
-        about
+        About
       </StyledLink>
       <StyledLink to="/work" className="mobile" activeClassName="selected">
-        work
+        Work
       </StyledLink>
-
+      <AnchorLink
+        href="https://www.behance.net/opdamsaski0505"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Hobby
+      </AnchorLink>
       <AnchorLink
         href="mailto:opdamsaskia@icloud.com"
         target="_blank"
         rel="noreferrer"
       >
-        e-mail
+        E-mail
         {/* <AiOutlineInbox /> */}
       </AnchorLink>
       <AnchorLink
@@ -89,7 +101,7 @@ function SlideMenu({ open, setOpen, toggleMenu }) {
         target="_blank"
         rel="noreferrer"
       >
-        linkedin
+        LinkedIn
         {/* <AiOutlineLinkedin /> */}
       </AnchorLink>
       <AnchorLink
@@ -97,7 +109,7 @@ function SlideMenu({ open, setOpen, toggleMenu }) {
         target="_blank"
         rel="noreferrer"
       >
-        github
+        GitHub
         {/* <AiOutlineGithub /> */}
       </AnchorLink>
     </Wrapper>
