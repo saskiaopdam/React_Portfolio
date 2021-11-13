@@ -4,6 +4,7 @@ import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.j
 
 const Wrapper = styled.div`
   flex-grow: 1;
+  background: pink;
 `;
 
 const Figure = styled.figure`
