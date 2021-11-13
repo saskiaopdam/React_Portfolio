@@ -4,13 +4,10 @@ import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.j
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  // background: pink;
 `;
 
 const Figure = styled.figure`
-  // flex-grow: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,10 +24,9 @@ const Image = styled.img`
 `;
 
 const Title = styled.h2`
-  // flex-grow: 1;
   font-size: 18px;
   font-weight: 500;
-  margin: 0 auto 20px;
+  margin: 20px auto;
 `;
 
 function Home() {
@@ -38,8 +34,8 @@ function Home() {
     <Wrapper>
       <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+        <Title>Junior front-end developer</Title>
       </Figure>
-      <Title>Junior front-end developer</Title>
     </Wrapper>
   );
 }
