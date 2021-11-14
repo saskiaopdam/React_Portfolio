@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import styled from "styled-components/macro";
 
 import portraitDarkSquare from "../assets/portrait-layout/portrait-dark-square.jpg";
@@ -19,33 +22,106 @@ const ImageWrapper = styled.div`
   flex-grow: 1;
   // background: white;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: flex-start;
+`;
+
+const Figure = styled.figure`
+  position: relative;
+  width: 50%;
+  @media (min-width: 768px) {
+    width: 25%;
+  }
 `;
 
 const Image = styled.img`
-  width: 50%;
+  width: 100%;
   display: block;
   border-radius: 50%;
-  margin-top: 20px;
-  &.small {
-    width: 25%;
-    & + & {
-      margin-top: 20px;
-    }
-  }
-  @media (min-width: 500px) {
-    width: 50%;
-  }
+`;
+
+const Text = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  opacity: ${({
+    portraitMouseEnter,
+    toggle2MouseEnter,
+    lemonsMouseEnter,
+    visible,
+  }) =>
+    portraitMouseEnter && visible
+      ? "1"
+      : toggle2MouseEnter && visible
+      ? "1"
+      : lemonsMouseEnter && visible
+      ? "1"
+      : "0"};
+`;
+
+const StyledLink = styled(Link)`
+  color: white;
+`;
+
+const AnchorLink = styled.a`
+  color: white;
+`;
+
+const Heading3 = styled.h3`
+  font-size: 18px;
+  font-weight: 500;
+  font-size: 24px;
 `;
 
 function Home() {
+  const [id, setId] = useState("");
+  const [visible, setVisible] = useState(false);
+
+  const handleMouseEnter = (event) => {
+    setId(event.target.id);
+    setVisible(true);
+    // alert(`enter ${id}`);
+  };
+
+  const handleMouseLeave = () => {
+    setVisible(false);
+    // alert(`leave ${id}`);
+  };
+
+  const portraitClicked = id === "portrait";
+  const toggle2Clicked = id === "toggle2";
+  const lemonsClicked = id === "lemons";
+  const portraitMouseEnter = id === "portrait";
+  const toggle2MouseEnter = id === "toggle2";
+
   return (
     <Wrapper>
       <Title>Junior front-end developer</Title>
-      <Image src={portraitDarkSquare} alt="portrait photo of Saskia Opdam" />
-      <ImageWrapper>
+      <Figure>
+        <Link to="/about">
+          <Image
+            src={portraitDarkSquare}
+            alt="portrait photo of Saskia Opdam"
+          />
+        </Link>
+        <Text
+          id="portrait"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          visible={visible}
+          portraitMouseEnter={portraitMouseEnter}
+        >
+          <StyledLink to="/about">About</StyledLink>
+        </Text>
+      </Figure>
+
+      {/* <ImageWrapper>
         <Image
           src={toggle2Square}
           alt="screenshot of toggle2 project"
@@ -56,7 +132,7 @@ function Home() {
           alt="screenshot of lemons project"
           className="small"
         />
-      </ImageWrapper>
+      </ImageWrapper> */}
       {/* <Figure> */}
       {/* <Figure> */}
       {/* <Image
