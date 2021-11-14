@@ -3,13 +3,13 @@ import styled from "styled-components/macro";
 import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.jpg";
 
 const Wrapper = styled.div`
-  // flex-grow: 1;
-  // background: orange;
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 500px) {
-    justify-content: center;
-  }
+  flex-grow: 1;
+  background: orange;
+  // display: flex;
+  // flex-direction: column;
+  // @media (min-width: 500px) {
+  //   justify-content: center;
+  // }
 `;
 
 const Figure = styled.figure`
@@ -41,10 +41,10 @@ const Title = styled.h2`
 function Home() {
   return (
     <Wrapper>
-      <Figure>
+      {/* <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
         <Title>Junior front-end developer</Title>
-      </Figure>
+      </Figure> */}
     </Wrapper>
   );
 }
