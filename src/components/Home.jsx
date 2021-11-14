@@ -3,10 +3,10 @@ import styled from "styled-components/macro";
 import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.jpg";
 
 const Wrapper = styled.div`
-  background: yellow;
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
+  // background: yellow;
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-grow: 1;
 
   // display: flex;
   // flex-direction: column;
@@ -49,10 +49,10 @@ const Figure = styled.figure`
 function Home() {
   return (
     <Wrapper>
-      <Figure>
-        {/* <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      {/* <Figure> */}
+      {/* <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
         <Title>Junior front-end developer</Title> */}
-      </Figure>
+      {/* </Figure> */}
     </Wrapper>
   );
 }
