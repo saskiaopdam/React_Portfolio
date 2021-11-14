@@ -18,19 +18,22 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  background: whitesmoke;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+  flex-shrink: 0;
   padding: 20px;
+  // background: whitesmoke;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // z-index: 1;
+  // padding: 20px;
 `;
 
 const Main = styled.main`
   flex-grow: 1;
-  display: flex;
-  margin-top: 61px;
+  background: orange;
+  // display: flex;
+  // margin-top: 61px;
   padding: 0px 20px;
 `;
 
@@ -40,9 +43,9 @@ const Footer = styled.footer`
 `;
 
 const Inner = styled.div`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  // flex-grow: 1;
+  // display: flex;
+  // flex-direction: column;
   max-width: 1000px;
   margin: 0 auto;
 `;
