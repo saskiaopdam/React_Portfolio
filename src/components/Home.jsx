@@ -67,6 +67,10 @@ const Text = styled.div`
 
 const StyledLink = styled(Link)`
   color: white;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const AnchorLink = styled.a`
