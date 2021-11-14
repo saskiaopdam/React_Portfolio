@@ -12,14 +12,26 @@ import Work from "./components/Work";
 import FooterContent from "./components/FooterContent";
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+  // min-height: 100vh;
+  min-height: 100vh;
+  position: relative;
 `;
 
 const Header = styled.header`
-  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 20px;
+
+  background: white;
+  opacity: 0.5;
+
+  // flex-shrink: 0;
+  // padding: 20px;
+
   // background: whitesmoke;
   // position: fixed;
   // top: 0;
@@ -30,16 +42,26 @@ const Header = styled.header`
 `;
 
 const Main = styled.main`
-  background: yellow;
+  background: pink;
   flex-grow: 1;
   // display: flex;
   // margin-top: 61px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 78px;
+  padding-bottom: 78px;
 `;
 
 const Footer = styled.footer`
-  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 20px;
+  // background: white;
+  opacity: 0.5;
+  // flex-shrink: 0;
+  // padding: 20px;
 `;
 
 const Inner = styled.div`
