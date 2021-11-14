@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import portraitLightSquare from "../assets/portrait-layout/portrait-light-square.jpg";
+import portraitDarkSquare from "../assets/portrait-layout/portrait-dark-square.jpg";
 import toggle2Square from "../assets/portrait-layout/toggle2-square.png";
 import lemonsSquare from "../assets/portrait-layout/lemons-square.jpg";
 
@@ -19,8 +19,8 @@ const ImageWrapper = styled.div`
   flex-grow: 1;
   // background: white;
   display: flex;
-  // flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-end;
 `;
 
@@ -28,9 +28,12 @@ const Image = styled.img`
   width: 50%;
   display: block;
   border-radius: 50%;
+  margin-top: 20px;
   &.small {
     width: 25%;
-    margin-left: 20px;
+    & + & {
+      margin-top: 20px;
+    }
   }
   @media (min-width: 500px) {
     width: 50%;
@@ -41,7 +44,7 @@ function Home() {
   return (
     <Wrapper>
       <Title>Junior front-end developer</Title>
-      <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      <Image src={portraitDarkSquare} alt="portrait photo of Saskia Opdam" />
       <ImageWrapper>
         <Image
           src={toggle2Square}

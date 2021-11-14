@@ -104,7 +104,7 @@ function About() {
       <Paragraph>
         What I love about programming is that it allows for creativity and
         logical thinking at the same time. The result is visual and - if done
-        well - appealing to the eye. An anspect I miss in translation.
+        well - appealing to the eye. An aspect I miss in translation.
       </Paragraph>
       <Paragraph>
         I'm looking for an opportunity to gain experience and broaden my

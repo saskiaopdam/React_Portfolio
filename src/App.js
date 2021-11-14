@@ -28,7 +28,7 @@ const Header = styled.header`
 `;
 
 const Main = styled.main`
-  // background: green;
+  background: green;
   flex-grow: 1;
   padding: 20px;
   display: flex;
