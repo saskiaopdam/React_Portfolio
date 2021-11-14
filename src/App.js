@@ -12,56 +12,34 @@ import Work from "./components/Work";
 import FooterContent from "./components/FooterContent";
 
 const Wrapper = styled.div`
-  // display: flex;
-  // flex-direction: column;
-  // min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  position: relative;
+  // min-height: 100vh;
+  // position: relative;
 `;
 
 const Header = styled.header`
-  position: absolute;
+  background: whitesmoke;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
   padding: 20px;
-
-  background: white;
-  opacity: 0.5;
-
-  // flex-shrink: 0;
-  // padding: 20px;
-
-  // background: whitesmoke;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // z-index: 1;
-  // padding: 20px;
 `;
 
 const Main = styled.main`
   background: pink;
   flex-grow: 1;
+  padding: 20px;
   // display: flex;
-  // margin-top: 61px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 78px;
-  padding-bottom: 78px;
+  margin-top: 58px;
 `;
 
 const Footer = styled.footer`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  flex-shrink: 0;
   padding: 20px;
-  // background: white;
-  opacity: 0.5;
-  // flex-shrink: 0;
-  // padding: 20px;
 `;
 
 const Inner = styled.div`
@@ -83,16 +61,14 @@ function App() {
   return (
     <Wrapper>
       <Router>
-        {/* <ScrollToTop> */}
-        <Header open={open}>
-          header
-          {/* <Inner>
+        <ScrollToTop>
+          <Header open={open}>
+            <Inner>
               <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
-            </Inner> */}
-        </Header>
-        <Main>
-          main
-          {/* <Inner>
+            </Inner>
+          </Header>
+          <Main>
+            <Inner>
               <SlideMenu
                 open={open}
                 setOpen={setOpen}
@@ -101,15 +77,14 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/work" exact component={Work} />
-            </Inner> */}
-        </Main>
-        <Footer>
-          footer
-          {/* <Inner>
+            </Inner>
+          </Main>
+          <Footer>
+            <Inner>
               <FooterContent />
-            </Inner> */}
-        </Footer>
-        {/* </ScrollToTop> */}
+            </Inner>
+          </Footer>
+        </ScrollToTop>
       </Router>
     </Wrapper>
   );
