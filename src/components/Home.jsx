@@ -1,21 +1,22 @@
 import styled from "styled-components/macro";
 
-import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.jpg";
-import toggle2 from "../assets/portrait-layout/toggle2.png";
-import lemons from "../assets/portrait-layout/lemons.jpg";
+import portraitLightSquare from "../assets/portrait-layout/portrait-light-square.jpg";
+import toggle2Square from "../assets/portrait-layout/toggle2-square.png";
+import lemonsSquare from "../assets/portrait-layout/lemons-square.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  // background: yellow;
-
-  // display: flex;
-  // flex-wrap: wrap;
-  // display: flex;
-  // flex-direction: column;
-  // @media (min-width: 500px) {
-  //   justify-content: center;
-  // }
 `;
+
+const Title = styled.h1`
+  font-size: 22px;
+  margin-bottom: 11px;
+`;
+
+// const Title = styled.h2`
+//   font-size: 18px;
+//   font-weight: 500;
+// `;
 
 // const Figure = styled.figure`
 //   width: 50%;
@@ -31,42 +32,37 @@ const Wrapper = styled.div`
 //   display: block;
 // `;
 
-const Figure = styled.figure`
-  width: 100%;
-  height: 25%;
-  // background: pink;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  &.big {
-    // background: white;
-    height: 100%;
-  }
-`;
+// const Figure = styled.figure`
+//   width: 100%;
+//   height: 25%;
+//   // background: pink;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   &.big {
+//     // background: green;
+//     height: 100%;
+//   }
+// `;
 
-const FigureWrapper = styled.div`
-  height: 50%;
-  // background: yellow;
-  display: flex;
-`;
+// const FigureWrapper = styled.div`
+//   height: 50%;
+//   // background: yellow;
+//   display: flex;
+// `;
 
 const Image = styled.img`
-  width: 25%;
+  width: 50%;
   display: block;
   border-radius: 50%;
   @media (min-width: 500px) {
     width: 25%;
   }
   &.big {
-    width: 50%;
+    width: 100%;
     border-radius: 0;
   }
-`;
-
-const Title = styled.h2`
-  font-size: 18px;
-  font-weight: 500;
 `;
 
 const Heading3 = styled.h3`
@@ -77,6 +73,8 @@ const Heading3 = styled.h3`
 function Home() {
   return (
     <Wrapper>
+      <Title>Junior front-end developer</Title>
+      <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
       {/* <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
       </Figure>
@@ -90,12 +88,22 @@ function Home() {
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
       </Figure> */}
       {/* <Figure> */}
-      <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-        <Title>Junior front-end developer</Title>
-      </Figure>
+      {/* <Figure> */}
 
-      <FigureWrapper>
+      {/* <Image
+        src={toggle2Square}
+        alt="screenshot of toggle2 project"
+        className="small"
+      />
+      <Image
+        src={lemonsSquare}
+        alt="screenshot of lemons project"
+        className="small"
+      /> */}
+
+      {/* </Figure> */}
+
+      {/* <FigureWrapper>
         <Figure className="big">
           <Image
             src={toggle2}
@@ -113,12 +121,12 @@ function Home() {
           />
           <Heading3>Photo-editing</Heading3>
         </Figure>
-      </FigureWrapper>
+      </FigureWrapper> */}
 
-      <Figure>
+      {/* <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
         <Heading3>Contact</Heading3>
-      </Figure>
+      </Figure> */}
       {/* <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
       </Figure>

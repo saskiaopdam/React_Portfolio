@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import portraitLight from "../assets/portrait-layout/portraitLight.jpg";
+import portraitLight from "../assets/portrait-layout/portrait-light.jpg";
 import lemons from "../assets/portrait-layout/lemons.jpg";
 
 const Wrapper = styled.div`
@@ -16,7 +16,7 @@ const Paragraph = styled.p`
   margin: 0px auto 16px;
   line-height: 1.25;
   @media (min-width: 500px) {
-    width: 50%;
+    width: 75%;
   }
 `;
 
