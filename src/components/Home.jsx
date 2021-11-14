@@ -28,21 +28,38 @@ const Heading3 = styled.h3`
 `;
 
 const FigureWrapper = styled.div`
-  margin: 20px 0;
+  margin: 40px 0;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 const Figure = styled.figure`
   position: relative;
-  width: 50%;
-  margin: 0 auto;
-  & + & {
-    margin-top: 20px;
-  }
   &.round {
-    margin: 40px 0;
+    width: 50%;
+    @media (min-width: 768px) {
+      width: 25%;
+    }
   }
-  @media (min-width: 768px) {
-    width: 25%;
+
+  &.portrait {
+    width: 100%;
+    & + & {
+      margin-top: 20px;
+    }
+    @media (min-width: 768px) {
+      width: 50%;
+      & + & {
+        margin-top: 0;
+      }
+      &:nth-child(odd) {
+        padding-right: 40px;
+      }
+      &:nth-child(even) {
+        padding-left: 40px;
+      }
+    }
   }
 `;
 
@@ -56,12 +73,24 @@ const Image = styled.img`
 
 const Text = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   &.round {
     border-radius: 50%;
   }
+  &.portraitLeft {
+    @media (min-width: 768px) {
+      right: 40px;
+    }
+  }
+  &.portraitRight {
+    @media (min-width: 768px) {
+      left: 40px;
+    }
+  }
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,6 +121,7 @@ const AnchorLink = styled.a`
   color: white;
   &.contact {
     color: black;
+    display: block;
   }
   &:hover {
     opacity: 0.5;
@@ -121,30 +151,33 @@ function Home() {
       <SubTitle>
         HTML | CSS | JavaScript | React/Redux | NodeJS | Python | Flask | SQL
       </SubTitle>
-      <FigureWrapper>
-        <Figure className="round">
-          <Link to="/about">
-            <Image
-              src={portraitDarkSquare}
-              alt="portrait photo of Saskia Opdam"
-              className="round"
-            />
-          </Link>
-          <Text
-            id="portrait"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            visible={visible}
-            portraitMouseEnter={portraitMouseEnter}
+      <Figure className="round">
+        <Link to="/about">
+          <Image
+            src={portraitDarkSquare}
+            alt="portrait photo of Saskia Opdam"
             className="round"
-          >
-            <StyledLink to="/about">Info</StyledLink>
-          </Text>
-        </Figure>
-
-        <Figure>
+          />
+        </Link>
+        <Text
+          id="portrait"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          visible={visible}
+          portraitMouseEnter={portraitMouseEnter}
+          className="round"
+        >
+          <StyledLink to="/about">Info</StyledLink>
+        </Text>
+      </Figure>
+      <FigureWrapper>
+        <Figure className="portrait">
           <Link to="/work">
-            <Image src={toggle2} alt="screenshot of toggle2 project" />
+            <Image
+              src={toggle2}
+              alt="screenshot of toggle2 project"
+              className="portrait"
+            />
           </Link>
           <Text
             id="toggle2"
@@ -152,18 +185,23 @@ function Home() {
             onMouseLeave={handleMouseLeave}
             visible={visible}
             toggle2MouseEnter={toggle2MouseEnter}
+            className="portraitLeft"
           >
             <StyledLink to="/work">Coding projects</StyledLink>
           </Text>
         </Figure>
 
-        <Figure>
+        <Figure className="portrait">
           <a
             href="https://www.behance.net/opdamsaski0505"
             target="_blank"
             rel="noreferrer"
           >
-            <Image src={lemons} alt="screenshot of lemons project" />
+            <Image
+              src={lemons}
+              alt="screenshot of lemons project"
+              className="portrait"
+            />
           </a>
           <Text
             id="lemons"
@@ -171,6 +209,7 @@ function Home() {
             onMouseLeave={handleMouseLeave}
             visible={visible}
             lemonsMouseEnter={lemonsMouseEnter}
+            className="portraitRight"
           >
             <AnchorLink
               href="https://www.behance.net/opdamsaski0505"
@@ -185,6 +224,23 @@ function Home() {
       <Heading3>Contact</Heading3>
       <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
         E-mail
+      </AnchorLink>
+      <AnchorLink
+        href="https://www.linkedin.com/in/saskiaopdam/"
+        target="_blank"
+        rel="noreferrer"
+        className="contact"
+      >
+        LinkedIn
+      </AnchorLink>
+
+      <AnchorLink
+        href="https://github.com/saskiaopdam"
+        target="_blank"
+        rel="noreferrer"
+        className="contact"
+      >
+        GitHub
       </AnchorLink>
     </Wrapper>
   );

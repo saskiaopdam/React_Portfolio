@@ -10,7 +10,7 @@ import {
 
 const Wrapper = styled.nav`
   position: fixed;
-  top: 125px;
+  top: 61px;
   left: -100%;
   width: 100%;
   height: 100%;
@@ -22,51 +22,35 @@ const Wrapper = styled.nav`
   transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0%)")};
 
   transition: transform 0.7s ease, background 0.7s ease;
-  @media (min-width: 281px) {
-    top: 104px;
-  }
   @media (min-width: 500px) {
     display: none;
   }
 `;
 
 const StyledLink = styled(NavLink)`
-  display: flex;
-  text-decoration: none;
-  justify-content: flex-end;
-  &:hover {
-    transform: translateX(-5px);
-  }
-
-  // &.selected {
-  //   pointer-events: none;
-  //   text-decoration: underline;
-  // }
-
   color: black;
-  font-size: 20px;
-  padding-top: 12px;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
   & + & {
-    padding-top: 32px;
+    padding-top: 14px;
+  }
+  &:hover {
+    text-decoration: underline;
   }
 `;
 
 const AnchorLink = styled.a`
-  display: flex;
+  color: black;
   text-decoration: none;
+  font-size: 16px;
+  padding-top: 16px;
+  display: flex;
   justify-content: flex-end;
   &:hover {
-    transform: translateX(-5px);
+    opacity: 0.5;
   }
-
-  &.selected {
-    pointer-events: none;
-    text-decoration: underline;
-  }
-
-  color: black;
-  font-size: 20px;
-  padding-top: 32px;
 `;
 
 function SlideMenu({ open, setOpen, toggleMenu }) {
@@ -86,27 +70,22 @@ function SlideMenu({ open, setOpen, toggleMenu }) {
         target="_blank"
         rel="noreferrer"
       >
-        E-mail
-        {/* <AiOutlineInbox /> */}
+        <AiOutlineInbox aria-label="e-mail" />
       </AnchorLink>
       <AnchorLink
         href="https://www.linkedin.com/in/saskiaopdam/"
         target="_blank"
         rel="noreferrer"
       >
-        LinkedIn
-        {/* <AiOutlineLinkedin /> */}
+        <AiOutlineLinkedin aria-label="linkedin" />
       </AnchorLink>
       <AnchorLink
         href="https://github.com/saskiaopdam"
         target="_blank"
         rel="noreferrer"
       >
-        GitHub
-        {/* <AiOutlineGithub /> */}
+        <AiOutlineGithub aria-label="github" />
       </AnchorLink>
-      <small>© 2021 Saskia Opdam</small>
-      <small>Made with React</small>
     </Wrapper>
   );
 }

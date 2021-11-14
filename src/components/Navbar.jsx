@@ -59,17 +59,6 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const AnchorLink = styled.a`
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-  // block-size: fit-content;
-  margin-left: 14px;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 function NavBar({ open, setOpen, toggleMenu }) {
   return (
     <Wrapper>

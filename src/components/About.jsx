@@ -12,26 +12,6 @@ const Title = styled.h1`
   margin-bottom: 20px;
 `;
 
-// const InfoWrapper = styled.div`
-//   @media (min-width: 768px) {
-//     display: flex;
-//   }
-// `;
-
-// const Info = styled.div`
-//   @media (min-width: 768px) {
-//     width: 50%;
-//     &:nth-child(odd) {
-//       padding-right: 10px;
-//       padding-bottom: 20px;
-//     }
-//     &:nth-child(even) {
-//       padding-left: 10px;
-//       padding-bottom: 20px;
-//     }
-//   }
-// `;
-
 const Paragraph = styled.p`
   margin-bottom: 16px;
   line-height: 1.25;
@@ -56,31 +36,9 @@ const AnchorLink = styled.a`
   color: black;
 `;
 
-// const Summary = styled.div`
-//   margin-bottom: 32px;
-// `;
-
-// const h2 = styled.h2`
-//   margin-bottom: 24px;
-//   color: darkgray;
-//   @media (min-width: 500px) {
-//     text-align: center;
-//   }
-// `;
-
-// const Paragraph = styled.p`
-//   margin-bottom: 16px;
-//   line-height: 1.25;
-//   // max-width: 500px;
-// `;
-
 const Accent = styled.span`
   font-weight: bold;
 `;
-
-// const Anchor = styled.a`
-//   color: black;
-// `;
 
 function About() {
   return (
