@@ -18,14 +18,6 @@ const Title = styled.h1`
   margin-bottom: 11px;
 `;
 
-const ImageWrapper = styled.div`
-  flex-grow: 1;
-  // background: white;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-`;
-
 const Figure = styled.figure`
   position: relative;
   width: 50%;
@@ -38,6 +30,27 @@ const Image = styled.img`
   width: 100%;
   display: block;
   border-radius: 50%;
+  &.small {
+    width: 25%;
+    & + & {
+      margin-top: 20px;
+    }
+    &:last-child {
+      transform: translateX(-200%);
+    }
+    @media (min-width: 768px) {
+      width: 12.5%;
+    }
+  }
+`;
+
+const ImageWrapper = styled.div`
+  flex-grow: 1;
+  // background: white;
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  align-items: flex-end;
 `;
 
 const Text = styled.div`
@@ -125,7 +138,7 @@ function Home() {
         </Text>
       </Figure>
 
-      {/* <ImageWrapper>
+      <ImageWrapper>
         <Image
           src={toggle2Square}
           alt="screenshot of toggle2 project"
@@ -136,7 +149,7 @@ function Home() {
           alt="screenshot of lemons project"
           className="small"
         />
-      </ImageWrapper> */}
+      </ImageWrapper>
       {/* <Figure> */}
       {/* <Figure> */}
       {/* <Image
