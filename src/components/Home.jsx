@@ -25,7 +25,7 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 75%;
+  width: 50%;
   display: block;
   border-radius: 50%;
   &.small {

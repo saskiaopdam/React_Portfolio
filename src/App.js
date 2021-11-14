@@ -9,7 +9,7 @@ import SlideMenu from "./components/SlideMenu";
 import Home from "./components/Home";
 import About from "./components/About";
 import Work from "./components/Work";
-import FooterContent from "./components/FooterContent";
+// import FooterContent from "./components/FooterContent";
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  background: pink;
+  background: whitesmoke;
   position: fixed;
   top: 0;
   left: 0;
@@ -38,9 +38,12 @@ const Main = styled.main`
 const Footer = styled.footer`
   flex-shrink: 0;
   padding: 20px;
-  background: pink;
 `;
 
+const FooterContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 const Inner = styled.div`
   flex-grow: 1;
   display: flex;
@@ -80,7 +83,10 @@ function App() {
           </Main>
           <Footer>
             <Inner>
-              <FooterContent />
+              <FooterContent>
+                <small>© 2021 Saskia Opdam</small>
+                <small>Made with React</small>
+              </FooterContent>
             </Inner>
           </Footer>
         </ScrollToTop>
