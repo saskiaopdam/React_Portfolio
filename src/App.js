@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  background: whitesmoke;
+  background: pink;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,7 +28,7 @@ const Header = styled.header`
 `;
 
 const Main = styled.main`
-  background: green;
+  // background: green;
   flex-grow: 1;
   padding: 20px;
   display: flex;
@@ -38,6 +38,7 @@ const Main = styled.main`
 const Footer = styled.footer`
   flex-shrink: 0;
   padding: 20px;
+  background: pink;
 `;
 
 const Inner = styled.div`

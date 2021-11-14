@@ -6,6 +6,8 @@ import lemonsSquare from "../assets/portrait-layout/lemons-square.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Title = styled.h1`
@@ -13,61 +15,26 @@ const Title = styled.h1`
   margin-bottom: 11px;
 `;
 
-// const Title = styled.h2`
-//   font-size: 18px;
-//   font-weight: 500;
-// `;
-
-// const Figure = styled.figure`
-//   width: 50%;
-//   height: 50%;
-//   background: green;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
-
-// const Image = styled.img`
-//   width: 100px;
-//   display: block;
-// `;
-
-// const Figure = styled.figure`
-//   width: 100%;
-//   height: 25%;
-//   // background: pink;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   &.big {
-//     // background: green;
-//     height: 100%;
-//   }
-// `;
-
-// const FigureWrapper = styled.div`
-//   height: 50%;
-//   // background: yellow;
-//   display: flex;
-// `;
-
-const Image = styled.img`
-  width: 50%;
-  display: block;
-  border-radius: 50%;
-  @media (min-width: 500px) {
-    width: 25%;
-  }
-  &.big {
-    width: 100%;
-    border-radius: 0;
-  }
+const ImageWrapper = styled.div`
+  flex-grow: 1;
+  // background: white;
+  display: flex;
+  // flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 `;
 
-const Heading3 = styled.h3`
-  font-size: 14px;
-  font-weight: 500;
+const Image = styled.img`
+  width: 75%;
+  display: block;
+  border-radius: 50%;
+  &.small {
+    width: 25%;
+    margin-left: 20px;
+  }
+  @media (min-width: 500px) {
+    width: 50%;
+  }
 `;
 
 function Home() {
@@ -75,21 +42,20 @@ function Home() {
     <Wrapper>
       <Title>Junior front-end developer</Title>
       <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      {/* <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      </Figure>
-      <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      </Figure>
-      <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      </Figure>
-      <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      </Figure> */}
+      <ImageWrapper>
+        <Image
+          src={toggle2Square}
+          alt="screenshot of toggle2 project"
+          className="small"
+        />
+        <Image
+          src={lemonsSquare}
+          alt="screenshot of lemons project"
+          className="small"
+        />
+      </ImageWrapper>
       {/* <Figure> */}
       {/* <Figure> */}
-
       {/* <Image
         src={toggle2Square}
         alt="screenshot of toggle2 project"
@@ -100,9 +66,7 @@ function Home() {
         alt="screenshot of lemons project"
         className="small"
       /> */}
-
       {/* </Figure> */}
-
       {/* <FigureWrapper>
         <Figure className="big">
           <Image
@@ -122,7 +86,6 @@ function Home() {
           <Heading3>Photo-editing</Heading3>
         </Figure>
       </FigureWrapper> */}
-
       {/* <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
         <Heading3>Contact</Heading3>
@@ -136,7 +99,6 @@ function Home() {
       <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
       </Figure> */}
-
       {/* </Figure> */}
     </Wrapper>
   );

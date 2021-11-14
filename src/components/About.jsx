@@ -12,21 +12,43 @@ const Title = styled.h1`
   margin-bottom: 11px;
 `;
 
+// const InfoWrapper = styled.div`
+//   @media (min-width: 768px) {
+//     display: flex;
+//   }
+// `;
+
+// const Info = styled.div`
+//   @media (min-width: 768px) {
+//     width: 50%;
+//     &:nth-child(odd) {
+//       padding-right: 10px;
+//       padding-bottom: 20px;
+//     }
+//     &:nth-child(even) {
+//       padding-left: 10px;
+//       padding-bottom: 20px;
+//     }
+//   }
+// `;
+
 const Paragraph = styled.p`
-  margin: 0px auto 16px;
+  margin-bottom: 16px;
   line-height: 1.25;
-  @media (min-width: 500px) {
+  text-align: justify;
+  @media (min-width: 768px) {
     width: 75%;
+    margin: 0 auto 16px;
   }
 `;
 
 const Image = styled.img`
   width: 100%;
   display: block;
-  margin: 40px auto 0px;
-  padding: 0 20px 20px 20px;
-  @media (min-width: 500px) {
-    width: 50%;
+  margin-top: 20px;
+  @media (min-width: 768px) {
+    width: 25%;
+    margin: 20px auto 0px;
   }
 `;
 
@@ -63,7 +85,7 @@ const Accent = styled.span`
 function About() {
   return (
     <Wrapper>
-      <Title>Info</Title>
+      <Title>About</Title>
       <Paragraph>
         After working on a website some time ago I got hooked and decided to
         learn more and switch careers from translation to development. Since
@@ -101,45 +123,6 @@ function About() {
         <strong> Upcoming skills:</strong>
         <br /> Python, Flask, SQL
       </Paragraph>
-      {/* <Image src={portraitLight} alt="portrait photo of Saskia Opdam" /> */}
-      <Paragraph>
-        <strong> Photo-editing:</strong>
-      </Paragraph>
-      <Image src={lemons} alt="screenshot of lemons project" />
-      {/* <h3>Photo-editing</h3>
-      <a
-        href="https://www.behance.net/opdamsaski0505"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Image src={lemons} alt="screenshot of lemons project" />
-      </a> */}
-      {/* <Summary>
-      
-
-        <h2>loves solving problems</h2>
-        <h2>loves visually beautiful things</h2>
-        <h2>curious, eager to learn</h2>
-        <h2>loves to dance, read and take long walks</h2>
-        <h2>lives and works in The Hague</h2>
-      </Summary>
-    
-      <Paragraph>
-        What I love about programming is that it allows for{" "}
-        <Accent>creativity</Accent> and logical thinking at the same time. The
-        result is visual and - if done well - appealing to the eye. An anspect I
-        miss in translation.
-      </Paragraph>
-      <Paragraph>
-        I'm looking for an opportunity to gain experience and broaden my
-        front-end skills in a junior <Accent>developer role</Accent>, while in
-        the spare time finishing the back-end curriculum.
-      </Paragraph>
-      <Paragraph>
-        If you are looking for someone with endless <Accent>curiosity</Accent>,
-        eagerness to learn and love of creating and problem solving, please let
-        me know.
-      </Paragraph> */}
     </Wrapper>
   );
 }

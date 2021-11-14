@@ -27,7 +27,7 @@ const Icon = styled.div`
 function FooterContent() {
   return (
     <Wrapper>
-      <AnchorLink
+      {/* <AnchorLink
         href="https://www.linkedin.com/in/saskiaopdam/"
         target="_blank"
         rel="noreferrer"
@@ -45,7 +45,7 @@ function FooterContent() {
         <Icon>
           <AiOutlineGithub />
         </Icon>
-      </AnchorLink>
+      </AnchorLink> */}
     </Wrapper>
   );
 }

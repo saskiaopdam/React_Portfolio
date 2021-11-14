@@ -28,7 +28,6 @@ const Title = styled.h1`
 `;
 
 const FigureWrapper = styled.div`
-  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -38,18 +37,24 @@ const Figure = styled.figure`
   & + & {
     margin-top: 20px;
   }
-  padding: 0 20px 20px 20px;
   @media (min-width: 768px) {
     width: 50%;
     & + & {
       margin-top: 0;
     }
-    padding-bottom: 40px;
-    &:nth-last-child(1) {
+    &:nth-child(odd) {
+      padding-right: 10px;
       padding-bottom: 20px;
     }
-    &:nth-last-child(2) {
+    &:nth-child(even) {
+      padding-left: 10px;
       padding-bottom: 20px;
+    }
+    &:nth-last-child(1) {
+      padding-bottom: 0;
+    }
+    &:nth-last-child(2) {
+      padding-bottom: 0;
     }
   }
 `;
@@ -232,7 +237,7 @@ function Work() {
 
   return (
     <Wrapper>
-      <Title>Projects</Title>
+      <Title>Work</Title>
       <FigureWrapper>
         <Figure>
           <Image
