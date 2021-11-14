@@ -101,13 +101,6 @@ function NavBar({ open, setOpen, toggleMenu }) {
         <StyledNavLink to="/work" activeClassName="selected">
           work
         </StyledNavLink>
-        <AnchorLink
-          href="https://www.behance.net/opdamsaski0505"
-          target="_blank"
-          rel="noreferrer"
-        >
-          hobby
-        </AnchorLink>
       </FullMenu>
     </Wrapper>
   );

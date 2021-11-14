@@ -82,13 +82,6 @@ function SlideMenu({ open, setOpen, toggleMenu }) {
         Work
       </StyledLink>
       <AnchorLink
-        href="https://www.behance.net/opdamsaski0505"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Hobby
-      </AnchorLink>
-      <AnchorLink
         href="mailto:opdamsaskia@icloud.com"
         target="_blank"
         rel="noreferrer"

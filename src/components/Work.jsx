@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 22px;
-  margin-bottom: 11px;
+  margin-bottom: 20px;
 `;
 
 const FigureWrapper = styled.div`
@@ -237,7 +237,7 @@ function Work() {
 
   return (
     <Wrapper>
-      <Title>Work</Title>
+      <Title>Coding projects</Title>
       <FigureWrapper>
         <Figure>
           <Image

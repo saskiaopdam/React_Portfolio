@@ -4,23 +4,43 @@ import { useState } from "react";
 import styled from "styled-components/macro";
 
 import portraitDarkSquare from "../assets/portrait-layout/portrait-dark-square.jpg";
-import toggle2Square from "../assets/portrait-layout/toggle2-square.png";
-import lemonsSquare from "../assets/portrait-layout/lemons-square.jpg";
+import toggle2 from "../assets/portrait-layout/toggle2.png";
+import lemons from "../assets/portrait-layout/lemons.jpg";
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
 `;
 
 const Title = styled.h1`
   font-size: 22px;
-  margin-bottom: 11px;
+  margin-bottom: 20px;
+`;
+
+const SubTitle = styled.h2`
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+`;
+
+const Heading3 = styled.h3`
+  font-size: 18px;
+  margin-bottom: 9px;
+`;
+
+const FigureWrapper = styled.div`
+  margin: 20px 0;
 `;
 
 const Figure = styled.figure`
   position: relative;
   width: 50%;
+  margin: 0 auto;
+  & + & {
+    margin-top: 20px;
+  }
+  &.round {
+    margin: 40px 0;
+  }
   @media (min-width: 768px) {
     width: 25%;
   }
@@ -29,28 +49,9 @@ const Figure = styled.figure`
 const Image = styled.img`
   width: 100%;
   display: block;
-  border-radius: 50%;
-  &.small {
-    width: 25%;
-    & + & {
-      margin-top: 20px;
-    }
-    &:last-child {
-      transform: translateX(-200%);
-    }
-    @media (min-width: 768px) {
-      width: 12.5%;
-    }
+  &.round {
+    border-radius: 50%;
   }
-`;
-
-const ImageWrapper = styled.div`
-  flex-grow: 1;
-  // background: white;
-  display: flex;
-  flex-direction: column;
-  // justify-content: flex-end;
-  align-items: flex-end;
 `;
 
 const Text = styled.div`
@@ -58,7 +59,9 @@ const Text = styled.div`
   width: 100%;
   height: 100%;
   top: 0;
-  border-radius: 50%;
+  &.round {
+    border-radius: 50%;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,20 +83,19 @@ const Text = styled.div`
 
 const StyledLink = styled(Link)`
   color: white;
-  text-decoration: none;
   &:hover {
-    text-decoration: underline;
+    opacity: 0.5;
   }
 `;
 
 const AnchorLink = styled.a`
   color: white;
-`;
-
-const Heading3 = styled.h3`
-  font-size: 18px;
-  font-weight: 500;
-  font-size: 24px;
+  &.contact {
+    color: black;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 
 function Home() {
@@ -103,99 +105,87 @@ function Home() {
   const handleMouseEnter = (event) => {
     setId(event.target.id);
     setVisible(true);
-    // alert(`enter ${id}`);
   };
 
   const handleMouseLeave = () => {
     setVisible(false);
-    // alert(`leave ${id}`);
   };
 
-  const portraitClicked = id === "portrait";
-  const toggle2Clicked = id === "toggle2";
-  const lemonsClicked = id === "lemons";
   const portraitMouseEnter = id === "portrait";
   const toggle2MouseEnter = id === "toggle2";
+  const lemonsMouseEnter = id === "lemons";
 
   return (
     <Wrapper>
-      <Title>Junior front-end developer</Title>
-      <Figure>
-        <Link to="/about">
-          <Image
-            src={portraitDarkSquare}
-            alt="portrait photo of Saskia Opdam"
-          />
-        </Link>
-        <Text
-          id="portrait"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          visible={visible}
-          portraitMouseEnter={portraitMouseEnter}
-        >
-          <StyledLink to="/about">About</StyledLink>
-        </Text>
-      </Figure>
-
-      <ImageWrapper>
-        <Image
-          src={toggle2Square}
-          alt="screenshot of toggle2 project"
-          className="small"
-        />
-        <Image
-          src={lemonsSquare}
-          alt="screenshot of lemons project"
-          className="small"
-        />
-      </ImageWrapper>
-      {/* <Figure> */}
-      {/* <Figure> */}
-      {/* <Image
-        src={toggle2Square}
-        alt="screenshot of toggle2 project"
-        className="small"
-      />
-      <Image
-        src={lemonsSquare}
-        alt="screenshot of lemons project"
-        className="small"
-      /> */}
-      {/* </Figure> */}
-      {/* <FigureWrapper>
-        <Figure className="big">
-          <Image
-            src={toggle2}
-            alt="screenshot of toggle2 project"
-            className="big"
-          />
-          <Heading3>Programming</Heading3>
+      <Title>Junior front-end developer learning full-stack</Title>
+      <SubTitle>
+        HTML | CSS | JavaScript | React/Redux | NodeJS | Python | Flask | SQL
+      </SubTitle>
+      <FigureWrapper>
+        <Figure className="round">
+          <Link to="/about">
+            <Image
+              src={portraitDarkSquare}
+              alt="portrait photo of Saskia Opdam"
+              className="round"
+            />
+          </Link>
+          <Text
+            id="portrait"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            visible={visible}
+            portraitMouseEnter={portraitMouseEnter}
+            className="round"
+          >
+            <StyledLink to="/about">Info</StyledLink>
+          </Text>
         </Figure>
 
-        <Figure className="big">
-          <Image
-            src={lemons}
-            alt="screenshot of lemons project"
-            className="big"
-          />
-          <Heading3>Photo-editing</Heading3>
+        <Figure>
+          <Link to="/work">
+            <Image src={toggle2} alt="screenshot of toggle2 project" />
+          </Link>
+          <Text
+            id="toggle2"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            visible={visible}
+            toggle2MouseEnter={toggle2MouseEnter}
+          >
+            <StyledLink to="/work">Coding projects</StyledLink>
+          </Text>
         </Figure>
-      </FigureWrapper> */}
-      {/* <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-        <Heading3>Contact</Heading3>
-      </Figure> */}
-      {/* <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      </Figure>
-      <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      </Figure>
-      <Figure>
-        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      </Figure> */}
-      {/* </Figure> */}
+
+        <Figure>
+          <a
+            href="https://www.behance.net/opdamsaski0505"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image src={lemons} alt="screenshot of lemons project" />
+          </a>
+          <Text
+            id="lemons"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            visible={visible}
+            lemonsMouseEnter={lemonsMouseEnter}
+          >
+            <AnchorLink
+              href="https://www.behance.net/opdamsaski0505"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Photo projects
+            </AnchorLink>
+          </Text>
+        </Figure>
+      </FigureWrapper>
+      <Heading3>Contact</Heading3>
+      <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
+        E-mail
+      </AnchorLink>
     </Wrapper>
   );
 }

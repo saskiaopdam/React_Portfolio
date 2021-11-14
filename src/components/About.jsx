@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 22px;
-  margin-bottom: 11px;
+  margin-bottom: 20px;
 `;
 
 // const InfoWrapper = styled.div`
@@ -85,7 +85,7 @@ const Accent = styled.span`
 function About() {
   return (
     <Wrapper>
-      <Title>About</Title>
+      <Title>Info</Title>
       <Paragraph>
         After working on a website some time ago I got hooked and decided to
         learn more and switch careers from translation to development. Since
