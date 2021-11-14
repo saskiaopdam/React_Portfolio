@@ -61,14 +61,16 @@ function App() {
   return (
     <Wrapper>
       <Router>
-        <ScrollToTop>
-          <Header open={open}>
-            <Inner>
+        {/* <ScrollToTop> */}
+        <Header open={open}>
+          header
+          {/* <Inner>
               <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
-            </Inner>
-          </Header>
-          <Main>
-            <Inner>
+            </Inner> */}
+        </Header>
+        <Main>
+          main
+          {/* <Inner>
               <SlideMenu
                 open={open}
                 setOpen={setOpen}
@@ -77,14 +79,15 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/work" exact component={Work} />
-            </Inner>
-          </Main>
-          <Footer>
-            <Inner>
+            </Inner> */}
+        </Main>
+        <Footer>
+          footer
+          {/* <Inner>
               <FooterContent />
-            </Inner>
-          </Footer>
-        </ScrollToTop>
+            </Inner> */}
+        </Footer>
+        {/* </ScrollToTop> */}
       </Router>
     </Wrapper>
   );
