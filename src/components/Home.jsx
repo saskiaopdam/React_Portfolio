@@ -4,9 +4,10 @@ import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.j
 
 const Wrapper = styled.div`
   flex-grow: 1;
+  background: yellow;
+
   display: flex;
   flex-wrap: wrap;
-
   // display: flex;
   // flex-direction: column;
   // @media (min-width: 500px) {
@@ -14,50 +15,51 @@ const Wrapper = styled.div`
   // }
 `;
 
-const Figure = styled.figure`
-  width: 50%;
-  height: 50%;
-  // background: green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Image = styled.img`
-  width: 100px;
-  display: block;
-`;
-
 // const Figure = styled.figure`
-//   margin-top: 20px;
-//   // background: pink;
+//   width: 50%;
+//   height: 50%;
+//   background: green;
 //   display: flex;
-//   flex-direction: column;
+//   justify-content: center;
 //   align-items: center;
-//   @media (min-width: 500px) {
-//     margin-top: 0;
-//   }
 // `;
 
 // const Image = styled.img`
-//   width: 75%;
+//   width: 100px;
 //   display: block;
-//   border-radius: 50%;
-//   @media (min-width: 500px) {
-//     width: 50%;
-//   }
 // `;
 
-// const Title = styled.h2`
-//   font-size: 18px;
-//   font-weight: 500;
-//   margin: 20px auto 0px;
-// `;
+const Figure = styled.figure`
+  width: 50%;
+  height: 50%;
+  background: pink;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  // @media (min-width: 500px) {
+  //   margin-top: 0;
+  // }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+  // @media (min-width: 500px) {
+  //   width: 25%;
+  // }
+`;
+
+const Title = styled.h2`
+  font-size: 18px;
+  font-weight: 500;
+  // margin: 20px auto 0px;
+`;
 
 function Home() {
   return (
     <Wrapper>
-      <Figure>
+      {/* <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
       </Figure>
       <Figure>
@@ -68,10 +70,22 @@ function Home() {
       </Figure>
       <Figure>
         <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-      </Figure>
+      </Figure> */}
       {/* <Figure> */}
-      {/* <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
-        <Title>Junior front-end developer</Title> */}
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
+
+      <Title>Junior front-end developer</Title>
       {/* </Figure> */}
     </Wrapper>
   );
