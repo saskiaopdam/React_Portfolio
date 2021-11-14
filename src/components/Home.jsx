@@ -3,10 +3,9 @@ import styled from "styled-components/macro";
 import portraitLightSquare from "../assets/portrait-layout/portraitLightSquare.jpg";
 
 const Wrapper = styled.div`
-  // background: yellow;
-  // display: flex;
-  // flex-wrap: wrap;
-  // flex-grow: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
 
   // display: flex;
   // flex-direction: column;
@@ -19,7 +18,16 @@ const Figure = styled.figure`
   width: 50%;
   height: 50%;
   // background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
+
+const Image = styled.img`
+  width: 100px;
+  display: block;
+`;
+
 // const Figure = styled.figure`
 //   margin-top: 20px;
 //   // background: pink;
@@ -49,6 +57,18 @@ const Figure = styled.figure`
 function Home() {
   return (
     <Wrapper>
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
+      <Figure>
+        <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
+      </Figure>
       {/* <Figure> */}
       {/* <Image src={portraitLightSquare} alt="portrait photo of Saskia Opdam" />
         <Title>Junior front-end developer</Title> */}

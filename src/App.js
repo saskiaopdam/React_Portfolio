@@ -15,8 +15,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  // min-height: 100vh;
-  // position: relative;
 `;
 
 const Header = styled.header`
@@ -33,8 +31,8 @@ const Main = styled.main`
   background: pink;
   flex-grow: 1;
   padding: 20px;
-  // display: flex;
-  margin-top: 58px;
+  display: flex;
+  margin-top: 61px;
 `;
 
 const Footer = styled.footer`
@@ -43,9 +41,9 @@ const Footer = styled.footer`
 `;
 
 const Inner = styled.div`
-  // flex-grow: 1;
-  // display: flex;
-  // flex-direction: column;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   max-width: 1000px;
   margin: 0 auto;
 `;
