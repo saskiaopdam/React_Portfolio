@@ -75,7 +75,8 @@ function About() {
       </Paragraph>
       <Paragraph>
         <strong>Current skills:</strong>
-        <br /> HTML | CSS | JavaScript | React | NodeJS
+        <br /> HTML, CSS, SCSS, JavaScript, React, Redux, Jest, Git, GitHub,
+        NodeJS
       </Paragraph>
       <Paragraph>
         <strong> Upcoming skills:</strong>
