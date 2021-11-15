@@ -1,8 +1,5 @@
 import styled from "styled-components/macro";
 
-import portraitLight from "../assets/portrait-layout/portrait-light.jpg";
-import lemons from "../assets/portrait-layout/lemons.jpg";
-
 const Wrapper = styled.div`
   flex-grow: 1;
 `;
@@ -22,22 +19,8 @@ const Paragraph = styled.p`
   }
 `;
 
-const Image = styled.img`
-  width: 100%;
-  display: block;
-  margin-top: 20px;
-  @media (min-width: 768px) {
-    width: 25%;
-    margin: 20px auto 0px;
-  }
-`;
-
 const AnchorLink = styled.a`
   color: black;
-`;
-
-const Accent = styled.span`
-  font-weight: bold;
 `;
 
 function About() {

@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import styled from "styled-components/macro";
+import {
+  AiOutlineGithub,
+  AiOutlineInbox,
+  AiOutlineLinkedin,
+} from "react-icons/ai";
 
 import portraitDarkSquare from "../assets/portrait-layout/portrait-dark-square.jpg";
 import toggle2 from "../assets/portrait-layout/toggle2.png";
@@ -13,22 +18,25 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 22px;
+  margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
 `;
 
 const SubTitle = styled.h2`
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 20px;
+  text-align: center;
 `;
 
 const Heading3 = styled.h3`
   font-size: 18px;
   margin-bottom: 9px;
+  text-align: center;
 `;
 
 const FigureWrapper = styled.div`
-  margin: 40px 0;
+  margin-bottom: 40px;
   @media (min-width: 768px) {
     display: flex;
   }
@@ -38,6 +46,7 @@ const Figure = styled.figure`
   position: relative;
   &.round {
     width: 50%;
+    margin: 60px auto;
     @media (min-width: 768px) {
       width: 25%;
     }
@@ -45,6 +54,7 @@ const Figure = styled.figure`
 
   &.portrait {
     width: 100%;
+    padding: 0 20px 20px 20px;
     & + & {
       margin-top: 20px;
     }
@@ -54,10 +64,10 @@ const Figure = styled.figure`
         margin-top: 0;
       }
       &:nth-child(odd) {
-        padding-right: 40px;
+        padding-right: 20px;
       }
       &:nth-child(even) {
-        padding-left: 40px;
+        padding-left: 20px;
       }
     }
   }
@@ -80,17 +90,12 @@ const Text = styled.div`
   &.round {
     border-radius: 50%;
   }
-  &.portraitLeft {
-    @media (min-width: 768px) {
-      right: 40px;
-    }
+  &.portrait {
+    top: 0;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
   }
-  &.portraitRight {
-    @media (min-width: 768px) {
-      left: 40px;
-    }
-  }
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,11 +107,11 @@ const Text = styled.div`
     visible,
   }) =>
     portraitMouseEnter && visible
-      ? "1"
+      ? "0.5"
       : toggle2MouseEnter && visible
-      ? "1"
+      ? "0.5"
       : lemonsMouseEnter && visible
-      ? "1"
+      ? "0.5"
       : "0"};
 `;
 
@@ -121,11 +126,18 @@ const AnchorLink = styled.a`
   color: white;
   &.contact {
     color: black;
-    display: block;
+    padding: 20px;
+    font-size: 24px;
+    color: darkblue;
   }
   &:hover {
     opacity: 0.5;
   }
+`;
+
+const ContactLinks = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 function Home() {
@@ -185,7 +197,7 @@ function Home() {
             onMouseLeave={handleMouseLeave}
             visible={visible}
             toggle2MouseEnter={toggle2MouseEnter}
-            className="portraitLeft"
+            className="portrait"
           >
             <StyledLink to="/work">Coding projects</StyledLink>
           </Text>
@@ -209,7 +221,7 @@ function Home() {
             onMouseLeave={handleMouseLeave}
             visible={visible}
             lemonsMouseEnter={lemonsMouseEnter}
-            className="portraitRight"
+            className="portrait"
           >
             <AnchorLink
               href="https://www.behance.net/opdamsaski0505"
@@ -222,26 +234,32 @@ function Home() {
         </Figure>
       </FigureWrapper>
       <Heading3>Contact</Heading3>
-      <AnchorLink href="mailto:opdamsaskia@icloud.com" className="contact">
-        E-mail
-      </AnchorLink>
-      <AnchorLink
-        href="https://www.linkedin.com/in/saskiaopdam/"
-        target="_blank"
-        rel="noreferrer"
-        className="contact"
-      >
-        LinkedIn
-      </AnchorLink>
-
-      <AnchorLink
-        href="https://github.com/saskiaopdam"
-        target="_blank"
-        rel="noreferrer"
-        className="contact"
-      >
-        GitHub
-      </AnchorLink>
+      <ContactLinks>
+        <AnchorLink
+          href="mailto:opdamsaskia@icloud.com"
+          target="_blank"
+          rel="noreferrer"
+          className="contact"
+        >
+          <AiOutlineInbox aria-label="e-mail" />
+        </AnchorLink>
+        <AnchorLink
+          href="https://www.linkedin.com/in/saskiaopdam/"
+          target="_blank"
+          rel="noreferrer"
+          className="contact"
+        >
+          <AiOutlineLinkedin aria-label="linkedin" />
+        </AnchorLink>
+        <AnchorLink
+          href="https://github.com/saskiaopdam"
+          target="_blank"
+          rel="noreferrer"
+          className="contact"
+        >
+          <AiOutlineGithub aria-label="github" />
+        </AnchorLink>
+      </ContactLinks>
     </Wrapper>
   );
 }
