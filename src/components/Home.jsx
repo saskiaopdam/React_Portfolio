@@ -18,7 +18,6 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 22px;
-  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
 `;
@@ -46,7 +45,7 @@ const Figure = styled.figure`
   position: relative;
   &.round {
     width: 50%;
-    margin: 60px auto;
+    margin: 40px auto;
     @media (min-width: 768px) {
       width: 25%;
     }
@@ -54,7 +53,7 @@ const Figure = styled.figure`
 
   &.portrait {
     width: 100%;
-    padding: 0 20px 20px 20px;
+    // padding: 0 20px 20px 20px;
     & + & {
       margin-top: 20px;
     }
@@ -90,12 +89,15 @@ const Text = styled.div`
   &.round {
     border-radius: 50%;
   }
-  &.portrait {
-    top: 0;
-    right: 20px;
-    bottom: 20px;
-    left: 20px;
+  @media (min-width: 768px) {
+    &.portraitLeft {
+      right: 20px;
+    }
+    &.portraitRight {
+      left: 20px;
+    }
   }
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,11 +109,11 @@ const Text = styled.div`
     visible,
   }) =>
     portraitMouseEnter && visible
-      ? "0.5"
+      ? "1"
       : toggle2MouseEnter && visible
-      ? "0.5"
+      ? "1"
       : lemonsMouseEnter && visible
-      ? "0.5"
+      ? "1"
       : "0"};
 `;
 
@@ -126,7 +128,7 @@ const AnchorLink = styled.a`
   color: white;
   &.contact {
     color: black;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     font-size: 24px;
     color: darkblue;
   }
@@ -197,7 +199,7 @@ function Home() {
             onMouseLeave={handleMouseLeave}
             visible={visible}
             toggle2MouseEnter={toggle2MouseEnter}
-            className="portrait"
+            className="portraitLeft"
           >
             <StyledLink to="/work">Coding projects</StyledLink>
           </Text>
@@ -221,7 +223,7 @@ function Home() {
             onMouseLeave={handleMouseLeave}
             visible={visible}
             lemonsMouseEnter={lemonsMouseEnter}
-            className="portrait"
+            className="portraitRight"
           >
             <AnchorLink
               href="https://www.behance.net/opdamsaski0505"
