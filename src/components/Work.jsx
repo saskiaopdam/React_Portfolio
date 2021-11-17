@@ -65,7 +65,7 @@ const Image = styled.img`
 `;
 
 const Text = styled.div`
-  padding: 20px;
+  padding: 20px 0px;
   display: ${({
     portfolioClicked,
     toggle2Clicked,
@@ -106,6 +106,7 @@ const Text = styled.div`
       : websiteClicked && visible
       ? "block"
       : "none"};
+  transition: display 0.7s ease;
 `;
 
 const Heading2 = styled.h2`
@@ -247,7 +248,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} portfolioClicked={portfolioClicked}>
-            <Heading2>Portfolio</Heading2>
+            {/* <Heading2>Portfolio</Heading2> */}
             <Paragraph>November 2021 - React</Paragraph>
             <Paragraph>
               Single Page portfolio app to demonstrate acquired skills and show
@@ -271,7 +272,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} toggle2Clicked={toggle2Clicked}>
-            <Heading2>Toggle2</Heading2>
+            {/* <Heading2>Toggle2</Heading2> */}
             <Paragraph>June 2021 - HTML, CSS, JavaScript</Paragraph>
             <Paragraph>
               A new and colourful version of the Winc Academy colour toggle
@@ -301,7 +302,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} dashboardClicked={dashboardClicked}>
-            <Heading2>Dashboard</Heading2>
+            {/* <Heading2>Dashboard</Heading2> */}
             <Paragraph>Just started - React</Paragraph>
             <Paragraph>
               Final Winc Academy front-end assignment:
@@ -333,7 +334,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} playlistClicked={playlistClicked}>
-            <Heading2>Playlist</Heading2>
+            {/* <Heading2>Playlist</Heading2> */}
             <Paragraph>September 2021 - React/Redux</Paragraph>
             <Paragraph>
               Seventh Winc Academy front-end assignment:
@@ -365,7 +366,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} tddClicked={tddClicked}>
-            <Heading2>TDD</Heading2>
+            {/* <Heading2>TDD</Heading2> */}
             <Paragraph>August 2021 - TDD testing</Paragraph>
             <Paragraph>
               Sixth Winc Academy front-end assignment:
@@ -390,7 +391,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} todolistClicked={todolistClicked}>
-            <Heading2>Todo-list</Heading2>
+            {/* <Heading2>Todo-list</Heading2> */}
             <Paragraph>August 2021 - HTML, CSS, JavaScript</Paragraph>
             <Paragraph>
               Fifth Winc Academy front-end assignment:
@@ -422,7 +423,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} moviefilterClicked={moviefilterClicked}>
-            <Heading2>Moviefilter</Heading2>
+            {/* <Heading2>Moviefilter</Heading2> */}
             <Paragraph>June 2021 - HTML, CSS, JavaScript</Paragraph>
             <Paragraph>
               Fourth Winc Academy front-end assignment:
@@ -454,7 +455,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} toggle1Clicked={toggle1Clicked}>
-            <Heading2>Toggle</Heading2>
+            {/* <Heading2>Toggle</Heading2> */}
             <Paragraph>April 2021 - HTML, CSS, JavaScript</Paragraph>
             <Paragraph>
               Third Winc Academy front-end assignment:
@@ -486,7 +487,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} mediabuttonsClicked={mediabuttonsClicked}>
-            <Heading2>Mediabuttons</Heading2>
+            {/* <Heading2>Mediabuttons</Heading2> */}
             <Paragraph>April 2021 - HTML, CSS, SCSS</Paragraph>
             <Paragraph>
               Second Winc Academy front-end assignment, level 3:
@@ -518,7 +519,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} portfoliogridClicked={portfoliogridClicked}>
-            <Heading2>Portfolio-grid</Heading2>
+            {/* <Heading2>Portfolio-grid</Heading2> */}
             <Paragraph>April 2021 - HTML, CSS, SCSS</Paragraph>
             <Paragraph>
               Second Winc Academy front-end assignment, level 2:
@@ -550,7 +551,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} testimonialClicked={testimonialClicked}>
-            <Heading2>Testimonial</Heading2>
+            {/* <Heading2>Testimonial</Heading2> */}
             <Paragraph>April 2021 - HTML, CSS, SCSS</Paragraph>
             <Paragraph>
               Second Winc Academy front-end assignment, level block:
@@ -582,7 +583,7 @@ function Work() {
             onClick={handleClick}
           />
           <Text visible={visible} websiteClicked={websiteClicked}>
-            <Heading2>Website</Heading2>
+            {/* <Heading2>Website</Heading2> */}
             <Paragraph>April 2021 - HTML, CSS</Paragraph>
             <Paragraph>
               First Winc Academy front-end assignment:
