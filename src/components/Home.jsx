@@ -114,14 +114,13 @@ const Text = styled.div`
     lemonsMouseLeave,
     visible,
   }) =>
-    // portraitClicked && visible
-    //   ? "1"
-    //   : toggle2Clicked && visible
-    //   ? "1"
-    //   : lemonsClicked && visible
-    //   ? "1"
-    //   : "0"};
-    portraitMouseEnter && visible
+    portraitClicked && visible
+      ? "1"
+      : toggle2Clicked && visible
+      ? "1"
+      : lemonsClicked && visible
+      ? "1"
+      : portraitMouseEnter && visible
       ? "1"
       : toggle2MouseEnter && visible
       ? "1"
