@@ -103,18 +103,39 @@ const Text = styled.div`
   align-items: center;
   background: black;
   opacity: ${({
+    portraitClicked,
+    toggle2Clicked,
+    lemonsClicked,
     portraitMouseEnter,
     toggle2MouseEnter,
     lemonsMouseEnter,
+    portraitMouseLeave,
+    toggle2MouseLeave,
+    lemonsMouseLeave,
     visible,
   }) =>
+    // portraitClicked && visible
+    //   ? "1"
+    //   : toggle2Clicked && visible
+    //   ? "1"
+    //   : lemonsClicked && visible
+    //   ? "1"
+    //   : "0"};
     portraitMouseEnter && visible
       ? "1"
       : toggle2MouseEnter && visible
       ? "1"
       : lemonsMouseEnter && visible
       ? "1"
+      : portraitMouseLeave && visible
+      ? "0"
+      : toggle2MouseLeave && visible
+      ? "0"
+      : lemonsMouseLeave && visible
+      ? "0"
       : "0"};
+
+  transition: opacity 0.7s ease;
 `;
 
 const StyledLink = styled(Link)`
@@ -146,6 +167,11 @@ function Home() {
   const [id, setId] = useState("");
   const [visible, setVisible] = useState(false);
 
+  const handleClick = (event) => {
+    setId(event.target.id);
+    setVisible(!visible);
+  };
+
   const handleMouseEnter = (event) => {
     setId(event.target.id);
     setVisible(true);
@@ -158,6 +184,12 @@ function Home() {
   const portraitMouseEnter = id === "portrait";
   const toggle2MouseEnter = id === "toggle2";
   const lemonsMouseEnter = id === "lemons";
+  const portraitMouseLeave = id === "portrait";
+  const toggle2MouseLeave = id === "toggle2";
+  const lemonsMouseLeave = id === "lemons";
+  const portraitClicked = id === "portrait";
+  const toggle2Clicked = id === "toggle2";
+  const lemonsClicked = id === "lemons";
 
   return (
     <Wrapper>
@@ -175,10 +207,13 @@ function Home() {
         </Link>
         <Text
           id="portrait"
+          onClick={handleClick}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           visible={visible}
+          portraitClicked={portraitClicked}
           portraitMouseEnter={portraitMouseEnter}
+          portraitMouseLeave={portraitMouseLeave}
           className="round"
         >
           <StyledLink to="/about">Info</StyledLink>
@@ -195,10 +230,13 @@ function Home() {
           </Link>
           <Text
             id="toggle2"
+            onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             visible={visible}
+            toggle2Clicked={toggle2Clicked}
             toggle2MouseEnter={toggle2MouseEnter}
+            toggle2MouseLeave={toggle2MouseLeave}
             className="portraitLeft"
           >
             <StyledLink to="/work">Coding projects</StyledLink>
@@ -219,10 +257,13 @@ function Home() {
           </a>
           <Text
             id="lemons"
+            onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             visible={visible}
+            lemonsClicked={lemonsClicked}
             lemonsMouseEnter={lemonsMouseEnter}
+            lemonsMouseLeave={lemonsMouseLeave}
             className="portraitRight"
           >
             <AnchorLink
